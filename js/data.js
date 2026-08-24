@@ -91,7 +91,7 @@ export const cards = {
 // в конец массива ниже, иначе розыгрыш не будет учтён при следующих
 // подборах.
 // -------------------------------------------------------------
-export const cardDrawOrder = ["r32-1", "r32-2", "r32-3", "r32-4", "r32-5", "r32-6", "r32-7", "r32-8"];
+export const cardDrawOrder = ["r32-1", "r32-2", "r32-3", "r32-4", "r32-5", "r32-6", "r32-7", "r32-8", "r32-9", "r32-10", "r32-11", "r32-12", "r32-13", "r32-14", "r32-15", "r32-16", "r16-1", "r16-2", "r16-3", "r16-4", "r16-5", "r16-6", "r16-7", "r16-8", "qf-1", "qf-2", "qf-3", "qf-4", "sf-1", "sf-2", "final"];
 
 // -------------------------------------------------------------
 // МАТЧИ. Полная сетка на 32 участника уже собрана ниже (16 игр
@@ -103,21 +103,27 @@ export const cardDrawOrder = ["r32-1", "r32-2", "r32-3", "r32-4", "r32-5", "r32-
 // Как заполнять по ходу турнира:
 //   1. Если нужно уточнить/поменять дату — впишите scheduledDate:
 //      "YYYY-MM-DD".
-//   2. Карту и то, кто из игроков за кого играет, впишите сюда сами
-//      (slotA.player/slotB.player и card, плюс id матча в конец
-//      cardDrawOrder) — можно заранее, задолго до самой игры. Пока
-//      status матча не "completed", карта и распределение игроков
-//      показываются на сайте под спойлером ("Показать"), чтобы не
-//      спалить их раньше времени.
+//   2. Карту, то, кто из игроков за кого играет, и кто ходит первым
+//      (firstMove: "A" или "B") впишите сюда сами — можно заранее,
+//      задолго до самой игры. Card и cardDrawOrder — как раньше.
+//      firstMove для 1/16 не нужен (там жёсткое правило: всегда
+//      slotA), а для 1/8 и дальше считается по алгоритму "первый ход
+//      / игрок за раунд 2+" — см. память сессии (или спросите
+//      заново, если начинается новая сессия: правило запомнено как
+//      факт о проекте). Пока status матча не "completed", карта,
+//      игроки и firstMove показываются на сайте под спойлером
+//      ("Показать"), чтобы не спалить их раньше времени.
 //   3. Когда матч сыгран — поставьте status: "completed", winner:
-//      "A" или "B", и заполните stats (кто ходил первым, на каком
-//      раунде закончилась игра, сколько HP осталось у победителя,
-//      впечатления). Спойлер с картой/игроками после этого сам
-//      исчезает — они показываются в открытую.
+//      "A" или "B", и заполните stats (кто ходил первым — то же
+//      значение, что в firstMove, если правило не нарушили, — на
+//      каком раунде закончилась игра, сколько HP осталось у
+//      победителя, впечатления). Спойлер с картой/игроками/первым
+//      ходом после этого сам исчезает — они показываются в открытую.
 //   4. Победитель сам не переносится в следующий матч — впишите его
 //      в slotA/slotB того матча, чей id указан в nextMatchId
 //      (в слот nextMatchSlot), когда пары следующего раунда
-//      определятся, заодно поставьте тому матчу status: "scheduled".
+//      определятся, заодно поставьте тому матчу status: "scheduled"
+//      и посчитайте для него firstMove/игроков по тому же алгоритму.
 // -------------------------------------------------------------
 export const matches = [
   {
@@ -130,6 +136,7 @@ export const matches = [
     status: "completed",
     scheduledDate: null,
     card: "king-solomons-mine",
+    firstMove: null,
     winner: "A",
     stats: {
       firstPlayer: "A",
@@ -145,12 +152,13 @@ export const matches = [
     stage: "1/16",
     roundIndex: 0,
     position: 1,
-    slotA: { player: "gleb", character: "bloody-mary" },
-    slotB: { player: "roma", character: "jekyll-hyde" },
+    slotA: { player: "roma", character: "jekyll-hyde" },
+    slotB: { player: "gleb", character: "bloody-mary" },
     status: "completed",
     scheduledDate: null,
     card: "sarpedon",
-    winner: "A",
+    firstMove: null,
+    winner: "B",
     stats: {
       firstPlayer: "A",
       finalRound: 22,
@@ -170,6 +178,7 @@ export const matches = [
     status: "completed",
     scheduledDate: null,
     card: "azuchi-castle",
+    firstMove: null,
     winner: "A",
     stats: {
       firstPlayer: "A",
@@ -190,6 +199,7 @@ export const matches = [
     status: "completed",
     scheduledDate: null,
     card: "t-rex-paddock",
+    firstMove: null,
     winner: "B",
     stats: {
       firstPlayer: "A",
@@ -210,6 +220,7 @@ export const matches = [
     status: "completed",
     scheduledDate: null,
     card: "raptor-paddock",
+    firstMove: null,
     winner: "B",
     stats: {
       firstPlayer: "A",
@@ -230,6 +241,7 @@ export const matches = [
     status: "completed",
     scheduledDate: null,
     card: "soho",
+    firstMove: null,
     winner: "A",
     stats: {
       firstPlayer: "A",
@@ -250,6 +262,7 @@ export const matches = [
     status: "completed",
     scheduledDate: null,
     card: "heorot",
+    firstMove: null,
     winner: "B",
     stats: {
       firstPlayer: "A",
@@ -270,6 +283,7 @@ export const matches = [
     status: "completed",
     scheduledDate: null,
     card: "sherwood-forest",
+    firstMove: null,
     winner: "A",
     stats: {
       firstPlayer: "A",
@@ -289,7 +303,8 @@ export const matches = [
     slotB: { player: null, character: "tomoe-gozen" },
     status: "scheduled",
     scheduledDate: null,
-    card: null,
+    card: "globe-theatre",
+    firstMove: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -309,7 +324,8 @@ export const matches = [
     slotB: { player: null, character: "sun-wukong" },
     status: "scheduled",
     scheduledDate: null,
-    card: null,
+    card: "baskerville-manor",
+    firstMove: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -329,7 +345,8 @@ export const matches = [
     slotB: { player: null, character: "robert-muldoon" },
     status: "scheduled",
     scheduledDate: null,
-    card: null,
+    card: "hanging-gardens",
+    firstMove: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -349,7 +366,8 @@ export const matches = [
     slotB: { player: null, character: "titania" },
     status: "scheduled",
     scheduledDate: null,
-    card: null,
+    card: "marmoreal",
+    firstMove: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -369,7 +387,8 @@ export const matches = [
     slotB: { player: null, character: "loki" },
     status: "scheduled",
     scheduledDate: null,
-    card: null,
+    card: "santas-workshop",
+    firstMove: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -389,7 +408,8 @@ export const matches = [
     slotB: { player: null, character: "weird-sisters" },
     status: "scheduled",
     scheduledDate: null,
-    card: null,
+    card: "venice",
+    firstMove: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -409,7 +429,8 @@ export const matches = [
     slotB: { player: null, character: "chupacabra" },
     status: "scheduled",
     scheduledDate: null,
-    card: null,
+    card: "yukon",
+    firstMove: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -429,7 +450,8 @@ export const matches = [
     slotB: { player: null, character: "pandora" },
     status: "scheduled",
     scheduledDate: null,
-    card: null,
+    card: "soho",
+    firstMove: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -445,11 +467,12 @@ export const matches = [
     stage: "1/8",
     roundIndex: 1,
     position: 0,
-    slotA: { player: null, character: "t-rex" },
-    slotB: { player: null, character: "bloody-mary" },
+    slotA: { player: "gleb", character: "t-rex" },
+    slotB: { player: "roma", character: "bloody-mary" },
     status: "scheduled",
     scheduledDate: null,
-    card: null,
+    card: "santas-workshop",
+    firstMove: "B",
     winner: null,
     stats: {
       firstPlayer: null,
@@ -465,11 +488,12 @@ export const matches = [
     stage: "1/8",
     roundIndex: 1,
     position: 1,
-    slotA: { player: null, character: "jinn" },
-    slotB: { player: null, character: "achilles" },
+    slotA: { player: "roma", character: "jinn" },
+    slotB: { player: "gleb", character: "achilles" },
     status: "scheduled",
     scheduledDate: null,
-    card: null,
+    card: "venice",
+    firstMove: "B",
     winner: null,
     stats: {
       firstPlayer: null,
@@ -485,11 +509,12 @@ export const matches = [
     stage: "1/8",
     roundIndex: 1,
     position: 2,
-    slotA: { player: null, character: "dracula" },
-    slotB: { player: null, character: "raptors" },
+    slotA: { player: "roma", character: "dracula" },
+    slotB: { player: "gleb", character: "raptors" },
     status: "scheduled",
     scheduledDate: null,
-    card: null,
+    card: "heorot",
+    firstMove: "A",
     winner: null,
     stats: {
       firstPlayer: null,
@@ -505,11 +530,12 @@ export const matches = [
     stage: "1/8",
     roundIndex: 1,
     position: 3,
-    slotA: { player: null, character: "blackbeard" },
-    slotB: { player: null, character: "hamlet" },
+    slotA: { player: "gleb", character: "blackbeard" },
+    slotB: { player: "roma", character: "hamlet" },
     status: "scheduled",
     scheduledDate: null,
-    card: null,
+    card: "marmoreal",
+    firstMove: "A",
     winner: null,
     stats: {
       firstPlayer: null,
@@ -529,7 +555,8 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
-    card: null,
+    card: "globe-theatre",
+    firstMove: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -549,7 +576,8 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
-    card: null,
+    card: "sherwood-forest",
+    firstMove: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -569,7 +597,8 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
-    card: null,
+    card: "raptor-paddock",
+    firstMove: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -589,7 +618,8 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
-    card: null,
+    card: "sarpedon",
+    firstMove: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -609,7 +639,8 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
-    card: null,
+    card: "hanging-gardens",
+    firstMove: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -629,7 +660,8 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
-    card: null,
+    card: "azuchi-castle",
+    firstMove: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -649,7 +681,8 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
-    card: null,
+    card: "baskerville-manor",
+    firstMove: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -669,7 +702,8 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
-    card: null,
+    card: "t-rex-paddock",
+    firstMove: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -689,7 +723,8 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
-    card: null,
+    card: "king-solomons-mine",
+    firstMove: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -709,7 +744,8 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
-    card: null,
+    card: "yukon",
+    firstMove: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -729,7 +765,8 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
-    card: null,
+    card: "hanging-gardens",
+    firstMove: null,
     winner: null,
     stats: {
       firstPlayer: null,

@@ -45,11 +45,19 @@
   font-size: 0.95rem;
 }
 
-.first-move {
+.first-move-wrap {
   text-align: center;
+  margin: -1.25rem 0 2rem;
+}
+
+.first-move-wrap .spoiler {
+  display: inline-block;
+}
+
+.first-move {
   color: var(--text-dim);
   font-size: 0.95rem;
-  margin: -1.25rem 0 2rem;
+  margin: 0;
 }
 
 .first-move strong {
@@ -84,8 +92,10 @@
 
 .card-display .placeholder-thumb,
 .card-display img.thumb {
-  width: 220px;
-  height: 220px;
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 5 / 3;
+  height: auto;
   font-size: 3.5rem;
   border-radius: 10px;
 }

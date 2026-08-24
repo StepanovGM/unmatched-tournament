@@ -1,4 +1,4 @@
-import { characters, players, cards } from "./data.js?v=2";
+import { characters, players, cards } from "./data.js?v=3";
 
 export function getCharacter(slug) {
   return slug ? characters[slug] : null;

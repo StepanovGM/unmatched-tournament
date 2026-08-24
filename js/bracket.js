@@ -1,5 +1,5 @@
-import { matches } from "./data.js?v=2";
-import { buildThumb, slotLabel, formatDate } from "./util.js?v=2";
+import { matches } from "./data.js?v=3";
+import { buildThumb, slotLabel, sidekickLabel, formatDate } from "./util.js?v=3";
 
 const bracketEl = document.querySelector(".bracket");
 const svg = document.querySelector(".bracket-connectors");
@@ -32,6 +32,14 @@ function buildSlot(match, key) {
   name.className = "slot-name";
   name.textContent = slotLabel(slot);
   text.appendChild(name);
+
+  const sidekick = sidekickLabel(slot);
+  if (sidekick) {
+    const sidekickEl = document.createElement("span");
+    sidekickEl.className = "slot-sidekick";
+    sidekickEl.textContent = sidekick;
+    text.appendChild(sidekickEl);
+  }
 
   row.appendChild(text);
   return row;
