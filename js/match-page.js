@@ -5,107 +5,193 @@ const root = document.getElementById("match-page");
 const id = new URLSearchParams(location.search).get("id");
 const match = matches.find((m) => m.id === id);
 
-if (!match) {
-  root.innerHTML = '<p class="empty-note">Матч не найден.</p>';
-} else {
-  render();
-}
-
 function isPlayed() {
   return match.status === "completed";
 }
 
-function buildSide(slot, isWinner) {
+// Тому, кто ходит первым, известно заранее (не спойлер — см. заметку
+// "first-move-rule" в памяти), поэтому бейдж можно показывать что до,
+// что после игры. Приоритет источников — как в displayOrder().
+function firstMoveSlotKey() {
+  if (match.stats && match.stats.firstPlayer) return match.stats.firstPlayer;
+  if (match.firstMove) return match.firstMove;
+  if (match.stage === "1/16") return "A";
+  return null;
+}
+
+const ICONS = {
+  footprint:
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3c-1.7 0-3 2-3 5 0 2-1 3-1 5.5C4 16.4 5.6 18 8 18s4-1.6 4-4.5c0-2.5-1-3.5-1-5.5 0-3-1.3-5-3-5z"/><path d="M16.5 8c-1.4 0-2.5 1.7-2.5 4.2 0 1.7-.8 2.5-.8 4.6 0 2.4 1.3 4.2 3.3 4.2s3.3-1.8 3.3-4.2c0-2.1-.8-2.9-.8-4.6 0-2.5-1.1-4.2-2.5-4.2z"/></svg>',
+  flag:
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h13l-3 4 3 4H5"/></svg>',
+  heart:
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5s-7.5-4.6-9.8-9.3C.7 7.8 2.4 4.5 5.6 4c2.1-.3 3.9.7 6.4 3.4C14.5 4.7 16.3 3.7 18.4 4c3.2.5 4.9 3.8 3.4 7.2C19.5 15.9 12 20.5 12 20.5z"/></svg>',
+};
+
+function buildIcon(name) {
+  const wrap = document.createElement("span");
+  wrap.className = "stat-icon";
+  wrap.innerHTML = ICONS[name];
+  return wrap;
+}
+
+// ---- Навигация между матчами (по порядку в data.js — соответствует
+// ходу турнира: весь 1/16, потом 1/8, 1/4, 1/2, финал, матч за 3-е) ----
+
+function buildNavLink(target, direction) {
+  const a = document.createElement("a");
+  a.className = `match-nav-link ${direction}`;
+  a.href = `match.html?id=${target.id}`;
+
+  const arrow = document.createElement("span");
+  arrow.className = "match-nav-arrow";
+  arrow.textContent = direction === "prev" ? "←" : "→";
+  a.appendChild(arrow);
+
+  const text = document.createElement("span");
+  text.className = "match-nav-text";
+
+  const label = document.createElement("span");
+  label.className = "match-nav-label";
+  label.textContent = direction === "prev" ? "Предыдущий матч" : "Следующий матч";
+  text.appendChild(label);
+
+  const desc = document.createElement("span");
+  desc.className = "match-nav-desc";
+  desc.textContent = `${target.stage} · ${slotLabel(target.slotA)} — ${slotLabel(target.slotB)}`;
+  text.appendChild(desc);
+
+  a.appendChild(text);
+  return a;
+}
+
+function buildMatchNav() {
+  const idx = matches.findIndex((m) => m.id === match.id);
+  const prev = idx > 0 ? matches[idx - 1] : null;
+  const next = idx < matches.length - 1 ? matches[idx + 1] : null;
+  if (!prev && !next) return null;
+
+  const nav = document.createElement("nav");
+  nav.className = "match-nav";
+  nav.appendChild(prev ? buildNavLink(prev, "prev") : Object.assign(document.createElement("span"), { className: "match-nav-spacer" }));
+  nav.appendChild(next ? buildNavLink(next, "next") : Object.assign(document.createElement("span"), { className: "match-nav-spacer" }));
+  return nav;
+}
+
+// ---- Hero (VS-блок) ----
+
+function buildHeroSide(slot, { isWinner, isLoser, firstMove, showPlayer }) {
   const side = document.createElement("div");
-  side.className = "match-side" + (isWinner ? " winner" : "");
-  side.appendChild(buildThumb(slot));
+  side.className = "hero-side" + (isWinner ? " winner" : "") + (isLoser ? " loser" : "");
+
+  const frame = document.createElement("div");
+  frame.className = "hero-portrait-frame";
+  frame.appendChild(buildThumb(slot));
+  if (firstMove) {
+    const badge = document.createElement("span");
+    badge.className = "hero-firstmove-badge";
+    badge.textContent = "Первый ход";
+    frame.appendChild(badge);
+  }
+  side.appendChild(frame);
+
+  if (isWinner) {
+    const tag = document.createElement("span");
+    tag.className = "hero-result-tag";
+    tag.textContent = "Победа";
+    side.appendChild(tag);
+  }
 
   const name = document.createElement("span");
-  name.className = "slot-name";
+  name.className = "hero-name";
   name.textContent = slotLabel(slot);
   side.appendChild(name);
 
   const sidekick = sidekickLabel(slot);
   if (sidekick) {
     const sidekickEl = document.createElement("span");
-    sidekickEl.className = "slot-sidekick";
+    sidekickEl.className = "hero-sidekick";
     sidekickEl.textContent = sidekick;
     side.appendChild(sidekickEl);
+  }
+
+  if (showPlayer && slot.player) {
+    const playerEl = document.createElement("span");
+    playerEl.className = "hero-player";
+    playerEl.textContent = getPlayer(slot.player).name;
+    side.appendChild(playerEl);
   }
 
   return side;
 }
 
-function buildVersus() {
-  const wrap = document.createElement("div");
-  wrap.className = "match-versus";
+function buildHero() {
+  const hero = document.createElement("div");
+  hero.className = "match-hero";
+
+  const stage = document.createElement("p");
+  stage.className = "hero-eyebrow";
+  stage.textContent = `Стадия: ${match.stage}`;
+  hero.appendChild(stage);
+
+  const versus = document.createElement("div");
+  versus.className = "hero-versus";
+
+  const played = isPlayed();
+  const firstKey = firstMoveSlotKey();
   const [firstLetter, secondLetter] = displayOrder(match);
-  wrap.appendChild(buildSide(match[`slot${firstLetter}`], match.winner === firstLetter));
-  const vs = document.createElement("span");
-  vs.className = "vs-label";
-  vs.textContent = "VS";
-  wrap.appendChild(vs);
-  wrap.appendChild(buildSide(match[`slot${secondLetter}`], match.winner === secondLetter));
-  return wrap;
-}
 
-function buildFirstMoveText(slotKey) {
-  const slot = slotKey === "A" ? match.slotA : match.slotB;
-  const p = document.createElement("p");
-  p.className = "first-move";
-  const strong = document.createElement("strong");
-  strong.textContent = slotLabel(slot);
-  p.append("Первый ход: ", strong);
-  return p;
-}
+  [firstLetter, secondLetter].forEach((letter) => {
+    const slot = match[`slot${letter}`];
+    versus.appendChild(
+      buildHeroSide(slot, {
+        isWinner: played && match.winner === letter,
+        isLoser: played && match.winner && match.winner !== letter,
+        firstMove: firstKey === letter,
+        showPlayer: played,
+      })
+    );
+    if (letter === firstLetter) {
+      const divider = document.createElement("div");
+      divider.className = "hero-divider";
+      const vs = document.createElement("span");
+      vs.className = "vs-label";
+      vs.textContent = "VS";
+      divider.appendChild(vs);
+      versus.appendChild(divider);
+    }
+  });
 
-// Для 1/16 действует фиксированное правило: первым ходит тот, кто указан
-// первым в паре (slotA). Для более поздних стадий — по правилу из
-// match.firstMove (см. заметку "first-move-rule" в памяти). В обоих
-// случаях это не секрет и спойлером не прячется — как только матч
-// сыгран, эту же информацию показывает раздел "Результаты матча".
-function buildFirstMoveSection() {
-  if (isPlayed()) return null;
-
-  let slotKey = null;
-  if (match.stage === "1/16") {
-    slotKey = "A";
-  } else if (match.firstMove) {
-    slotKey = match.firstMove;
-  }
-  if (!slotKey) return null;
-
-  const wrap = document.createElement("div");
-  wrap.className = "first-move-wrap";
-  wrap.appendChild(buildFirstMoveText(slotKey));
-  return wrap;
-}
-
-function buildSection(title) {
-  const section = document.createElement("section");
-  section.className = "match-section";
-  const h = document.createElement("h3");
-  h.textContent = title;
-  section.appendChild(h);
-  return section;
-}
-
-function buildCardDisplay(slug) {
-  const card = cards[slug];
-  const wrap = document.createElement("div");
-  wrap.className = "card-display";
-  wrap.appendChild(buildCardThumb(slug));
-  const name = document.createElement("span");
-  name.className = "slot-name";
-  name.textContent = card ? card.name : slug;
-  wrap.appendChild(name);
-  return wrap;
+  hero.appendChild(versus);
+  return hero;
 }
 
 // ---- Карта ----
 
+function buildShowcaseMedia(slug) {
+  const card = cards[slug];
+  const media = document.createElement("div");
+  media.className = "showcase-media";
+  media.appendChild(buildCardThumb(slug));
+
+  const scrim = document.createElement("div");
+  scrim.className = "showcase-scrim";
+  const eyebrow = document.createElement("p");
+  eyebrow.className = "showcase-eyebrow";
+  eyebrow.textContent = "Карта матча";
+  const title = document.createElement("p");
+  title.className = "showcase-title";
+  title.textContent = card ? card.name : slug;
+  scrim.appendChild(eyebrow);
+  scrim.appendChild(title);
+  media.appendChild(scrim);
+
+  return media;
+}
+
 function renderCardSection() {
-  const section = buildSection("Карта матча");
+  const section = document.createElement("section");
+  section.className = "card-showcase";
 
   if (!match.card) {
     const note = document.createElement("p");
@@ -115,15 +201,20 @@ function renderCardSection() {
     return section;
   }
 
-  const display = buildCardDisplay(match.card);
-  section.appendChild(isPlayed() ? display : buildSpoiler(display));
+  const media = buildShowcaseMedia(match.card);
+  section.appendChild(isPlayed() ? media : buildSpoiler(media));
   return section;
 }
 
-// ---- Игроки ----
+// ---- Игроки (только для ещё не сыгранных — после игры имя игрока
+// показывается прямо в hero, под персонажем) ----
 
 function renderPlayerSection() {
-  const section = buildSection("Кто за кого играет");
+  const section = document.createElement("section");
+  section.className = "match-section";
+  const h = document.createElement("h3");
+  h.textContent = "Кто за кого играет";
+  section.appendChild(h);
 
   if (!match.slotA.player || !match.slotB.player) {
     const note = document.createElement("p");
@@ -135,81 +226,103 @@ function renderPlayerSection() {
 
   const p = document.createElement("p");
   p.textContent = `${getPlayer(match.slotA.player).name} — ${slotLabel(match.slotA)}, ${getPlayer(match.slotB.player).name} — ${slotLabel(match.slotB)}`;
-  section.appendChild(isPlayed() ? p : buildSpoiler(p));
+  section.appendChild(buildSpoiler(p));
   return section;
 }
 
-// ---- Результаты ----
+// ---- Результаты (панель статистики для сыгранных матчей) ----
+
+function buildStatTile(iconName, value, label) {
+  const tile = document.createElement("div");
+  tile.className = "stat-tile";
+  tile.appendChild(buildIcon(iconName));
+  const val = document.createElement("span");
+  val.className = "stat-value";
+  val.textContent = value;
+  tile.appendChild(val);
+  const lbl = document.createElement("span");
+  lbl.className = "stat-label";
+  lbl.textContent = label;
+  tile.appendChild(lbl);
+  return tile;
+}
 
 function renderResultsSection() {
-  const section = buildSection("Результаты матча");
-
   if (!isPlayed()) {
+    const section = document.createElement("section");
+    section.className = "match-section";
+    const h = document.createElement("h3");
+    h.textContent = "Результаты матча";
+    section.appendChild(h);
     const note = document.createElement("p");
     note.className = "empty-note";
     note.textContent = "Матч ещё не сыгран.";
     section.appendChild(note);
-    return section;
+    return [section];
   }
 
-  const stats = document.createElement("dl");
-  stats.className = "result-stats";
+  const nodes = [];
+  const strip = document.createElement("div");
+  strip.className = "stat-strip";
 
-  const rows = [];
   if (match.stats.firstPlayer) {
     const firstSlot = match.stats.firstPlayer === "A" ? match.slotA : match.slotB;
-    rows.push(["Первый ход", slotLabel(firstSlot)]);
+    strip.appendChild(buildStatTile("footprint", slotLabel(firstSlot), "Первый ход"));
   }
   if (match.stats.finalRound != null) {
-    rows.push(["Игра закончилась на раунде", match.stats.finalRound]);
+    strip.appendChild(buildStatTile("flag", match.stats.finalRound, "Раунд окончания"));
   }
   if (match.stats.winnerHp != null) {
-    rows.push(["HP победителя в конце", match.stats.winnerHp]);
+    strip.appendChild(buildStatTile("heart", match.stats.winnerHp, "HP победителя"));
   }
-  rows.forEach(([label, value]) => {
-    const dt = document.createElement("dt");
-    dt.textContent = label;
-    const dd = document.createElement("dd");
-    dd.textContent = value;
-    stats.appendChild(dt);
-    stats.appendChild(dd);
-  });
-
   if (match.stats.rating != null) {
-    const dt = document.createElement("dt");
-    dt.textContent = "Оценка игры";
-    const dd = document.createElement("dd");
-    dd.appendChild(buildStarRating(match.stats.rating));
-    stats.appendChild(dt);
-    stats.appendChild(dd);
+    const tile = document.createElement("div");
+    tile.className = "stat-tile";
+    tile.appendChild(buildStarRating(match.stats.rating));
+    const lbl = document.createElement("span");
+    lbl.className = "stat-label";
+    lbl.textContent = "Оценка игры";
+    tile.appendChild(lbl);
+    strip.appendChild(tile);
   }
 
-  section.appendChild(stats);
+  if (strip.children.length) nodes.push(strip);
 
   if (match.stats.notes) {
     const notes = document.createElement("p");
-    notes.className = "match-notes";
+    notes.className = "match-notes-card";
     notes.textContent = match.stats.notes;
-    section.appendChild(notes);
+    nodes.push(notes);
   }
 
-  return section;
+  return nodes;
 }
 
 function render() {
   root.innerHTML = "";
 
-  const stage = document.createElement("p");
-  stage.className = "match-stage";
-  stage.textContent = `Стадия: ${match.stage}`;
-  root.appendChild(stage);
+  const inner = document.createElement("div");
+  inner.className = "match-page-inner";
 
-  root.appendChild(buildVersus());
+  const nav = buildMatchNav();
+  if (nav) inner.appendChild(nav);
 
-  const firstMove = buildFirstMoveSection();
-  if (firstMove) root.appendChild(firstMove);
+  if (isPlayed()) {
+    inner.appendChild(buildHero());
+    inner.appendChild(renderCardSection());
+    renderResultsSection().forEach((node) => inner.appendChild(node));
+  } else {
+    inner.appendChild(buildHero());
+    inner.appendChild(renderCardSection());
+    inner.appendChild(renderPlayerSection());
+    renderResultsSection().forEach((node) => inner.appendChild(node));
+  }
 
-  root.appendChild(renderCardSection());
-  root.appendChild(renderPlayerSection());
-  root.appendChild(renderResultsSection());
+  root.appendChild(inner);
+}
+
+if (!match) {
+  root.innerHTML = '<p class="empty-note">Матч не найден.</p>';
+} else {
+  render();
 }

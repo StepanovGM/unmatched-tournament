@@ -98,9 +98,12 @@ export const cardDrawOrder = ["r32-1", "r32-2", "r32-3", "r32-4", "r32-5", "r32-
 // в 1/16, 8 в 1/8, 4 в 1/4, 2 в 1/2, 1 финал) — связи между
 // раундами (nextMatchId/nextMatchSlot) готовы, их трогать не нужно.
 // Персонажи первого раунда (1/16) уже расставлены по официальной
-// сетке турнира. Последний элемент массива — отдельный матч "third-
-// place" (за 3-е место, между проигравшими полуфиналов sf-1/sf-2);
-// он не входит в сетку на выбывание (nextMatchId у него нет), в
+// сетке турнира. Предпоследний элемент массива — отдельный матч
+// "third-place" (за 3-е место, между проигравшими полуфиналов
+// sf-1/sf-2), последний — "final"; такой порядок специально стоит
+// перед финалом, чтобы навигация "предыдущий/следующий матч" на
+// странице матча шла в реальном порядке проведения игр. third-place
+// не входит в сетку на выбывание (nextMatchId у него нет), в
 // bracket.js отрисовывается отдельно рядом с финалом.
 //
 // Как заполнять по ходу турнира:
@@ -796,15 +799,15 @@ export const matches = [
     nextMatchSlot: "B",
   },
   {
-    id: "final",
-    stage: "Финал",
+    id: "third-place",
+    stage: "Матч за 3-е место",
     roundIndex: 4,
-    position: 0,
+    position: 1,
     slotA: { player: null, character: null },
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
-    card: "hanging-gardens",
+    card: "marmoreal",
     firstMove: null,
     winner: null,
     stats: {
@@ -818,15 +821,15 @@ export const matches = [
     nextMatchSlot: null,
   },
   {
-    id: "third-place",
-    stage: "Матч за 3-е место",
+    id: "final",
+    stage: "Финал",
     roundIndex: 4,
-    position: 1,
+    position: 0,
     slotA: { player: null, character: null },
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
-    card: "marmoreal",
+    card: "hanging-gardens",
     firstMove: null,
     winner: null,
     stats: {
