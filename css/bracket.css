@@ -1,0 +1,107 @@
+.bracket-wrap {
+  position: relative;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+
+.bracket {
+  position: relative;
+  display: flex;
+  gap: 4.5rem;
+  width: max-content;
+  padding: 1rem 0;
+}
+
+.bracket-connectors {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.bracket-connectors path {
+  fill: none;
+  stroke: var(--border);
+  stroke-width: 2;
+}
+
+.bracket-connectors path.decided {
+  stroke: var(--accent-dim);
+}
+
+.round-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1.2rem;
+  min-width: 230px;
+}
+
+.round-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--accent);
+  text-align: center;
+  margin-bottom: 0.3rem;
+}
+
+.match-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.match-card.clickable {
+  cursor: pointer;
+}
+
+.match-card.clickable:hover {
+  border-color: var(--accent);
+}
+
+.match-slot {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 0.6rem;
+}
+
+.match-slot + .match-slot {
+  border-top: 1px solid var(--border);
+}
+
+.match-slot .placeholder-thumb,
+.match-slot img.thumb {
+  width: 32px;
+  height: 32px;
+  font-size: 1rem;
+}
+
+.match-slot img.thumb {
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.match-slot.winner {
+  background: rgba(76, 175, 125, 0.12);
+}
+
+.match-slot.winner .slot-name {
+  color: var(--win);
+}
+
+.match-slot.loser {
+  opacity: 0.55;
+}
+
+.match-meta {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  text-align: center;
+  padding: 0.2rem 0;
+  border-top: 1px solid var(--border);
+}

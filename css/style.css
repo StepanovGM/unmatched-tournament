@@ -1,0 +1,222 @@
+@font-face {
+  font-family: "Bebas Neue Cyrillic";
+  src: url("../assets/fonts/bebasneuecyrillic.ttf") format("truetype");
+  font-display: swap;
+}
+
+:root {
+  --bg: #14151a;
+  --bg-raised: #1d1f27;
+  --bg-card: #23262f;
+  --border: #34384a;
+  --text: #eceef2;
+  --text-dim: #9297a8;
+  --accent: #c9a24b;
+  --accent-dim: #7a6636;
+  --win: #4caf7d;
+  --lose: #6b6f7d;
+  --danger: #c9564b;
+  --font-display: "Bebas Neue Cyrillic", "Arial Narrow", sans-serif;
+  --font-body: "Segoe UI", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+.site-title,
+.nav-link,
+.stage-label,
+.slot-name,
+.btn {
+  font-family: var(--font-display);
+  letter-spacing: 0.03em;
+}
+
+a {
+  color: var(--accent);
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem 1.5rem;
+  background: var(--bg-raised);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.site-title {
+  font-size: 1.8rem;
+  color: var(--accent);
+  margin: 0;
+  white-space: nowrap;
+}
+
+.site-nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  color: var(--text-dim);
+  text-decoration: none;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover {
+  color: var(--text);
+}
+
+.nav-link.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+main {
+  padding: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-size: 2.4rem;
+  color: var(--text);
+  margin: 0 0 1rem;
+}
+
+.placeholder-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--accent-dim), var(--bg-card));
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-weight: 400;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.empty-note {
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+.slot-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.slot-name {
+  font-size: 1.05rem;
+  line-height: 1.1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.slot-player {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.upcoming-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 760px;
+}
+
+.upcoming-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+}
+
+.upcoming-stage {
+  font-family: var(--font-display);
+  color: var(--accent);
+  font-size: 1.1rem;
+  min-width: 3.5rem;
+}
+
+.upcoming-pair {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex: 1;
+}
+
+.upcoming-side {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.upcoming-side .placeholder-thumb,
+.upcoming-side img.thumb {
+  width: 36px;
+  height: 36px;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+
+.upcoming-side img.thumb {
+  object-fit: cover;
+}
+
+.upcoming-date {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.stats-note {
+  color: var(--text-dim);
+  max-width: 640px;
+  margin-bottom: 1.5rem;
+}
+
+.stats-table {
+  border-collapse: collapse;
+  max-width: 480px;
+}
+
+.stats-table th,
+.stats-table td {
+  text-align: left;
+  padding: 0.5rem 1rem 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.stats-table th {
+  color: var(--text-dim);
+  font-weight: normal;
+  font-size: 0.85rem;
+}
