@@ -7,7 +7,8 @@ function currentCycleDraws() {
   return cardDrawOrder.slice(cycleStart);
 }
 
-// Карты, уже занятые в текущем незавершённом цикле розыгрыша (14 матчей).
+// Карты, уже занятые в текущем незавершённом цикле розыгрыша (размер
+// цикла = количество карт в cards, сейчас CYCLE_SIZE).
 export function cardsUsedInCurrentCycle() {
   return currentCycleDraws()
     .map((matchId) => matches.find((m) => m.id === matchId))
@@ -23,7 +24,7 @@ export function availableCards() {
 
 // Возвращает slug случайной ещё не занятой в этом цикле карты, либо null,
 // если пул почему-то пуст (не должно случаться при аккуратном ведении
-// cardDrawOrder — цикл сбрасывается сам каждые 14 розыгрышей).
+// cardDrawOrder — цикл сбрасывается сам каждые CYCLE_SIZE розыгрышей).
 export function drawRandomCard() {
   const pool = availableCards();
   if (pool.length === 0) return null;

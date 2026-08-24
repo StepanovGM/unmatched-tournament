@@ -59,36 +59,33 @@ export const players = {
 };
 
 // -------------------------------------------------------------
-// КАРТЫ. Пул из 14 карт, одна из которых случайно достаётся
-// каждому матчу (кнопка на странице матча). Замените name/image
-// на реальные, когда определитесь со списком — slug-и (ключи)
-// можно тоже переименовать, только заодно поправьте ссылки на
-// них в matches (card: "...") и в cardDrawOrder ниже.
+// КАРТЫ. Пул из 15 карт (игровых карт-локаций), одна из которых
+// случайно достаётся каждому матчу (кнопка на странице матча).
 // -------------------------------------------------------------
 export const cards = {
-  "card-1": { name: "Карта 1", image: "assets/cards/card-1.jpg" },
-  "card-2": { name: "Карта 2", image: "assets/cards/card-2.jpg" },
-  "card-3": { name: "Карта 3", image: "assets/cards/card-3.jpg" },
-  "card-4": { name: "Карта 4", image: "assets/cards/card-4.jpg" },
-  "card-5": { name: "Карта 5", image: "assets/cards/card-5.jpg" },
-  "card-6": { name: "Карта 6", image: "assets/cards/card-6.jpg" },
-  "card-7": { name: "Карта 7", image: "assets/cards/card-7.jpg" },
-  "card-8": { name: "Карта 8", image: "assets/cards/card-8.jpg" },
-  "card-9": { name: "Карта 9", image: "assets/cards/card-9.jpg" },
-  "card-10": { name: "Карта 10", image: "assets/cards/card-10.jpg" },
-  "card-11": { name: "Карта 11", image: "assets/cards/card-11.jpg" },
-  "card-12": { name: "Карта 12", image: "assets/cards/card-12.jpg" },
-  "card-13": { name: "Карта 13", image: "assets/cards/card-13.jpg" },
-  "card-14": { name: "Карта 14", image: "assets/cards/card-14.jpg" },
-  // ... замените на реальные 14 карт
+  "baskerville-manor": { name: "Baskerville Manor", image: "assets/cards/baskerville-manor.webp" },
+  "globe-theatre": { name: "Globe Theatre", image: "assets/cards/globe-theatre.webp" },
+  "hanging-gardens": { name: "Hanging Gardens", image: "assets/cards/hanging-gardens.webp" },
+  "marmoreal": { name: "Marmoreal", image: "assets/cards/marmoreal.webp" },
+  "santas-workshop": { name: "Santa's Workshop", image: "assets/cards/santas-workshop.avif" },
+  "sarpedon": { name: "Sarpedon", image: "assets/cards/sarpedon.webp" },
+  "soho": { name: "Soho", image: "assets/cards/soho.webp" },
+  "venice": { name: "Venice", image: "assets/cards/venice.avif" },
+  "azuchi-castle": { name: "Azuchi Castle", image: "assets/cards/azuchi-castle.webp" },
+  "heorot": { name: "Heorot", image: "assets/cards/heorot.webp" },
+  "king-solomons-mine": { name: "King Solomon's Mine", image: "assets/cards/king-solomons-mine.webp" },
+  "raptor-paddock": { name: "Raptor Paddock", image: "assets/cards/raptor-paddock.webp" },
+  "sherwood-forest": { name: "Sherwood Forest", image: "assets/cards/sherwood-forest.webp" },
+  "t-rex-paddock": { name: "T. Rex Paddock", image: "assets/cards/t-rex-paddock.webp" },
+  "yukon": { name: "Yukon", image: "assets/cards/yukon.webp" },
 };
 
 // -------------------------------------------------------------
 // ПОРЯДОК РОЗЫГРЫША КАРТ. Список id матчей в том порядке, в котором
 // им реально доставалась карта (не порядок сетки, а порядок по
 // факту розыгрыша!). Каждая карта не может выпасть повторно, пока
-// не будут розыграны все остальные 13 — то есть до 14-го розыгрыша,
-// потом колода "перетасовывается" заново для матчей 15-28, и так далее.
+// не будут розыграны все остальные 14 — то есть до 15-го розыгрыша,
+// потом колода "перетасовывается" заново для матчей 16-30, и так далее.
 //
 // Когда на странице матча жмёте "Рандомизировать карту" и копируете
 // код в data.js — допишите id этого матча в конец массива ниже,
