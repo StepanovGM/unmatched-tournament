@@ -41,6 +41,10 @@
   font-size: 1.4rem;
 }
 
+.match-side .slot-sidekick {
+  font-size: 0.9rem;
+}
+
 .match-section {
   max-width: 640px;
   background: var(--bg-card);

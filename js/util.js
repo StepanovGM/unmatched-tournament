@@ -18,6 +18,11 @@ export function playerLabel(slot) {
   return player ? player.name : "";
 }
 
+export function sidekickLabel(slot) {
+  const character = getCharacter(slot.character);
+  return character && character.sidekick ? character.sidekick : "";
+}
+
 // Строит миниатюру персонажа: картинку, если она есть и грузится,
 // иначе цветной плейсхолдер с первой буквой имени.
 export function buildThumb(slot) {

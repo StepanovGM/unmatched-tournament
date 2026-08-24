@@ -1,5 +1,5 @@
 import { matches, players, cards, cardDrawOrder } from "./data.js";
-import { buildThumb, buildCardThumb, buildSnippetBox, buildSpoiler, slotLabel, playerLabel, getPlayer } from "./util.js";
+import { buildThumb, buildCardThumb, buildSnippetBox, buildSpoiler, slotLabel, playerLabel, sidekickLabel, getPlayer } from "./util.js";
 import { drawRandomCard, drawRandomPlayers } from "./random.js";
 
 const root = document.getElementById("match-page");
@@ -21,6 +21,14 @@ function buildSide(slot, isWinner) {
   name.className = "slot-name";
   name.textContent = slotLabel(slot);
   side.appendChild(name);
+
+  const sidekick = sidekickLabel(slot);
+  if (sidekick) {
+    const sidekickEl = document.createElement("span");
+    sidekickEl.className = "slot-sidekick";
+    sidekickEl.textContent = sidekick;
+    side.appendChild(sidekickEl);
+  }
 
   // Имя игрока в шапке матча показываем только после игры — до этого
   // распределение скрыто за спойлером в разделе "Кто за кого играет",

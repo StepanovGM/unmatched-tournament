@@ -7,16 +7,46 @@
 
 // -------------------------------------------------------------
 // ПЕРСОНАЖИ. slug — короткий идентификатор без пробелов
-// (используется в matches ниже), image — путь до портрета
+// (используется в matches ниже). sidekick — необязательное имя
+// сайдкика, показывается второй строкой мельче и серым (кроме
+// компактных мест вроде превью матча в сетке — там оно скрыто,
+// чтобы не перегружать карточку). image — путь до портрета
 // в assets/characters/. Пока картинок нет — покажется плейсхолдер
 // с первой буквой имени, вёрстка не сломается.
 // -------------------------------------------------------------
 export const characters = {
-  "sherlock-holmes": { name: "Шерлок Холмс", image: "assets/characters/sherlock-holmes.jpg" },
-  "invisible-man": { name: "Человек-невидимка", image: "assets/characters/invisible-man.jpg" },
-  "dracula": { name: "Дракула", image: "assets/characters/dracula.jpg" },
-  "alice": { name: "Алиса", image: "assets/characters/alice.jpg" },
-  // ... добавляйте остальных участников турнира по такому же образцу
+  "t-rex": { name: "Ти-рекс", image: "assets/characters/t-rex.jpg" },
+  "sherlock-holmes": { name: "Шерлок Холмс", sidekick: "и доктор Ватсон", image: "assets/characters/sherlock-holmes.jpg" },
+  "bloody-mary": { name: "Кровавая Мэри", image: "assets/characters/bloody-mary.jpg" },
+  "jekyll-hyde": { name: "Джекил и Хайд", image: "assets/characters/jekyll-hyde.jpg" },
+  "jinn": { name: "Джинн", image: "assets/characters/jinn.jpg" },
+  "invisible-man": { name: "Невидимка", image: "assets/characters/invisible-man.jpg" },
+  "houdini": { name: "Гудини", sidekick: "и Бесс", image: "assets/characters/houdini.jpg" },
+  "achilles": { name: "Ахиллес", sidekick: "и Патрокл", image: "assets/characters/achilles.jpg" },
+  "ellie-sattler": { name: "Д-р Элли Сэттлер", sidekick: "и Д-р Иэн Малькольм", image: "assets/characters/ellie-sattler.jpg" },
+  "dracula": { name: "Дракула", sidekick: "и Сёстры", image: "assets/characters/dracula.jpg" },
+  "raptors": { name: "Рапторы", image: "assets/characters/raptors.jpg" },
+  "yennenga": { name: "Йенненга", sidekick: "и лучники", image: "assets/characters/yennenga.jpg" },
+  "beowulf": { name: "Беовульф", sidekick: "и Виглаф", image: "assets/characters/beowulf.jpg" },
+  "blackbeard": { name: "Чёрная Борода", sidekick: "и Морские Волки", image: "assets/characters/blackbeard.jpg" },
+  "hamlet": { name: "Гамлет", sidekick: "и Розенкранц и Гильденстерн", image: "assets/characters/hamlet.jpg" },
+  "shakespeare": { name: "Шекспир", sidekick: "и Актёры", image: "assets/characters/shakespeare.jpg" },
+  "robin-hood": { name: "Робин Гуд", sidekick: "и разбойники", image: "assets/characters/robin-hood.jpg" },
+  "tomoe-gozen": { name: "Томоэ Годзэн", image: "assets/characters/tomoe-gozen.jpg" },
+  "king-arthur": { name: "Король Артур", sidekick: "и Мерлин", image: "assets/characters/king-arthur.jpg" },
+  "sun-wukong": { name: "Сунь Укун", sidekick: "и Двойники", image: "assets/characters/sun-wukong.jpg" },
+  "little-red-riding-hood": { name: "Красная Шапочка", sidekick: "и Охотник", image: "assets/characters/little-red-riding-hood.jpg" },
+  "robert-muldoon": { name: "Роберт Малдуин", sidekick: "и работники \"Инген\"", image: "assets/characters/robert-muldoon.jpg" },
+  "bigfoot": { name: "Бигфут", sidekick: "и Кролень", image: "assets/characters/bigfoot.jpg" },
+  "titania": { name: "Титания", sidekick: "и Оберон", image: "assets/characters/titania.jpg" },
+  "medusa": { name: "Медуза", sidekick: "и Гарпии", image: "assets/characters/medusa.jpg" },
+  "loki": { name: "Локи", image: "assets/characters/loki.jpg" },
+  "sindbad": { name: "Синдбад", sidekick: "и Носильщик", image: "assets/characters/sindbad.jpg" },
+  "weird-sisters": { name: "Вещие Сёстры", image: "assets/characters/weird-sisters.jpg" },
+  "alice": { name: "Алиса", sidekick: "и Бармаглот", image: "assets/characters/alice.jpg" },
+  "chupacabra": { name: "Чупакабра", image: "assets/characters/chupacabra.jpg" },
+  "oda-nobunaga": { name: "Ода Нобунага", sidekick: "и Самураи", image: "assets/characters/oda-nobunaga.jpg" },
+  "pandora": { name: "Пандора", sidekick: "и Какодемоны", image: "assets/characters/pandora.jpg" },
 };
 
 // -------------------------------------------------------------
@@ -64,17 +94,18 @@ export const cards = {
 // код в data.js — допишите id этого матча в конец массива ниже,
 // иначе розыгрыш не будет учтён при следующих подборах.
 // -------------------------------------------------------------
-export const cardDrawOrder = ["r32-1", "r32-2"];
+export const cardDrawOrder = [];
 
 // -------------------------------------------------------------
 // МАТЧИ. Полная сетка на 32 участника уже собрана ниже (16 игр
 // в 1/16, 8 в 1/8, 4 в 1/4, 2 в 1/2, 1 финал) — связи между
 // раундами (nextMatchId/nextMatchSlot) готовы, их трогать не нужно.
+// Персонажи первого раунда (1/16) уже расставлены по официальной
+// сетке турнира.
 //
 // Как заполнять по ходу турнира:
-//   1. Когда пара определилась — впишите slotA/slotB.character (slug
-//      персонажа), поставьте status: "scheduled" и, если знаете дату
-//      игры, scheduledDate: "YYYY-MM-DD".
+//   1. Если нужно уточнить/поменять дату — впишите scheduledDate:
+//      "YYYY-MM-DD".
 //   2. На странице матча (ссылка с сетки/ближайших матчей) можно
 //      случайно распределить, кто из игроков за кого играет, и
 //      вытянуть карту матча — оба действия дают код для копирования
@@ -86,15 +117,12 @@ export const cardDrawOrder = ["r32-1", "r32-2"];
 //   3. Когда матч сыгран — поставьте status: "completed", winner:
 //      "A" или "B", и заполните stats (кто ходил первым, на каком
 //      раунде закончилась игра, сколько HP осталось у победителя,
-//      впечатления). Спойлер с картой/игроками после этого само
+//      впечатления). Спойлер с картой/игроками после этого сам
 //      исчезает — они показываются в открытую.
 //   4. Победитель сам не переносится в следующий матч — впишите его
 //      в slotA/slotB того матча, чей id указан в nextMatchId
-//      (в слот nextMatchSlot).
-//
-// Первые два матча ниже — для примера: первый сыгран полностью,
-// у второго уже заранее разыграны карта и игроки (но сам матч ещё
-// не сыгран) — так на сайте выглядит спойлер.
+//      (в слот nextMatchSlot), когда пары следующего раунда
+//      определятся, заодно поставьте тому матчу status: "scheduled".
 // -------------------------------------------------------------
 export const matches = [
   {
@@ -102,17 +130,17 @@ export const matches = [
     stage: "1/16",
     roundIndex: 0,
     position: 0,
-    slotA: { player: "roma", character: "sherlock-holmes" },
-    slotB: { player: "gleb", character: "invisible-man" },
-    status: "completed",
+    slotA: { player: null, character: "t-rex" },
+    slotB: { player: null, character: "sherlock-holmes" },
+    status: "scheduled",
     scheduledDate: null,
-    card: "card-1",
-    winner: "A",
+    card: null,
+    winner: null,
     stats: {
-      firstPlayer: "A",
-      finalRound: 5,
-      winnerHp: 6,
-      notes: "Шерлок задавил ловушками у канализации, Невидимка не успел разогнаться.",
+      firstPlayer: null,
+      finalRound: null,
+      winnerHp: null,
+      notes: "",
     },
     nextMatchId: "r16-1",
     nextMatchSlot: "A",
@@ -122,11 +150,11 @@ export const matches = [
     stage: "1/16",
     roundIndex: 0,
     position: 1,
-    slotA: { player: "roma", character: "dracula" },
-    slotB: { player: "gleb", character: "alice" },
+    slotA: { player: null, character: "bloody-mary" },
+    slotB: { player: null, character: "jekyll-hyde" },
     status: "scheduled",
-    scheduledDate: "2026-08-30",
-    card: "card-7",
+    scheduledDate: null,
+    card: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -142,9 +170,9 @@ export const matches = [
     stage: "1/16",
     roundIndex: 0,
     position: 2,
-    slotA: { player: null, character: null },
-    slotB: { player: null, character: null },
-    status: "tbd",
+    slotA: { player: null, character: "jinn" },
+    slotB: { player: null, character: "invisible-man" },
+    status: "scheduled",
     scheduledDate: null,
     card: null,
     winner: null,
@@ -162,9 +190,9 @@ export const matches = [
     stage: "1/16",
     roundIndex: 0,
     position: 3,
-    slotA: { player: null, character: null },
-    slotB: { player: null, character: null },
-    status: "tbd",
+    slotA: { player: null, character: "houdini" },
+    slotB: { player: null, character: "achilles" },
+    status: "scheduled",
     scheduledDate: null,
     card: null,
     winner: null,
@@ -182,9 +210,9 @@ export const matches = [
     stage: "1/16",
     roundIndex: 0,
     position: 4,
-    slotA: { player: null, character: null },
-    slotB: { player: null, character: null },
-    status: "tbd",
+    slotA: { player: null, character: "ellie-sattler" },
+    slotB: { player: null, character: "dracula" },
+    status: "scheduled",
     scheduledDate: null,
     card: null,
     winner: null,
@@ -202,9 +230,9 @@ export const matches = [
     stage: "1/16",
     roundIndex: 0,
     position: 5,
-    slotA: { player: null, character: null },
-    slotB: { player: null, character: null },
-    status: "tbd",
+    slotA: { player: null, character: "raptors" },
+    slotB: { player: null, character: "yennenga" },
+    status: "scheduled",
     scheduledDate: null,
     card: null,
     winner: null,
@@ -222,9 +250,9 @@ export const matches = [
     stage: "1/16",
     roundIndex: 0,
     position: 6,
-    slotA: { player: null, character: null },
-    slotB: { player: null, character: null },
-    status: "tbd",
+    slotA: { player: null, character: "beowulf" },
+    slotB: { player: null, character: "blackbeard" },
+    status: "scheduled",
     scheduledDate: null,
     card: null,
     winner: null,
@@ -242,9 +270,9 @@ export const matches = [
     stage: "1/16",
     roundIndex: 0,
     position: 7,
-    slotA: { player: null, character: null },
-    slotB: { player: null, character: null },
-    status: "tbd",
+    slotA: { player: null, character: "hamlet" },
+    slotB: { player: null, character: "shakespeare" },
+    status: "scheduled",
     scheduledDate: null,
     card: null,
     winner: null,
@@ -262,9 +290,9 @@ export const matches = [
     stage: "1/16",
     roundIndex: 0,
     position: 8,
-    slotA: { player: null, character: null },
-    slotB: { player: null, character: null },
-    status: "tbd",
+    slotA: { player: null, character: "robin-hood" },
+    slotB: { player: null, character: "tomoe-gozen" },
+    status: "scheduled",
     scheduledDate: null,
     card: null,
     winner: null,
@@ -282,9 +310,9 @@ export const matches = [
     stage: "1/16",
     roundIndex: 0,
     position: 9,
-    slotA: { player: null, character: null },
-    slotB: { player: null, character: null },
-    status: "tbd",
+    slotA: { player: null, character: "king-arthur" },
+    slotB: { player: null, character: "sun-wukong" },
+    status: "scheduled",
     scheduledDate: null,
     card: null,
     winner: null,
@@ -302,9 +330,9 @@ export const matches = [
     stage: "1/16",
     roundIndex: 0,
     position: 10,
-    slotA: { player: null, character: null },
-    slotB: { player: null, character: null },
-    status: "tbd",
+    slotA: { player: null, character: "little-red-riding-hood" },
+    slotB: { player: null, character: "robert-muldoon" },
+    status: "scheduled",
     scheduledDate: null,
     card: null,
     winner: null,
@@ -322,9 +350,9 @@ export const matches = [
     stage: "1/16",
     roundIndex: 0,
     position: 11,
-    slotA: { player: null, character: null },
-    slotB: { player: null, character: null },
-    status: "tbd",
+    slotA: { player: null, character: "bigfoot" },
+    slotB: { player: null, character: "titania" },
+    status: "scheduled",
     scheduledDate: null,
     card: null,
     winner: null,
@@ -342,9 +370,9 @@ export const matches = [
     stage: "1/16",
     roundIndex: 0,
     position: 12,
-    slotA: { player: null, character: null },
-    slotB: { player: null, character: null },
-    status: "tbd",
+    slotA: { player: null, character: "medusa" },
+    slotB: { player: null, character: "loki" },
+    status: "scheduled",
     scheduledDate: null,
     card: null,
     winner: null,
@@ -362,9 +390,9 @@ export const matches = [
     stage: "1/16",
     roundIndex: 0,
     position: 13,
-    slotA: { player: null, character: null },
-    slotB: { player: null, character: null },
-    status: "tbd",
+    slotA: { player: null, character: "sindbad" },
+    slotB: { player: null, character: "weird-sisters" },
+    status: "scheduled",
     scheduledDate: null,
     card: null,
     winner: null,
@@ -382,9 +410,9 @@ export const matches = [
     stage: "1/16",
     roundIndex: 0,
     position: 14,
-    slotA: { player: null, character: null },
-    slotB: { player: null, character: null },
-    status: "tbd",
+    slotA: { player: null, character: "alice" },
+    slotB: { player: null, character: "chupacabra" },
+    status: "scheduled",
     scheduledDate: null,
     card: null,
     winner: null,
@@ -402,9 +430,9 @@ export const matches = [
     stage: "1/16",
     roundIndex: 0,
     position: 15,
-    slotA: { player: null, character: null },
-    slotB: { player: null, character: null },
-    status: "tbd",
+    slotA: { player: null, character: "oda-nobunaga" },
+    slotB: { player: null, character: "pandora" },
+    status: "scheduled",
     scheduledDate: null,
     card: null,
     winner: null,
