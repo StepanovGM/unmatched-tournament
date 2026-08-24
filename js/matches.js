@@ -29,8 +29,9 @@ function buildSide(slot) {
 }
 
 function buildRow(match) {
-  const row = document.createElement("div");
+  const row = document.createElement("a");
   row.className = "upcoming-row";
+  row.href = `match.html?id=${match.id}`;
 
   const stage = document.createElement("span");
   stage.className = "upcoming-stage";
@@ -41,7 +42,7 @@ function buildRow(match) {
   pair.className = "upcoming-pair";
   pair.appendChild(buildSide(match.slotA));
   const vs = document.createElement("span");
-  vs.className = "modal-vs";
+  vs.className = "vs-label";
   vs.textContent = "VS";
   pair.appendChild(vs);
   pair.appendChild(buildSide(match.slotB));

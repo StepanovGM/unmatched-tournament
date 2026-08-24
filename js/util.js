@@ -1,4 +1,4 @@
-import { characters, players } from "./data.js";
+import { characters, players, cards } from "./data.js";
 
 export function getCharacter(slug) {
   return slug ? characters[slug] : null;
@@ -44,6 +44,64 @@ export function buildThumb(slot) {
 
   wrap.appendChild(img);
   return wrap;
+}
+
+// Миниатюра карты (аналогично buildThumb, но для словаря cards).
+export function buildCardThumb(cardSlug) {
+  const card = cardSlug ? cards[cardSlug] : null;
+  const wrap = document.createElement("span");
+
+  if (!card) {
+    wrap.className = "placeholder-thumb";
+    wrap.textContent = "?";
+    return wrap;
+  }
+
+  const placeholder = document.createElement("span");
+  placeholder.className = "placeholder-thumb";
+  placeholder.textContent = card.name.charAt(0).toUpperCase();
+
+  const img = document.createElement("img");
+  img.className = "thumb";
+  img.src = card.image;
+  img.alt = card.name;
+  img.onerror = () => {
+    img.replaceWith(placeholder);
+  };
+
+  wrap.appendChild(img);
+  return wrap;
+}
+
+// Блок с кодом для вставки в data.js + кнопка "скопировать".
+export function buildSnippetBox(code) {
+  const box = document.createElement("div");
+  box.className = "snippet-box";
+
+  const pre = document.createElement("pre");
+  const codeEl = document.createElement("code");
+  codeEl.textContent = code;
+  pre.appendChild(codeEl);
+  box.appendChild(pre);
+
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "btn snippet-copy";
+  btn.textContent = "Скопировать";
+  btn.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(code);
+      btn.textContent = "Скопировано!";
+    } catch {
+      btn.textContent = "Не удалось скопировать";
+    }
+    setTimeout(() => {
+      btn.textContent = "Скопировать";
+    }, 1500);
+  });
+  box.appendChild(btn);
+
+  return box;
 }
 
 export function formatDate(isoDate) {

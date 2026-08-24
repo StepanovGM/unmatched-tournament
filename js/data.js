@@ -1,7 +1,8 @@
 // =============================================================
 // ДАННЫЕ ТУРНИРА — этот файл правится вручную по ходу турнира.
 // Больше нигде ничего трогать не нужно: сетка, список ближайших
-// матчей и статистика рендерятся из того, что здесь написано.
+// матчей, страница матча и статистика рендерятся из того, что
+// здесь написано.
 // =============================================================
 
 // -------------------------------------------------------------
@@ -19,15 +20,51 @@ export const characters = {
 };
 
 // -------------------------------------------------------------
-// ИГРОКИ. slug — короткий идентификатор (используется в matches).
+// ИГРОКИ турнира (сейчас их двое — каждый матч они распределяют
+// между собой, кто каким персонажем играет).
 // -------------------------------------------------------------
 export const players = {
+  "roma": { name: "Рома" },
   "gleb": { name: "Глеб" },
-  "anna": { name: "Анна" },
-  "igor": { name: "Игорь" },
-  "olesya": { name: "Олеся" },
-  // ... добавляйте остальных игроков турнира по такому же образцу
 };
+
+// -------------------------------------------------------------
+// КАРТЫ. Пул из 14 карт, одна из которых случайно достаётся
+// каждому матчу (кнопка на странице матча). Замените name/image
+// на реальные, когда определитесь со списком — slug-и (ключи)
+// можно тоже переименовать, только заодно поправьте ссылки на
+// них в matches (card: "...") и в cardDrawOrder ниже.
+// -------------------------------------------------------------
+export const cards = {
+  "card-1": { name: "Карта 1", image: "assets/cards/card-1.jpg" },
+  "card-2": { name: "Карта 2", image: "assets/cards/card-2.jpg" },
+  "card-3": { name: "Карта 3", image: "assets/cards/card-3.jpg" },
+  "card-4": { name: "Карта 4", image: "assets/cards/card-4.jpg" },
+  "card-5": { name: "Карта 5", image: "assets/cards/card-5.jpg" },
+  "card-6": { name: "Карта 6", image: "assets/cards/card-6.jpg" },
+  "card-7": { name: "Карта 7", image: "assets/cards/card-7.jpg" },
+  "card-8": { name: "Карта 8", image: "assets/cards/card-8.jpg" },
+  "card-9": { name: "Карта 9", image: "assets/cards/card-9.jpg" },
+  "card-10": { name: "Карта 10", image: "assets/cards/card-10.jpg" },
+  "card-11": { name: "Карта 11", image: "assets/cards/card-11.jpg" },
+  "card-12": { name: "Карта 12", image: "assets/cards/card-12.jpg" },
+  "card-13": { name: "Карта 13", image: "assets/cards/card-13.jpg" },
+  "card-14": { name: "Карта 14", image: "assets/cards/card-14.jpg" },
+  // ... замените на реальные 14 карт
+};
+
+// -------------------------------------------------------------
+// ПОРЯДОК РОЗЫГРЫША КАРТ. Список id матчей в том порядке, в котором
+// им реально доставалась карта (не порядок сетки, а порядок по
+// факту розыгрыша!). Каждая карта не может выпасть повторно, пока
+// не будут розыграны все остальные 13 — то есть до 14-го розыгрыша,
+// потом колода "перетасовывается" заново для матчей 15-28, и так далее.
+//
+// Когда на странице матча жмёте "Рандомизировать карту" и копируете
+// код в data.js — допишите id этого матча в конец массива ниже,
+// иначе розыгрыш не будет учтён при следующих подборах.
+// -------------------------------------------------------------
+export const cardDrawOrder = ["r32-1"];
 
 // -------------------------------------------------------------
 // МАТЧИ. Полная сетка на 32 участника уже собрана ниже (16 игр
@@ -35,17 +72,25 @@ export const players = {
 // раундами (nextMatchId/nextMatchSlot) готовы, их трогать не нужно.
 //
 // Как заполнять по ходу турнира:
-//   1. Когда пара определилась — впишите slotA/slotB (player + character
-//      как slug из словарей выше), поставьте status: "scheduled" и,
-//      если знаете дату игры, scheduledDate: "YYYY-MM-DD".
-//   2. Когда матч сыгран — поставьте status: "completed", winner: "A" или "B",
-//      и заполните stats (кто ходил первым, на каком раунде закончилась
-//      игра, сколько HP осталось у победителя, впечатления).
-//   3. Победитель сам не переносится в следующий матч — впишите его
+//   1. Когда пара определилась — впишите slotA/slotB.character (slug
+//      персонажа), поставьте status: "scheduled" и, если знаете дату
+//      игры, scheduledDate: "YYYY-MM-DD".
+//   2. На странице матча (ссылка с сетки/ближайших матчей) можно
+//      случайно распределить, кто из игроков за кого играет, и
+//      вытянуть карту матча — оба действия дают код для копирования
+//      сюда (slotA.player/slotB.player и card, плюс запись в
+//      cardDrawOrder для карты).
+//   3. Когда матч сыгран — поставьте status: "completed", winner:
+//      "A" или "B", и заполните stats (кто ходил первым, на каком
+//      раунде закончилась игра, сколько HP осталось у победителя,
+//      впечатления).
+//   4. Победитель сам не переносится в следующий матч — впишите его
 //      в slotA/slotB того матча, чей id указан в nextMatchId
 //      (в слот nextMatchSlot).
 //
-// Первые два матча ниже — для примера (один сыгран, один запланирован).
+// Первые два матча ниже — для примера (один сыгран полностью,
+// у второго известна пара персонажей, но ещё не назначены игроки
+// и не вытянута карта — так выглядит матч перед игрой).
 // -------------------------------------------------------------
 export const matches = [
   {
@@ -53,10 +98,11 @@ export const matches = [
     stage: "1/16",
     roundIndex: 0,
     position: 0,
-    slotA: { player: "gleb", character: "sherlock-holmes" },
-    slotB: { player: "anna", character: "invisible-man" },
+    slotA: { player: "roma", character: "sherlock-holmes" },
+    slotB: { player: "gleb", character: "invisible-man" },
     status: "completed",
     scheduledDate: null,
+    card: "card-1",
     winner: "A",
     stats: {
       firstPlayer: "A",
@@ -72,10 +118,11 @@ export const matches = [
     stage: "1/16",
     roundIndex: 0,
     position: 1,
-    slotA: { player: "igor", character: "dracula" },
-    slotB: { player: "olesya", character: "alice" },
+    slotA: { player: null, character: "dracula" },
+    slotB: { player: null, character: "alice" },
     status: "scheduled",
     scheduledDate: "2026-08-30",
+    card: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -95,6 +142,7 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
+    card: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -114,6 +162,7 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
+    card: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -133,6 +182,7 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
+    card: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -152,6 +202,7 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
+    card: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -171,6 +222,7 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
+    card: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -190,6 +242,7 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
+    card: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -209,6 +262,7 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
+    card: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -228,6 +282,7 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
+    card: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -247,6 +302,7 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
+    card: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -266,6 +322,7 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
+    card: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -285,6 +342,7 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
+    card: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -304,6 +362,7 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
+    card: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -323,6 +382,7 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
+    card: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -342,6 +402,7 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
+    card: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -361,6 +422,7 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
+    card: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -380,6 +442,7 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
+    card: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -399,6 +462,7 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
+    card: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -418,6 +482,7 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
+    card: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -437,6 +502,7 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
+    card: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -456,6 +522,7 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
+    card: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -475,6 +542,7 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
+    card: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -494,6 +562,7 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
+    card: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -513,6 +582,7 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
+    card: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -532,6 +602,7 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
+    card: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -551,6 +622,7 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
+    card: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -570,6 +642,7 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
+    card: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -589,6 +662,7 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
+    card: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -608,6 +682,7 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
+    card: null,
     winner: null,
     stats: {
       firstPlayer: null,
@@ -627,6 +702,7 @@ export const matches = [
     slotB: { player: null, character: null },
     status: "tbd",
     scheduledDate: null,
+    card: null,
     winner: null,
     stats: {
       firstPlayer: null,

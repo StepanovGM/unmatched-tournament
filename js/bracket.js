@@ -1,6 +1,5 @@
 import { matches } from "./data.js";
 import { buildThumb, slotLabel, playerLabel, formatDate } from "./util.js";
-import { openMatchModal } from "./match-modal.js";
 
 const bracketWrap = document.querySelector(".bracket-wrap");
 const bracketEl = document.querySelector(".bracket");
@@ -43,18 +42,21 @@ function buildMatchCard(match) {
   card.appendChild(buildSlot(match, "slotA"));
   card.appendChild(buildSlot(match, "slotB"));
 
-  if (match.status === "completed") {
+  if (match.status !== "tbd") {
     card.classList.add("clickable");
-    card.addEventListener("click", () => openMatchModal(match));
+    card.addEventListener("click", () => {
+      location.href = `match.html?id=${match.id}`;
+    });
 
     const meta = document.createElement("div");
     meta.className = "match-meta";
-    meta.textContent = "Результаты матча";
-    card.appendChild(meta);
-  } else if (match.status === "scheduled" && match.scheduledDate) {
-    const meta = document.createElement("div");
-    meta.className = "match-meta";
-    meta.textContent = formatDate(match.scheduledDate);
+    if (match.status === "completed") {
+      meta.textContent = "Результаты матча →";
+    } else if (match.scheduledDate) {
+      meta.textContent = `${formatDate(match.scheduledDate)} →`;
+    } else {
+      meta.textContent = "Страница матча →";
+    }
     card.appendChild(meta);
   }
 

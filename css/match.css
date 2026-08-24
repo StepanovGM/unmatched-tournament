@@ -1,0 +1,133 @@
+.match-stage {
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  margin: 0 0 1rem;
+}
+
+.match-versus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.match-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  text-align: center;
+}
+
+.match-side .placeholder-thumb,
+.match-side img.thumb {
+  width: 84px;
+  height: 84px;
+  font-size: 2rem;
+  border-radius: 8px;
+}
+
+.match-side img.thumb {
+  object-fit: cover;
+}
+
+.match-side.winner .slot-name {
+  color: var(--win);
+}
+
+.match-side .slot-name {
+  font-size: 1.4rem;
+}
+
+.match-section {
+  max-width: 640px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.match-section h3 {
+  margin: 0 0 0.75rem;
+  color: var(--accent);
+  font-size: 1.3rem;
+}
+
+.card-display {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.card-display .placeholder-thumb,
+.card-display img.thumb {
+  width: 56px;
+  height: 56px;
+  font-size: 1.4rem;
+  border-radius: 6px;
+}
+
+.card-display img.thumb {
+  object-fit: cover;
+}
+
+.player-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0.75rem 0;
+}
+
+.player-option {
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+}
+
+.player-option.selected {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(201, 162, 75, 0.1);
+}
+
+.snippet-box {
+  margin-top: 0.75rem;
+}
+
+.snippet-box pre {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.75rem;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin: 0 0 0.5rem;
+}
+
+.result-stats {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.4rem 0.8rem;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.result-stats dt {
+  color: var(--text-dim);
+}
+
+.result-stats dd {
+  margin: 0;
+}
+
+.match-notes {
+  border-top: 1px solid var(--border);
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}

@@ -141,6 +141,27 @@ main {
   white-space: nowrap;
 }
 
+.vs-label {
+  font-family: var(--font-display);
+  color: var(--text-dim);
+  font-size: 1.3rem;
+}
+
+.btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 .upcoming-list {
   display: flex;
   flex-direction: column;
@@ -156,6 +177,12 @@ main {
   border: 1px solid var(--border);
   border-radius: 6px;
   padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.upcoming-row:hover {
+  border-color: var(--accent);
 }
 
 .upcoming-stage {
