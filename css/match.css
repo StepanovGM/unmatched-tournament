@@ -124,6 +124,19 @@
   margin: 0;
 }
 
+.star-rating {
+  letter-spacing: 0.1em;
+  font-size: 1.1rem;
+}
+
+.star-rating .star {
+  color: var(--border);
+}
+
+.star-rating .star.filled {
+  color: var(--accent);
+}
+
 .spoiler {
   position: relative;
   border-radius: 6px;

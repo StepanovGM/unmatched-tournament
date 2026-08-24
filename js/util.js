@@ -1,4 +1,4 @@
-import { characters, players, cards } from "./data.js?v=3";
+import { characters, players, cards } from "./data.js?v=4";
 
 export function getCharacter(slug) {
   return slug ? characters[slug] : null;
@@ -21,6 +21,37 @@ export function playerLabel(slot) {
 export function sidekickLabel(slot) {
   const character = getCharacter(slot.character);
   return character && character.sidekick ? character.sidekick : "";
+}
+
+// Порядок отображения слотов матча: тот, кто ходит первым, всегда
+// идёт первым (сверху в сетке, слева на странице матча) — даже если
+// физически хранится как slotB. Источник истины по приоритету:
+// фактически записанный первый ход (stats.firstPlayer, после игры),
+// затем заранее определённый firstMove, затем правило для 1/16
+// (всегда slotA), иначе — обычный порядок A, B.
+export function displayOrder(match) {
+  let firstKey = "A";
+  if (match.stats && match.stats.firstPlayer) {
+    firstKey = match.stats.firstPlayer;
+  } else if (match.firstMove) {
+    firstKey = match.firstMove;
+  } else if (match.stage === "1/16") {
+    firstKey = "A";
+  }
+  return firstKey === "A" ? ["A", "B"] : ["B", "A"];
+}
+
+// Строит ряд из filled/empty звёзд по оценке 1-5.
+export function buildStarRating(rating) {
+  const wrap = document.createElement("span");
+  wrap.className = "star-rating";
+  for (let i = 1; i <= 5; i++) {
+    const star = document.createElement("span");
+    star.className = "star" + (i <= rating ? " filled" : "");
+    star.textContent = "★";
+    wrap.appendChild(star);
+  }
+  return wrap;
 }
 
 // Строит миниатюру персонажа: картинку, если она есть и грузится,

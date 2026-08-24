@@ -91,14 +91,17 @@ export const cards = {
 // в конец массива ниже, иначе розыгрыш не будет учтён при следующих
 // подборах.
 // -------------------------------------------------------------
-export const cardDrawOrder = ["r32-1", "r32-2", "r32-3", "r32-4", "r32-5", "r32-6", "r32-7", "r32-8", "r32-9", "r32-10", "r32-11", "r32-12", "r32-13", "r32-14", "r32-15", "r32-16", "r16-1", "r16-2", "r16-3", "r16-4", "r16-5", "r16-6", "r16-7", "r16-8", "qf-1", "qf-2", "qf-3", "qf-4", "sf-1", "sf-2", "final"];
+export const cardDrawOrder = ["r32-1", "r32-2", "r32-3", "r32-4", "r32-5", "r32-6", "r32-7", "r32-8", "r32-9", "r32-10", "r32-11", "r32-12", "r32-13", "r32-14", "r32-15", "r32-16", "r16-1", "r16-2", "r16-3", "r16-4", "r16-5", "r16-6", "r16-7", "r16-8", "qf-1", "qf-2", "qf-3", "qf-4", "sf-1", "sf-2", "final", "third-place"];
 
 // -------------------------------------------------------------
 // МАТЧИ. Полная сетка на 32 участника уже собрана ниже (16 игр
 // в 1/16, 8 в 1/8, 4 в 1/4, 2 в 1/2, 1 финал) — связи между
 // раундами (nextMatchId/nextMatchSlot) готовы, их трогать не нужно.
 // Персонажи первого раунда (1/16) уже расставлены по официальной
-// сетке турнира.
+// сетке турнира. Последний элемент массива — отдельный матч "third-
+// place" (за 3-е место, между проигравшими полуфиналов sf-1/sf-2);
+// он не входит в сетку на выбывание (nextMatchId у него нет), в
+// bracket.js отрисовывается отдельно рядом с финалом.
 //
 // Как заполнять по ходу турнира:
 //   1. Если нужно уточнить/поменять дату — впишите scheduledDate:
@@ -110,15 +113,21 @@ export const cardDrawOrder = ["r32-1", "r32-2", "r32-3", "r32-4", "r32-5", "r32-
 //      slotA), а для 1/8 и дальше считается по алгоритму "первый ход
 //      / игрок за раунд 2+" — см. память сессии (или спросите
 //      заново, если начинается новая сессия: правило запомнено как
-//      факт о проекте). Пока status матча не "completed", карта,
-//      игроки и firstMove показываются на сайте под спойлером
-//      ("Показать"), чтобы не спалить их раньше времени.
+//      факт о проекте). Пока status матча не "completed", карта и
+//      игроки показываются на сайте под спойлером ("Показать"),
+//      чтобы не спалить их раньше времени — а вот firstMove не
+//      секрет и показывается сразу открыто (плюс определяет, кто
+//      в сетке/на странице матча рисуется сверху/слева).
 //   3. Когда матч сыгран — поставьте status: "completed", winner:
 //      "A" или "B", и заполните stats (кто ходил первым — то же
 //      значение, что в firstMove, если правило не нарушили, — на
 //      каком раунде закончилась игра, сколько HP осталось у
-//      победителя, впечатления). Спойлер с картой/игроками/первым
-//      ходом после этого сам исчезает — они показываются в открытую.
+//      победителя, впечатления, rating — оценка игры от 1 до 5).
+//      Спойлер с картой/игроками после этого сам исчезает — они
+//      показываются в открытую.
+//   3а. Когда сыграны sf-1 и sf-2 — впишите проигравших (не
+//      победителей!) в slotA/slotB матча "third-place" и поставьте
+//      ему status: "scheduled".
 //   4. Победитель сам не переносится в следующий матч — впишите его
 //      в slotA/slotB того матча, чей id указан в nextMatchId
 //      (в слот nextMatchSlot), когда пары следующего раунда
@@ -143,6 +152,7 @@ export const matches = [
       finalRound: 13,
       winnerHp: 16,
       notes: "",
+      rating: null,
     },
     nextMatchId: "r16-1",
     nextMatchSlot: "A",
@@ -164,6 +174,7 @@ export const matches = [
       finalRound: 22,
       winnerHp: 4,
       notes: "",
+      rating: null,
     },
     nextMatchId: "r16-1",
     nextMatchSlot: "B",
@@ -185,6 +196,7 @@ export const matches = [
       finalRound: 15,
       winnerHp: 8,
       notes: "",
+      rating: null,
     },
     nextMatchId: "r16-2",
     nextMatchSlot: "A",
@@ -206,6 +218,7 @@ export const matches = [
       finalRound: 24,
       winnerHp: 4,
       notes: "",
+      rating: null,
     },
     nextMatchId: "r16-2",
     nextMatchSlot: "B",
@@ -227,6 +240,7 @@ export const matches = [
       finalRound: 26,
       winnerHp: 7,
       notes: "",
+      rating: null,
     },
     nextMatchId: "r16-3",
     nextMatchSlot: "A",
@@ -248,6 +262,7 @@ export const matches = [
       finalRound: 19,
       winnerHp: 7,
       notes: "Была мощнейшая комбуха на 4 доп действия со стороны динозавриков.",
+      rating: null,
     },
     nextMatchId: "r16-3",
     nextMatchSlot: "B",
@@ -269,6 +284,7 @@ export const matches = [
       finalRound: 34,
       winnerHp: 3,
       notes: "У обоих бородачей кончились карты, но Беовульфа больше покоцали.",
+      rating: null,
     },
     nextMatchId: "r16-4",
     nextMatchSlot: "A",
@@ -290,6 +306,7 @@ export const matches = [
       finalRound: 11,
       winnerHp: 7,
       notes: "У Розенкранца и Гильденстерна ещё +1 HP сверху. Шекспир пытался что-то противопоставить, но в неудачный момент кончились защитные карты и получил 10 урона в ебало за один ход.",
+      rating: null,
     },
     nextMatchId: "r16-4",
     nextMatchSlot: "B",
@@ -311,6 +328,7 @@ export const matches = [
       finalRound: null,
       winnerHp: null,
       notes: "",
+      rating: null,
     },
     nextMatchId: "r16-5",
     nextMatchSlot: "A",
@@ -332,6 +350,7 @@ export const matches = [
       finalRound: null,
       winnerHp: null,
       notes: "",
+      rating: null,
     },
     nextMatchId: "r16-5",
     nextMatchSlot: "B",
@@ -353,6 +372,7 @@ export const matches = [
       finalRound: null,
       winnerHp: null,
       notes: "",
+      rating: null,
     },
     nextMatchId: "r16-6",
     nextMatchSlot: "A",
@@ -374,6 +394,7 @@ export const matches = [
       finalRound: null,
       winnerHp: null,
       notes: "",
+      rating: null,
     },
     nextMatchId: "r16-6",
     nextMatchSlot: "B",
@@ -395,6 +416,7 @@ export const matches = [
       finalRound: null,
       winnerHp: null,
       notes: "",
+      rating: null,
     },
     nextMatchId: "r16-7",
     nextMatchSlot: "A",
@@ -416,6 +438,7 @@ export const matches = [
       finalRound: null,
       winnerHp: null,
       notes: "",
+      rating: null,
     },
     nextMatchId: "r16-7",
     nextMatchSlot: "B",
@@ -437,6 +460,7 @@ export const matches = [
       finalRound: null,
       winnerHp: null,
       notes: "",
+      rating: null,
     },
     nextMatchId: "r16-8",
     nextMatchSlot: "A",
@@ -458,6 +482,7 @@ export const matches = [
       finalRound: null,
       winnerHp: null,
       notes: "",
+      rating: null,
     },
     nextMatchId: "r16-8",
     nextMatchSlot: "B",
@@ -479,6 +504,7 @@ export const matches = [
       finalRound: null,
       winnerHp: null,
       notes: "",
+      rating: null,
     },
     nextMatchId: "qf-1",
     nextMatchSlot: "A",
@@ -500,6 +526,7 @@ export const matches = [
       finalRound: null,
       winnerHp: null,
       notes: "",
+      rating: null,
     },
     nextMatchId: "qf-1",
     nextMatchSlot: "B",
@@ -521,6 +548,7 @@ export const matches = [
       finalRound: null,
       winnerHp: null,
       notes: "",
+      rating: null,
     },
     nextMatchId: "qf-2",
     nextMatchSlot: "A",
@@ -542,6 +570,7 @@ export const matches = [
       finalRound: null,
       winnerHp: null,
       notes: "",
+      rating: null,
     },
     nextMatchId: "qf-2",
     nextMatchSlot: "B",
@@ -563,6 +592,7 @@ export const matches = [
       finalRound: null,
       winnerHp: null,
       notes: "",
+      rating: null,
     },
     nextMatchId: "qf-3",
     nextMatchSlot: "A",
@@ -584,6 +614,7 @@ export const matches = [
       finalRound: null,
       winnerHp: null,
       notes: "",
+      rating: null,
     },
     nextMatchId: "qf-3",
     nextMatchSlot: "B",
@@ -605,6 +636,7 @@ export const matches = [
       finalRound: null,
       winnerHp: null,
       notes: "",
+      rating: null,
     },
     nextMatchId: "qf-4",
     nextMatchSlot: "A",
@@ -626,6 +658,7 @@ export const matches = [
       finalRound: null,
       winnerHp: null,
       notes: "",
+      rating: null,
     },
     nextMatchId: "qf-4",
     nextMatchSlot: "B",
@@ -647,6 +680,7 @@ export const matches = [
       finalRound: null,
       winnerHp: null,
       notes: "",
+      rating: null,
     },
     nextMatchId: "sf-1",
     nextMatchSlot: "A",
@@ -668,6 +702,7 @@ export const matches = [
       finalRound: null,
       winnerHp: null,
       notes: "",
+      rating: null,
     },
     nextMatchId: "sf-1",
     nextMatchSlot: "B",
@@ -689,6 +724,7 @@ export const matches = [
       finalRound: null,
       winnerHp: null,
       notes: "",
+      rating: null,
     },
     nextMatchId: "sf-2",
     nextMatchSlot: "A",
@@ -710,6 +746,7 @@ export const matches = [
       finalRound: null,
       winnerHp: null,
       notes: "",
+      rating: null,
     },
     nextMatchId: "sf-2",
     nextMatchSlot: "B",
@@ -731,6 +768,7 @@ export const matches = [
       finalRound: null,
       winnerHp: null,
       notes: "",
+      rating: null,
     },
     nextMatchId: "final",
     nextMatchSlot: "A",
@@ -752,6 +790,7 @@ export const matches = [
       finalRound: null,
       winnerHp: null,
       notes: "",
+      rating: null,
     },
     nextMatchId: "final",
     nextMatchSlot: "B",
@@ -773,6 +812,29 @@ export const matches = [
       finalRound: null,
       winnerHp: null,
       notes: "",
+      rating: null,
+    },
+    nextMatchId: null,
+    nextMatchSlot: null,
+  },
+  {
+    id: "third-place",
+    stage: "Матч за 3-е место",
+    roundIndex: 4,
+    position: 1,
+    slotA: { player: null, character: null },
+    slotB: { player: null, character: null },
+    status: "tbd",
+    scheduledDate: null,
+    card: "marmoreal",
+    firstMove: null,
+    winner: null,
+    stats: {
+      firstPlayer: null,
+      finalRound: null,
+      winnerHp: null,
+      notes: "",
+      rating: null,
     },
     nextMatchId: null,
     nextMatchSlot: null,

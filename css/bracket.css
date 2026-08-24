@@ -128,3 +128,20 @@
   margin-top: auto;
   min-height: 1.1rem;
 }
+
+.third-place-title {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: var(--text-dim);
+}
+
+.third-place-card {
+  min-height: 100px;
+  opacity: 0.9;
+}
+
+.third-place-card .placeholder-thumb,
+.third-place-card img.thumb {
+  width: 26px;
+  height: 26px;
+}

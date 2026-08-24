@@ -1,8 +1,14 @@
-import { matches } from "./data.js?v=3";
-import { buildThumb, slotLabel, sidekickLabel, formatDate } from "./util.js?v=3";
+import { matches as allMatches } from "./data.js?v=4";
+import { buildThumb, slotLabel, sidekickLabel, displayOrder, formatDate } from "./util.js?v=4";
 
 const bracketEl = document.querySelector(".bracket");
 const svg = document.querySelector(".bracket-connectors");
+
+// Матч за 3-е место — вне основной сетки на выбывание (не питает
+// nextMatchId никуда, не должен участвовать в расчёте размеров
+// раундов/сторон), поэтому везде ниже используется отдельный список.
+const matches = allMatches.filter((m) => m.id !== "third-place");
+const thirdPlaceMatch = allMatches.find((m) => m.id === "third-place");
 
 function roundSize(roundIndex) {
   return matches.filter((m) => m.roundIndex === roundIndex).length;
@@ -50,8 +56,7 @@ function buildMatchCard(match) {
   card.className = "match-card";
   card.dataset.matchId = match.id;
 
-  card.appendChild(buildSlot(match, "slotA"));
-  card.appendChild(buildSlot(match, "slotB"));
+  displayOrder(match).forEach((letter) => card.appendChild(buildSlot(match, `slot${letter}`)));
 
   const meta = document.createElement("div");
   meta.className = "match-meta";
@@ -84,7 +89,8 @@ function buildColumn(roundIndex, side) {
 
   const column = document.createElement("div");
   column.className = "round-column";
-  if (size <= 1) column.classList.add("final-column");
+  const isFinalColumn = size <= 1;
+  if (isFinalColumn) column.classList.add("final-column");
 
   const title = document.createElement("div");
   title.className = "round-title";
@@ -92,6 +98,17 @@ function buildColumn(roundIndex, side) {
   column.appendChild(title);
 
   roundMatches.forEach((match) => column.appendChild(buildMatchCard(match)));
+
+  if (isFinalColumn && thirdPlaceMatch) {
+    const thirdTitle = document.createElement("div");
+    thirdTitle.className = "round-title third-place-title";
+    thirdTitle.textContent = thirdPlaceMatch.stage;
+    column.appendChild(thirdTitle);
+    const thirdCard = buildMatchCard(thirdPlaceMatch);
+    thirdCard.classList.add("third-place-card");
+    column.appendChild(thirdCard);
+  }
+
   return column;
 }
 

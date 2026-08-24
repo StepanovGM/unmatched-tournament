@@ -1,5 +1,5 @@
-import { matches, cards } from "./data.js?v=3";
-import { buildThumb, buildCardThumb, buildSpoiler, slotLabel, sidekickLabel, getPlayer } from "./util.js?v=3";
+import { matches, cards } from "./data.js?v=4";
+import { buildThumb, buildCardThumb, buildSpoiler, buildStarRating, slotLabel, sidekickLabel, displayOrder, getPlayer } from "./util.js?v=4";
 
 const root = document.getElementById("match-page");
 const id = new URLSearchParams(location.search).get("id");
@@ -39,12 +39,13 @@ function buildSide(slot, isWinner) {
 function buildVersus() {
   const wrap = document.createElement("div");
   wrap.className = "match-versus";
-  wrap.appendChild(buildSide(match.slotA, match.winner === "A"));
+  const [firstLetter, secondLetter] = displayOrder(match);
+  wrap.appendChild(buildSide(match[`slot${firstLetter}`], match.winner === firstLetter));
   const vs = document.createElement("span");
   vs.className = "vs-label";
   vs.textContent = "VS";
   wrap.appendChild(vs);
-  wrap.appendChild(buildSide(match.slotB, match.winner === "B"));
+  wrap.appendChild(buildSide(match[`slot${secondLetter}`], match.winner === secondLetter));
   return wrap;
 }
 
@@ -59,24 +60,24 @@ function buildFirstMoveText(slotKey) {
 }
 
 // Для 1/16 действует фиксированное правило: первым ходит тот, кто указан
-// первым в паре (slotA) — это известно заранее и не прячется. Для более
-// поздних стадий первый ход определяется по правилу из match.firstMove
-// (см. заметку "first-move-rule" в памяти) и, как карта и игроки, скрыт
-// за спойлером, пока матч не сыгран.
+// первым в паре (slotA). Для более поздних стадий — по правилу из
+// match.firstMove (см. заметку "first-move-rule" в памяти). В обоих
+// случаях это не секрет и спойлером не прячется — как только матч
+// сыгран, эту же информацию показывает раздел "Результаты матча".
 function buildFirstMoveSection() {
   if (isPlayed()) return null;
 
-  let content = null;
+  let slotKey = null;
   if (match.stage === "1/16") {
-    content = buildFirstMoveText("A");
+    slotKey = "A";
   } else if (match.firstMove) {
-    content = buildSpoiler(buildFirstMoveText(match.firstMove));
+    slotKey = match.firstMove;
   }
-  if (!content) return null;
+  if (!slotKey) return null;
 
   const wrap = document.createElement("div");
   wrap.className = "first-move-wrap";
-  wrap.appendChild(content);
+  wrap.appendChild(buildFirstMoveText(slotKey));
   return wrap;
 }
 
@@ -173,6 +174,16 @@ function renderResultsSection() {
     stats.appendChild(dt);
     stats.appendChild(dd);
   });
+
+  if (match.stats.rating != null) {
+    const dt = document.createElement("dt");
+    dt.textContent = "Оценка игры";
+    const dd = document.createElement("dd");
+    dd.appendChild(buildStarRating(match.stats.rating));
+    stats.appendChild(dt);
+    stats.appendChild(dd);
+  }
+
   section.appendChild(stats);
 
   if (match.stats.notes) {
