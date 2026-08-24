@@ -22,7 +22,9 @@ function buildSlot(match, key) {
   name.textContent = slotLabel(slot);
   text.appendChild(name);
 
-  const player = playerLabel(slot);
+  // Игрока показываем только после игры — до этого распределение
+  // скрыто за спойлером на странице матча, здесь его спалить не нужно.
+  const player = match.status === "completed" ? playerLabel(slot) : "";
   if (player) {
     const playerEl = document.createElement("span");
     playerEl.className = "slot-player";

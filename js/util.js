@@ -104,6 +104,27 @@ export function buildSnippetBox(code) {
   return box;
 }
 
+// Оборачивает уже готовый DOM-узел в спойлер: контент размыт и скрыт
+// за кнопкой "Показать", пока пользователь сам не откроет его.
+export function buildSpoiler(contentEl) {
+  const wrap = document.createElement("div");
+  wrap.className = "spoiler";
+
+  const content = document.createElement("div");
+  content.className = "spoiler-content";
+  content.appendChild(contentEl);
+  wrap.appendChild(content);
+
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "spoiler-reveal";
+  btn.textContent = "Показать";
+  btn.addEventListener("click", () => wrap.classList.add("revealed"));
+  wrap.appendChild(btn);
+
+  return wrap;
+}
+
 export function formatDate(isoDate) {
   if (!isoDate) return "";
   const date = new Date(isoDate + "T00:00:00");

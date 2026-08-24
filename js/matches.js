@@ -3,7 +3,7 @@ import { buildThumb, slotLabel, playerLabel, formatDate } from "./util.js";
 
 const list = document.querySelector(".upcoming-list");
 
-function buildSide(slot) {
+function buildSide(slot, played) {
   const side = document.createElement("div");
   side.className = "upcoming-side";
   side.appendChild(buildThumb(slot));
@@ -16,7 +16,9 @@ function buildSide(slot) {
   name.textContent = slotLabel(slot);
   text.appendChild(name);
 
-  const player = playerLabel(slot);
+  // Игрока показываем только после игры — до этого распределение
+  // скрыто за спойлером на странице матча.
+  const player = played ? playerLabel(slot) : "";
   if (player) {
     const playerEl = document.createElement("span");
     playerEl.className = "slot-player";
@@ -40,12 +42,13 @@ function buildRow(match) {
 
   const pair = document.createElement("div");
   pair.className = "upcoming-pair";
-  pair.appendChild(buildSide(match.slotA));
+  const played = match.status === "completed";
+  pair.appendChild(buildSide(match.slotA, played));
   const vs = document.createElement("span");
   vs.className = "vs-label";
   vs.textContent = "VS";
   pair.appendChild(vs);
-  pair.appendChild(buildSide(match.slotB));
+  pair.appendChild(buildSide(match.slotB, played));
   row.appendChild(pair);
 
   const date = document.createElement("span");

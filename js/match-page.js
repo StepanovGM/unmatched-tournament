@@ -1,5 +1,5 @@
 import { matches, players, cards, cardDrawOrder } from "./data.js";
-import { buildThumb, buildCardThumb, buildSnippetBox, slotLabel, playerLabel, getPlayer } from "./util.js";
+import { buildThumb, buildCardThumb, buildSnippetBox, buildSpoiler, slotLabel, playerLabel, getPlayer } from "./util.js";
 import { drawRandomCard, drawRandomPlayers } from "./random.js";
 
 const root = document.getElementById("match-page");
@@ -22,10 +22,15 @@ function buildSide(slot, isWinner) {
   name.textContent = slotLabel(slot);
   side.appendChild(name);
 
-  const player = document.createElement("span");
-  player.className = "slot-player";
-  player.textContent = playerLabel(slot);
-  side.appendChild(player);
+  // Имя игрока в шапке матча показываем только после игры — до этого
+  // распределение скрыто за спойлером в разделе "Кто за кого играет",
+  // и здесь его показывать раньше времени не нужно.
+  if (isPlayed()) {
+    const player = document.createElement("span");
+    player.className = "slot-player";
+    player.textContent = playerLabel(slot);
+    side.appendChild(player);
+  }
 
   return side;
 }
@@ -55,21 +60,37 @@ function pairKnown() {
   return match.status !== "tbd";
 }
 
+function isPlayed() {
+  return match.status === "completed";
+}
+
+function buildCardDisplay(slug) {
+  const card = cards[slug];
+  const row = document.createElement("div");
+  row.className = "card-display";
+  row.appendChild(buildCardThumb(slug));
+  const name = document.createElement("span");
+  name.className = "slot-name";
+  name.textContent = card ? card.name : slug;
+  row.appendChild(name);
+  return row;
+}
+
 // ---- Карта ----
 
 function renderCardSection() {
   const section = buildSection("Карта матча");
 
   if (match.card) {
-    const card = cards[match.card];
-    const row = document.createElement("div");
-    row.className = "card-display";
-    row.appendChild(buildCardThumb(match.card));
-    const name = document.createElement("span");
-    name.className = "slot-name";
-    name.textContent = card ? card.name : match.card;
-    row.appendChild(name);
-    section.appendChild(row);
+    if (isPlayed()) {
+      section.appendChild(buildCardDisplay(match.card));
+    } else {
+      section.appendChild(buildSpoiler(buildCardDisplay(match.card)));
+      const note = document.createElement("p");
+      note.className = "empty-note";
+      note.textContent = "Карта уже определена, но скрыта до игры.";
+      section.insertBefore(note, section.lastChild);
+    }
     return section;
   }
 
@@ -140,7 +161,16 @@ function renderPlayerSection() {
   if (match.slotA.player && match.slotB.player) {
     const p = document.createElement("p");
     p.textContent = `${getPlayer(match.slotA.player).name} — ${slotLabel(match.slotA)}, ${getPlayer(match.slotB.player).name} — ${slotLabel(match.slotB)}`;
-    section.appendChild(p);
+
+    if (isPlayed()) {
+      section.appendChild(p);
+    } else {
+      section.appendChild(buildSpoiler(p));
+      const note = document.createElement("p");
+      note.className = "empty-note";
+      note.textContent = "Распределение уже готово, но скрыто до игры.";
+      section.insertBefore(note, section.lastChild);
+    }
     return section;
   }
 
