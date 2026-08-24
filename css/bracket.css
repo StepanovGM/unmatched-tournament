@@ -7,7 +7,8 @@
 .bracket {
   position: relative;
   display: flex;
-  gap: 4.5rem;
+  align-items: stretch;
+  gap: 2.5rem;
   width: max-content;
   padding: 1rem 0;
 }
@@ -37,7 +38,12 @@
   flex-direction: column;
   justify-content: space-around;
   gap: 1.2rem;
-  min-width: 230px;
+  min-width: 210px;
+}
+
+.round-column.final-column {
+  justify-content: center;
+  min-width: 190px;
 }
 
 .round-title {
@@ -53,6 +59,13 @@
   border: 1px solid var(--border);
   border-radius: 6px;
   overflow: hidden;
+  min-height: 118px;
+  display: flex;
+  flex-direction: column;
+}
+
+.final-column .match-card {
+  border-color: var(--accent-dim);
 }
 
 .match-card.clickable {
@@ -104,4 +117,6 @@
   text-align: center;
   padding: 0.2rem 0;
   border-top: 1px solid var(--border);
+  margin-top: auto;
+  min-height: 1.1rem;
 }

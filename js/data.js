@@ -87,9 +87,9 @@ export const cards = {
 // не будут розыграны все остальные 14 — то есть до 15-го розыгрыша,
 // потом колода "перетасовывается" заново для матчей 16-30, и так далее.
 //
-// Когда на странице матча жмёте "Рандомизировать карту" и копируете
-// код в data.js — допишите id этого матча в конец массива ниже,
-// иначе розыгрыш не будет учтён при следующих подборах.
+// Когда вписываете карту матчу (поле card) — допишите id этого матча
+// в конец массива ниже, иначе розыгрыш не будет учтён при следующих
+// подборах.
 // -------------------------------------------------------------
 export const cardDrawOrder = ["r32-1", "r32-2", "r32-3", "r32-4", "r32-5", "r32-6", "r32-7", "r32-8"];
 
@@ -103,14 +103,12 @@ export const cardDrawOrder = ["r32-1", "r32-2", "r32-3", "r32-4", "r32-5", "r32-
 // Как заполнять по ходу турнира:
 //   1. Если нужно уточнить/поменять дату — впишите scheduledDate:
 //      "YYYY-MM-DD".
-//   2. На странице матча (ссылка с сетки/ближайших матчей) можно
-//      случайно распределить, кто из игроков за кого играет, и
-//      вытянуть карту матча — оба действия дают код для копирования
-//      сюда (slotA.player/slotB.player и card, плюс запись в
-//      cardDrawOrder для карты). Можно рандомизировать заранее,
-//      сильно до самой игры — пока status матча не "completed",
-//      карта и распределение игроков показываются на сайте под
-//      спойлером ("Показать"), чтобы не спалить их раньше времени.
+//   2. Карту и то, кто из игроков за кого играет, впишите сюда сами
+//      (slotA.player/slotB.player и card, плюс id матча в конец
+//      cardDrawOrder) — можно заранее, задолго до самой игры. Пока
+//      status матча не "completed", карта и распределение игроков
+//      показываются на сайте под спойлером ("Показать"), чтобы не
+//      спалить их раньше времени.
 //   3. Когда матч сыгран — поставьте status: "completed", winner:
 //      "A" или "B", и заполните stats (кто ходил первым, на каком
 //      раунде закончилась игра, сколько HP осталось у победителя,
@@ -134,7 +132,7 @@ export const matches = [
     card: "king-solomons-mine",
     winner: "A",
     stats: {
-      firstPlayer: null,
+      firstPlayer: "A",
       finalRound: 13,
       winnerHp: 16,
       notes: "",
@@ -154,7 +152,7 @@ export const matches = [
     card: "sarpedon",
     winner: "A",
     stats: {
-      firstPlayer: null,
+      firstPlayer: "A",
       finalRound: 22,
       winnerHp: 4,
       notes: "",
@@ -174,7 +172,7 @@ export const matches = [
     card: "azuchi-castle",
     winner: "A",
     stats: {
-      firstPlayer: null,
+      firstPlayer: "A",
       finalRound: 15,
       winnerHp: 8,
       notes: "",
@@ -194,7 +192,7 @@ export const matches = [
     card: "t-rex-paddock",
     winner: "B",
     stats: {
-      firstPlayer: null,
+      firstPlayer: "A",
       finalRound: 24,
       winnerHp: 4,
       notes: "",
@@ -214,7 +212,7 @@ export const matches = [
     card: "raptor-paddock",
     winner: "B",
     stats: {
-      firstPlayer: null,
+      firstPlayer: "A",
       finalRound: 26,
       winnerHp: 7,
       notes: "",
@@ -234,7 +232,7 @@ export const matches = [
     card: "soho",
     winner: "A",
     stats: {
-      firstPlayer: null,
+      firstPlayer: "A",
       finalRound: 19,
       winnerHp: 7,
       notes: "Была мощнейшая комбуха на 4 доп действия со стороны динозавриков.",
@@ -254,7 +252,7 @@ export const matches = [
     card: "heorot",
     winner: "B",
     stats: {
-      firstPlayer: null,
+      firstPlayer: "A",
       finalRound: 34,
       winnerHp: 3,
       notes: "У обоих бородачей кончились карты, но Беовульфа больше покоцали.",
@@ -274,7 +272,7 @@ export const matches = [
     card: "sherwood-forest",
     winner: "A",
     stats: {
-      firstPlayer: null,
+      firstPlayer: "A",
       finalRound: 11,
       winnerHp: 7,
       notes: "У Розенкранца и Гильденстерна ещё +1 HP сверху. Шекспир пытался что-то противопоставить, но в неудачный момент кончились защитные карты и получил 10 урона в ебало за один ход.",
