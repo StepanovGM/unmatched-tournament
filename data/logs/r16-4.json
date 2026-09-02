@@ -1,0 +1,958 @@
+{
+  "matchId": "r16-4",
+  "slotA": {
+    "heroSlug": "blackbeard"
+  },
+  "slotB": {
+    "heroSlug": "hamlet"
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 13,
+        "B": 15
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "scheme",
+              "mechanic": null,
+              "cardId": 694,
+              "cardName": "Plunder",
+              "image": "assets/cardart/blackbeard/694.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 687,
+          "cardName": "Give no quarter",
+          "image": "assets/cardart/blackbeard/687.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 570,
+              "cardName": "Blood Will Have Blood",
+              "image": "assets/cardart/hamlet/570.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Гамлет",
+                  "delta": -3,
+                  "total": 12,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чёрная Борода",
+                  "delta": -1,
+                  "total": 12,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 12,
+        "B": 12
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Розенкранц и Гильденстерн",
+                  "delta": -2,
+                  "total": 4,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 571,
+          "cardName": "Cruel To Be Kind",
+          "image": "assets/cardart/hamlet/571.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 571,
+              "cardName": "Cruel To Be Kind",
+              "image": "assets/cardart/hamlet/571.webp",
+              "boosted": false,
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 688,
+              "cardName": "Intimidating visage",
+              "image": "assets/cardart/blackbeard/688.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чёрная Борода",
+                  "delta": -4,
+                  "total": 8,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чёрная Борода",
+                  "delta": 2,
+                  "total": 10,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 10,
+        "B": 12
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 692,
+          "cardName": "No prey, no pay",
+          "image": "assets/cardart/blackbeard/692.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "versatile",
+              "mechanic": null,
+              "cardId": 691,
+              "cardName": "Parley",
+              "image": "assets/cardart/blackbeard/691.webp",
+              "boosted": false,
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 577,
+              "cardName": "The Play's The Thing",
+              "image": "assets/cardart/hamlet/577.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Розенкранц и Гильденстерн",
+                  "delta": -1,
+                  "total": 3,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "versatile",
+              "mechanic": null,
+              "cardId": 691,
+              "cardName": "Parley",
+              "image": "assets/cardart/blackbeard/691.webp",
+              "boosted": false,
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 10,
+        "B": 12
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 5,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 10,
+        "B": 12
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 6,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 10,
+        "B": 12
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Гамлет",
+                  "delta": -2,
+                  "total": 10,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 576,
+          "cardName": "The Ghost",
+          "image": "assets/cardart/hamlet/576.webp",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 581,
+          "cardName": "Uncertain Doom",
+          "image": "assets/cardart/hamlet/581.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 689,
+              "cardName": "Queen Anne's revenge",
+              "image": "assets/cardart/blackbeard/689.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чёрная Борода",
+                  "delta": -4,
+                  "total": 6,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 577,
+          "cardName": "The Play's The Thing",
+          "image": "assets/cardart/hamlet/577.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 693,
+              "cardName": "Show a leg!",
+              "image": "assets/cardart/blackbeard/693.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чёрная Борода",
+                  "delta": -3,
+                  "total": 3,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Гамлет",
+                  "delta": 2,
+                  "total": 12,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 7,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 3,
+        "B": 12
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 694,
+          "cardName": "Plunder",
+          "image": "assets/cardart/blackbeard/694.webp",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 8,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 3,
+        "B": 12
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 9,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 3,
+        "B": 12
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 695,
+          "cardName": "Scourge of the seven seas",
+          "image": "assets/cardart/blackbeard/695.webp",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 10,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 3,
+        "B": 12
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Гамлет",
+                  "delta": -2,
+                  "total": 10,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "defense",
+              "mechanic": null,
+              "cardId": 572,
+              "cardName": "Maddening Insight",
+              "image": "assets/cardart/hamlet/572.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 577,
+          "cardName": "The Play's The Thing",
+          "image": "assets/cardart/hamlet/577.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Морские Волки 1",
+                  "delta": -3,
+                  "total": -2,
+                  "dead": true
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 686,
+              "cardName": "A brace of primed pistols",
+              "image": "assets/cardart/blackbeard/686.webp",
+              "boosted": false,
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Гамлет",
+                  "delta": 2,
+                  "total": 12,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 11,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 3,
+        "B": 12
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 695,
+          "cardName": "Scourge of the seven seas",
+          "image": "assets/cardart/blackbeard/695.webp",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 687,
+          "cardName": "Give no quarter",
+          "image": "assets/cardart/blackbeard/687.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 570,
+              "cardName": "Blood Will Have Blood",
+              "image": "assets/cardart/hamlet/570.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Гамлет",
+                  "delta": -3,
+                  "total": 9,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чёрная Борода",
+                  "delta": -1,
+                  "total": 2,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 12,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 2,
+        "B": 9
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 575,
+          "cardName": "Outrageous Fortune",
+          "image": "assets/cardart/hamlet/575.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "versatile",
+              "mechanic": null,
+              "cardId": 578,
+              "cardName": "The Readiness Is All",
+              "image": "assets/cardart/hamlet/578.webp",
+              "boosted": false,
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Морские Волки 2",
+                  "delta": -1,
+                  "total": 0,
+                  "dead": true
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 13,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 2,
+        "B": 9
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 685,
+          "cardName": "Avast Ye!",
+          "image": "assets/cardart/blackbeard/685.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 572,
+              "cardName": "Maddening Insight",
+              "image": "assets/cardart/hamlet/572.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "versatile",
+              "mechanic": null,
+              "cardId": 689,
+              "cardName": "Queen Anne's revenge",
+              "image": "assets/cardart/blackbeard/689.webp",
+              "boosted": false,
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Гамлет",
+                  "delta": -1,
+                  "total": 8,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 14,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 2,
+        "B": 8
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 573,
+          "cardName": "Method In The Madness",
+          "image": "assets/cardart/hamlet/573.webp",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 580,
+              "cardName": "To Sleep, Perchance To Dream",
+              "image": "assets/cardart/hamlet/580.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 15,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 2,
+        "B": 8
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 16,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 2,
+        "B": 8
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Розенкранц и Гильденстерн",
+                  "delta": -2,
+                  "total": 1,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 581,
+          "cardName": "Uncertain Doom",
+          "image": "assets/cardart/hamlet/581.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 688,
+              "cardName": "Intimidating visage",
+              "image": "assets/cardart/blackbeard/688.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чёрная Борода",
+                  "delta": 2,
+                  "total": 4,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 581,
+          "cardName": "Uncertain Doom",
+          "image": "assets/cardart/hamlet/581.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 690,
+              "cardName": "Fearsome and calculating",
+              "image": "assets/cardart/blackbeard/690.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чёрная Борода",
+                  "delta": -4,
+                  "total": 0,
+                  "dead": true
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

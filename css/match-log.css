@@ -1,0 +1,624 @@
+/* =============================================================
+   Блок "Ход матча" — сжатый навигатор (.log-strip) + подробный
+   таймлайн (.log-full) на странице матча. См. js/match-log.js.
+   ============================================================= */
+
+.match-log {
+  max-width: 980px;
+  margin: 0 auto 2rem;
+}
+
+.match-log-heading {
+  font-family: var(--font-display);
+  color: var(--accent);
+  font-size: 1.5rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 1rem;
+  text-align: center;
+}
+
+.log-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+/* ---------------------------------------------------------------
+   Сжатый навигатор
+   --------------------------------------------------------------- */
+
+.log-strip {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0.7rem;
+  height: 78px;
+  padding: 0.5rem 0.7rem;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  position: sticky;
+  top: calc(65px + 0.6rem);
+  z-index: 4;
+}
+
+.log-strip-avatars {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.log-strip-avatar .placeholder-thumb,
+.log-strip-avatar img.thumb {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+}
+
+.log-strip-avatar img.thumb {
+  object-fit: cover;
+}
+
+/* Дорожка теперь прокручиваемая: раунды не сжимаются до нечитаемости,
+   а если все вместе не помещаются — просто скроллятся (перетаскиванием
+   или колесом мыши, см. enableDragScroll в match-log.js). Скроллбар
+   скрыт — тянуть можно только жестом, не полоской. */
+.log-strip-track {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+  touch-action: pan-x;
+}
+
+.log-strip-track::-webkit-scrollbar {
+  display: none;
+}
+
+.log-strip-track:active {
+  cursor: grabbing;
+}
+
+/* Ширина раунда определяется его содержимым (сколько карт/полосок
+   HP нужно уместить) — у "пустых" раундов схлопывается до минимума,
+   освобождая место остальным. Тонкая линия слева отделяет раунды
+   друг от друга. */
+.log-strip-round {
+  flex: 0 0 auto;
+  min-width: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border: none;
+  border-left: 1px solid rgba(236, 238, 242, 0.1);
+  background: none;
+  padding: 2px 4px;
+  margin: 0;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.log-strip-round:first-child {
+  border-left: none;
+}
+
+.log-strip-round:hover,
+.log-strip-round:focus-visible {
+  background: rgba(201, 162, 75, 0.16);
+  outline: none;
+}
+
+.log-strip-half {
+  flex: 1 1 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+
+.log-strip-cards {
+  display: flex;
+  align-items: center;
+}
+
+.log-strip-card-dot {
+  width: 14px;
+  height: 20px;
+  border-radius: 3px;
+  background: var(--accent);
+  border: 1.5px solid var(--bg);
+  margin-left: -5px;
+  flex-shrink: 0;
+}
+
+.log-strip-card-dot:first-child {
+  margin-left: 0;
+}
+
+/* Только цвет — величина урона/лечения задаёт высоту полоски. */
+.log-strip-hp-bar {
+  width: 8px;
+  height: calc(7px + var(--mag, 1) * 1.6px);
+  min-height: 9px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.log-strip-hp-bar-dmg {
+  background: var(--danger);
+}
+
+.log-strip-hp-bar-heal {
+  background: var(--win);
+}
+
+/* ---------------------------------------------------------------
+   Подробный таймлайн
+   --------------------------------------------------------------- */
+
+.log-full {
+  --log-card-w: clamp(90px, 19vw, 160px);
+  --log-attach-w: clamp(56px, 12vw, 100px);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.5rem 1rem 1.2rem;
+  overflow: hidden;
+}
+
+.log-round-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0.8rem 0 0.4rem;
+}
+
+.log-round-line {
+  flex: 1 1 auto;
+  height: 1px;
+  background: var(--border);
+}
+
+.log-round-number {
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  color: var(--accent);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.log-round-hp {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: var(--text-dim);
+}
+
+.log-round-hp-icon {
+  width: 13px;
+  height: 13px;
+  color: var(--danger);
+}
+
+.log-round-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.log-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 0.7rem;
+  padding: 0.4rem 0;
+  border-top: 1px dashed var(--border);
+}
+
+.log-round-body > .log-row:first-child {
+  border-top: none;
+}
+
+.log-row-death {
+  background: linear-gradient(90deg, transparent, rgba(201, 86, 75, 0.08), transparent);
+  border-top-color: var(--danger);
+}
+
+.log-round-body > .log-row-death:first-child {
+  border-top: 1px dashed var(--danger);
+}
+
+.log-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+.log-cell-a {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.log-cell-b {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.log-cell-main {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Если в строке есть разыгранная карта — обе стороны резервируют её
+   высоту под главное содержимое (даже там, где карты нет, только
+   шильдик), чтобы карты не съезжали из-за текста урона под одной
+   из сторон. Только для строк с картой — иначе манёвр-строки без
+   карт зря раздувались бы по высоте. */
+.log-row-card .log-cell-main {
+  min-height: calc(var(--log-card-w) * 7 / 5);
+}
+
+.log-cell-hp {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+/* ---- Шильдики (манёвр/способность) ---- */
+
+.log-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32rem;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.18rem 0.5rem;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  flex-shrink: 0;
+}
+
+.log-chip-icon {
+  width: 14px;
+  height: 14px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+/* ---- Разыгранная карта (основная, полноразмерная) ---- */
+
+.log-card {
+  position: relative;
+  width: var(--log-card-w);
+  aspect-ratio: 5 / 7;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.log-card img,
+.log-card-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+.log-card img {
+  object-fit: cover;
+  border: 1.5px solid rgba(236, 238, 242, 0.22);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+.log-card-placeholder {
+  font-size: 1.6rem;
+}
+
+/* ---- Прицепленные карточки (добор/сброс/возврат) — все одного
+   компактного размера, чтобы стопка внахлёст была аккуратной ---- */
+
+.log-attach-card {
+  position: relative;
+  width: var(--log-attach-w);
+  aspect-ratio: 5 / 7;
+  border-radius: 7px;
+  flex-shrink: 0;
+}
+
+.log-attach-card img,
+.log-attach-card .placeholder-thumb {
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+  display: block;
+  object-fit: cover;
+  border: 1.5px solid rgba(236, 238, 242, 0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.log-attach-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.log-attach-overlay-text {
+  position: relative;
+  z-index: 1;
+  font-size: 2rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.85), 0 0 3px rgba(0, 0, 0, 0.9);
+}
+
+.log-attach-badge {
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--bg-card);
+}
+
+/* buildIcon() оборачивает svg в свой собственный <span class="stat-icon">
+   — центрируем именно эту обёртку, иначе строчная база/лишний
+   интервал у инлайнового svg сдвигает плюс мимо центра кружка. */
+.log-attach-badge .stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  line-height: 0;
+}
+
+.log-attach-badge svg {
+  width: 14px;
+  height: 14px;
+}
+
+.log-attach-badge-spawn {
+  background: var(--win);
+}
+
+.log-attach-badge-spawn svg {
+  color: var(--bg);
+}
+
+.log-attach-badge-boost {
+  bottom: auto;
+  top: -5px;
+  background: var(--bg-card);
+  border-color: var(--accent-dim);
+}
+
+.log-attach-badge-boost svg {
+  color: var(--accent);
+}
+
+/* ---- Появление сайдкика — маленький кружок ---- */
+
+.log-spawn {
+  position: relative;
+  width: calc(var(--log-attach-w) * 0.62);
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+}
+
+.log-spawn img,
+.log-spawn-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: block;
+  object-fit: cover;
+  border: 1.5px solid rgba(236, 238, 242, 0.25);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.log-spawn-placeholder {
+  font-size: 1rem;
+}
+
+/* ---- Стопка внахлёст: наведение/тап поднимает карточку наверх ---- */
+
+.log-attach-stack {
+  display: flex;
+  align-items: center;
+}
+
+.log-attach-item {
+  position: relative;
+  z-index: calc(var(--i, 0) + 1);
+  transition: transform 0.15s ease;
+  border-radius: 8px;
+}
+
+.log-attach-item:not(:first-child) {
+  margin-left: calc(var(--log-attach-w) * -0.5);
+}
+
+.log-attach-item:hover,
+.log-attach-item:focus-visible,
+.log-attach-item.is-front {
+  transform: translateY(-8px) scale(1.12);
+  z-index: 40;
+  outline: none;
+}
+
+/* ---- HP ---- */
+
+.log-hp-hit {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-size: 0.92rem;
+}
+
+.log-cell-a .log-hp-hit {
+  flex-direction: row-reverse;
+}
+
+.log-hp-label {
+  color: var(--text-dim);
+}
+
+/* Тело (не дисплейный шрифт) — у Bebas Neue стрелка "→" рисуется
+   не своим глифом и слипается с соседним знаком. */
+.log-hp-delta {
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  font-size: 1.05rem;
+}
+
+.log-hp-dmg {
+  color: var(--danger);
+}
+
+.log-hp-heal {
+  color: var(--win);
+}
+
+.log-hp-flat {
+  color: var(--text-dim);
+}
+
+.log-hp-dead {
+  font-weight: 600;
+}
+
+.log-hp-skull {
+  width: 15px;
+  height: 15px;
+  color: var(--danger);
+}
+
+/* Стрелка направления атаки — стоит на высоте бьющей карты (см.
+   positionAttackArrows в match-log.js) и указывает от бьющего к
+   цели — полезно при обмене одинаковыми универсальными картами. */
+.log-attack-arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 10px solid var(--danger);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.log-attack-a2b {
+  transform: translate(-50%, -50%);
+}
+
+.log-attack-b2a {
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+
+/* ---- Клик по карте — крупный просмотр ---- */
+
+.log-card-clickable {
+  cursor: zoom-in;
+}
+
+.log-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(10, 10, 13, 0.86);
+  cursor: zoom-out;
+}
+
+.log-lightbox.is-open {
+  display: flex;
+}
+
+.log-lightbox img {
+  max-width: min(90vw, 480px);
+  max-height: 88vh;
+  border-radius: 12px;
+  border: 2px solid rgba(236, 238, 242, 0.25);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* ---------------------------------------------------------------
+   Мобильная раскладка: сжатый навигатор остаётся такой же
+   горизонтальной прокручиваемой полосой, что и на десктопе —
+   меняются только размеры карт и отступы самого таймлайна.
+   --------------------------------------------------------------- */
+
+@media (max-width: 700px) {
+  .log-full {
+    --log-card-w: clamp(62px, 24vw, 122px);
+    --log-attach-w: clamp(40px, 15vw, 76px);
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 0.5rem 0.6rem 1rem;
+  }
+
+  .log-row {
+    gap: 0.4rem;
+  }
+
+  .log-round-hp {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 460px) {
+  .log-full {
+    --log-card-w: clamp(52px, 26vw, 88px);
+    --log-attach-w: clamp(34px, 17vw, 60px);
+  }
+
+  .log-chip {
+    padding: 0.16rem 0.42rem;
+    font-size: 0.7rem;
+  }
+
+  .log-hp-hit {
+    font-size: 0.78rem;
+  }
+
+  .log-hp-delta {
+    font-size: 0.9rem;
+  }
+
+  .log-round-hp {
+    font-size: 0.72rem;
+  }
+
+  .log-attach-overlay-text {
+    font-size: 1.4rem;
+  }
+}

@@ -1,4 +1,4 @@
-import { characters, players, cards } from "./data.js?v=4";
+import { characters, players, cards } from "./data.js?v=14";
 
 export function getCharacter(slug) {
   return slug ? characters[slug] : null;
@@ -101,6 +101,33 @@ export function buildCardThumb(cardSlug) {
   img.className = "thumb";
   img.src = card.image;
   img.alt = card.name;
+  img.onerror = () => {
+    img.replaceWith(placeholder);
+  };
+
+  wrap.appendChild(img);
+  return wrap;
+}
+
+// Рубашка карты персонажа (для событий "взял карту" в логе матча).
+export function buildCardbackThumb(characterSlug) {
+  const character = getCharacter(characterSlug);
+  const wrap = document.createElement("span");
+
+  if (!character || !character.cardback) {
+    wrap.className = "placeholder-thumb";
+    wrap.textContent = character ? character.name.charAt(0).toUpperCase() : "?";
+    return wrap;
+  }
+
+  const placeholder = document.createElement("span");
+  placeholder.className = "placeholder-thumb";
+  placeholder.textContent = character.name.charAt(0).toUpperCase();
+
+  const img = document.createElement("img");
+  img.className = "thumb";
+  img.src = character.cardback;
+  img.alt = "";
   img.onerror = () => {
     img.replaceWith(placeholder);
   };

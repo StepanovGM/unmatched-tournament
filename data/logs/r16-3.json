@@ -1,0 +1,1564 @@
+{
+  "matchId": "r16-3",
+  "slotA": {
+    "heroSlug": "dracula"
+  },
+  "slotB": {
+    "heroSlug": "raptors"
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 13,
+        "B": 21
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 60,
+          "cardName": "Ravening Seduction",
+          "image": "assets/cardart/dracula/60.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Рапторы 2",
+                  "delta": -2,
+                  "total": 5,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 13,
+        "B": 19
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 133,
+          "cardName": "Clever Girl",
+          "image": "assets/cardart/raptors/133.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 2,
+              "cardName": "Feint",
+              "image": "assets/cardart/dracula/2.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Сёстры 1",
+                  "delta": -1,
+                  "total": 0,
+                  "dead": true
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 13,
+        "B": 19
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 13,
+        "B": 19
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 2,
+          "cardName": "Feint",
+          "image": "assets/cardart/raptors/2.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 13,
+              "cardName": "Exploit",
+              "image": "assets/cardart/dracula/13.webp",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 5,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 13,
+        "B": 19
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 57,
+          "cardName": "Prey Upon",
+          "image": "assets/cardart/dracula/57.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Рапторы 1",
+                  "delta": -1,
+                  "total": 6,
+                  "dead": false
+                },
+                {
+                  "fighterLabel": "Рапторы 2",
+                  "delta": -1,
+                  "total": 4,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 6,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 13,
+        "B": 17
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 2,
+          "cardName": "Feint",
+          "image": "assets/cardart/raptors/2.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 54,
+              "cardName": "Do My Bidding",
+              "image": "assets/cardart/dracula/54.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "return",
+              "cardType": "versatile",
+              "mechanic": null,
+              "cardId": 2,
+              "cardName": "Feint",
+              "image": "assets/cardart/raptors/2.webp",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 2,
+          "cardName": "Feint",
+          "image": "assets/cardart/raptors/2.webp",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 9,
+          "cardName": "Ambush",
+          "image": "assets/cardart/raptors/9.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 55,
+              "cardName": "Look Into My Eyes",
+              "image": "assets/cardart/dracula/55.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 53,
+              "cardName": "Beastform",
+              "image": "assets/cardart/dracula/53.webp",
+              "boosted": false,
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Дракула",
+                  "delta": -3,
+                  "total": 10,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 7,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 10,
+        "B": 17
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Рапторы 2",
+                  "delta": -1,
+                  "total": 3,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 53,
+          "cardName": "Beastform",
+          "image": "assets/cardart/dracula/53.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 2,
+              "cardName": "Feint",
+              "image": "assets/cardart/raptors/2.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Рапторы 2",
+                  "delta": -4,
+                  "total": -1,
+                  "dead": true
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 8,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 10,
+        "B": 12
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 9,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 10,
+        "B": 12
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 59,
+          "cardName": "Thirst for Sustenance",
+          "image": "assets/cardart/dracula/59.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 136,
+              "cardName": "Decoy",
+              "image": "assets/cardart/raptors/136.webp",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 10,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 10,
+        "B": 12
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 11,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 10,
+        "B": 12
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 58,
+          "cardName": "Baptism of Blood",
+          "image": "assets/cardart/dracula/58.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Дракула",
+                  "delta": 2,
+                  "total": 12,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "spawn",
+              "image": "assets/cardart/dracula/sidekick.webp",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 12,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 12,
+        "B": 12
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 147,
+          "cardName": "Eviscerate",
+          "image": "assets/cardart/raptors/147.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 11,
+              "cardName": "Dash",
+              "image": "assets/cardart/dracula/11.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Дракула",
+                  "delta": -2,
+                  "total": 10,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 8,
+          "cardName": "Disengage",
+          "image": "assets/cardart/raptors/8.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 11,
+              "cardName": "Dash",
+              "image": "assets/cardart/dracula/11.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Рапторы 1",
+                  "delta": -1,
+                  "total": 5,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Рапторы 1",
+                  "delta": 1,
+                  "total": 6,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Дракула",
+                  "delta": -1,
+                  "total": 9,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 13,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 9,
+        "B": 12
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 14,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 9,
+        "B": 12
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 15,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 9,
+        "B": 12
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Рапторы 3",
+                  "delta": -1,
+                  "total": 6,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 60,
+          "cardName": "Ravening Seduction",
+          "image": "assets/cardart/dracula/60.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Рапторы 3",
+                  "delta": -3,
+                  "total": 3,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 16,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 9,
+        "B": 8
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 17,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 9,
+        "B": 8
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 9,
+          "cardName": "Ambush",
+          "image": "assets/cardart/dracula/9.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 136,
+              "cardName": "Decoy",
+              "image": "assets/cardart/raptors/136.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 9,
+              "cardName": "Ambush",
+              "image": "assets/cardart/raptors/9.webp",
+              "boosted": false,
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Рапторы 3",
+                  "delta": -2,
+                  "total": 1,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 18,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 9,
+        "B": 6
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 19,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 9,
+        "B": 6
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 11,
+          "cardName": "Dash",
+          "image": "assets/cardart/dracula/11.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 135,
+              "cardName": "Eaten Alive",
+              "image": "assets/cardart/raptors/135.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Сёстры 1",
+                  "delta": -1,
+                  "total": -1,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 20,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 9,
+        "B": 6
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "scheme",
+              "mechanic": null,
+              "cardId": 125,
+              "cardName": "Coordinated Attack Pattern",
+              "image": "assets/cardart/raptors/125.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 21,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 9,
+        "B": 6
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 57,
+          "cardName": "Prey Upon",
+          "image": "assets/cardart/dracula/57.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Рапторы 3",
+                  "delta": -1,
+                  "total": 0,
+                  "dead": true
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Дракула",
+                  "delta": 1,
+                  "total": 10,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 22,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 10,
+        "B": 5
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 127,
+          "cardName": "Working Things Out",
+          "image": "assets/cardart/raptors/127.webp",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 147,
+          "cardName": "Eviscerate",
+          "image": "assets/cardart/raptors/147.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 13,
+              "cardName": "Exploit",
+              "image": "assets/cardart/dracula/13.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Дракула",
+                  "delta": -1,
+                  "total": 9,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 8,
+          "cardName": "Disengage",
+          "image": "assets/cardart/raptors/8.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 55,
+              "cardName": "Look Into My Eyes",
+              "image": "assets/cardart/dracula/55.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Дракула",
+                  "delta": -1,
+                  "total": 8,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 23,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 8,
+        "B": 5
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 58,
+          "cardName": "Baptism of Blood",
+          "image": "assets/cardart/dracula/58.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Дракула",
+                  "delta": 2,
+                  "total": 10,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "spawn",
+              "image": "assets/cardart/dracula/sidekick.webp",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 24,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 10,
+        "B": 5
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 134,
+          "cardName": "Pack Hunters",
+          "image": "assets/cardart/raptors/134.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 2,
+              "cardName": "Feint",
+              "image": "assets/cardart/dracula/2.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Дракула",
+                  "delta": -2,
+                  "total": 8,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 25,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 8,
+        "B": 5
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 26,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 8,
+        "B": 5
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 128,
+          "cardName": "They Remember",
+          "image": "assets/cardart/raptors/128.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Сёстры 1",
+                  "delta": -1,
+                  "total": -2,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 27,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 8,
+        "B": 5
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 60,
+          "cardName": "Ravening Seduction",
+          "image": "assets/cardart/dracula/60.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Рапторы 1",
+                  "delta": -2,
+                  "total": 4,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 28,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 8,
+        "B": 3
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 135,
+          "cardName": "Eaten Alive",
+          "image": "assets/cardart/raptors/135.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Сёстры 2",
+                  "delta": -1,
+                  "total": 0,
+                  "dead": true
+                },
+                {
+                  "fighterLabel": "Сёстры 3",
+                  "delta": -1,
+                  "total": 0,
+                  "dead": true
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 29,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 8,
+        "B": 3
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 51,
+          "cardName": "Feeding Frenzy",
+          "image": "assets/cardart/dracula/51.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 136,
+              "cardName": "Decoy",
+              "image": "assets/cardart/raptors/136.webp",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 30,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 8,
+        "B": 3
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 9,
+          "cardName": "Ambush",
+          "image": "assets/cardart/raptors/9.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 2,
+              "cardName": "Feint",
+              "image": "assets/cardart/dracula/2.webp",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 31,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 8,
+        "B": 3
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 59,
+              "cardName": "Thirst for Sustenance",
+              "image": "assets/cardart/dracula/59.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 9,
+          "cardName": "Ambush",
+          "image": "assets/cardart/dracula/9.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 128,
+              "cardName": "They Remember",
+              "image": "assets/cardart/raptors/128.webp",
+              "boosted": false,
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 136,
+              "cardName": "Decoy",
+              "image": "assets/cardart/raptors/136.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Рапторы 1",
+                  "delta": -1,
+                  "total": 3,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 32,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 8,
+        "B": 2
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 33,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 8,
+        "B": 2
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 59,
+              "cardName": "Thirst for Sustenance",
+              "image": "assets/cardart/dracula/59.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 51,
+          "cardName": "Feeding Frenzy",
+          "image": "assets/cardart/dracula/51.webp",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 34,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 8,
+        "B": 2
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 128,
+          "cardName": "They Remember",
+          "image": "assets/cardart/raptors/128.webp",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 128,
+          "cardName": "They Remember",
+          "image": "assets/cardart/raptors/128.webp",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 135,
+          "cardName": "Eaten Alive",
+          "image": "assets/cardart/raptors/135.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Дракула",
+                  "delta": -2,
+                  "total": 6,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Дракула",
+                  "delta": -2,
+                  "total": 4,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Дракула",
+                  "delta": -4,
+                  "total": 0,
+                  "dead": true
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Дракула",
+                  "delta": -1,
+                  "total": -1,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

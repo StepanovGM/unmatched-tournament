@@ -1,5 +1,7 @@
-import { matches, cards } from "./data.js?v=4";
-import { buildThumb, buildCardThumb, buildSpoiler, buildStarRating, slotLabel, sidekickLabel, displayOrder, getPlayer } from "./util.js?v=4";
+import { matches, cards } from "./data.js?v=14";
+import { buildThumb, buildCardThumb, buildSpoiler, buildStarRating, slotLabel, sidekickLabel, displayOrder, getPlayer } from "./util.js?v=14";
+import { buildIcon } from "./icons.js?v=14";
+import { renderMatchLog } from "./match-log.js?v=14";
 
 const root = document.getElementById("match-page");
 const id = new URLSearchParams(location.search).get("id");
@@ -17,22 +19,6 @@ function firstMoveSlotKey() {
   if (match.firstMove) return match.firstMove;
   if (match.stage === "1/16") return "A";
   return null;
-}
-
-const ICONS = {
-  footprint:
-    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3c-1.7 0-3 2-3 5 0 2-1 3-1 5.5C4 16.4 5.6 18 8 18s4-1.6 4-4.5c0-2.5-1-3.5-1-5.5 0-3-1.3-5-3-5z"/><path d="M16.5 8c-1.4 0-2.5 1.7-2.5 4.2 0 1.7-.8 2.5-.8 4.6 0 2.4 1.3 4.2 3.3 4.2s3.3-1.8 3.3-4.2c0-2.1-.8-2.9-.8-4.6 0-2.5-1.1-4.2-2.5-4.2z"/></svg>',
-  flag:
-    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h13l-3 4 3 4H5"/></svg>',
-  heart:
-    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5s-7.5-4.6-9.8-9.3C.7 7.8 2.4 4.5 5.6 4c2.1-.3 3.9.7 6.4 3.4C14.5 4.7 16.3 3.7 18.4 4c3.2.5 4.9 3.8 3.4 7.2C19.5 15.9 12 20.5 12 20.5z"/></svg>',
-};
-
-function buildIcon(name) {
-  const wrap = document.createElement("span");
-  wrap.className = "stat-icon";
-  wrap.innerHTML = ICONS[name];
-  return wrap;
 }
 
 // ---- Навигация между матчами (по порядку в data.js — соответствует
@@ -311,6 +297,7 @@ function render() {
     inner.appendChild(buildHero());
     inner.appendChild(renderCardSection());
     renderResultsSection().forEach((node) => inner.appendChild(node));
+    renderMatchLog(inner, match);
   } else {
     inner.appendChild(buildHero());
     inner.appendChild(renderCardSection());
