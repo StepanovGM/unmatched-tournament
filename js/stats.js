@@ -1,4 +1,4 @@
-import { matches, characters } from "./data.js?v=14";
+import { matches, characters } from "./data.js?v=15";
 
 const tableBody = document.querySelector(".stats-table tbody");
 

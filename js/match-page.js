@@ -1,7 +1,7 @@
-import { matches, cards } from "./data.js?v=14";
-import { buildThumb, buildCardThumb, buildSpoiler, buildStarRating, slotLabel, sidekickLabel, displayOrder, getPlayer } from "./util.js?v=14";
-import { buildIcon } from "./icons.js?v=14";
-import { renderMatchLog } from "./match-log.js?v=14";
+import { matches, cards } from "./data.js?v=15";
+import { buildThumb, buildCardThumb, buildSpoiler, buildStarRating, slotLabel, sidekickLabel, displayOrder, getPlayer } from "./util.js?v=15";
+import { buildIcon } from "./icons.js?v=15";
+import { renderMatchLog } from "./match-log.js?v=15";
 
 const root = document.getElementById("match-page");
 const id = new URLSearchParams(location.search).get("id");

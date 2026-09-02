@@ -21,8 +21,8 @@
 //     снизу — это данные, которые всегда должны быть читаемы сразу,
 //     без наведения.
 // -------------------------------------------------------------
-import { buildThumb, buildCardbackThumb } from "./util.js?v=14";
-import { buildIcon } from "./icons.js?v=14";
+import { buildThumb, buildCardbackThumb } from "./util.js?v=15";
+import { buildIcon } from "./icons.js?v=15";
 
 // ---- Лайтбокс: клик по карте открывает её крупно ----
 
@@ -494,6 +494,11 @@ function enableDragScroll(track) {
   let startLeft = 0;
   let startTop = 0;
 
+  // Слушаем движение/отпускание на document, а не на самой дорожке —
+  // setPointerCapture на элементе с кнопками внутри ломает их
+  // собственный клик (браузер перестаёт видеть pointerup как "по
+  // кнопке"), а без захвата обычный клик по раунду продолжает
+  // работать как раньше.
   track.addEventListener("pointerdown", (e) => {
     if (e.button !== undefined && e.button !== 0) return;
     dragging = true;
@@ -502,10 +507,9 @@ function enableDragScroll(track) {
     startY = e.clientY;
     startLeft = track.scrollLeft;
     startTop = track.scrollTop;
-    track.setPointerCapture(e.pointerId);
   });
 
-  track.addEventListener("pointermove", (e) => {
+  document.addEventListener("pointermove", (e) => {
     if (!dragging) return;
     const dx = e.clientX - startX;
     const dy = e.clientY - startY;
@@ -517,8 +521,8 @@ function enableDragScroll(track) {
   const stopDrag = () => {
     dragging = false;
   };
-  track.addEventListener("pointerup", stopDrag);
-  track.addEventListener("pointercancel", stopDrag);
+  document.addEventListener("pointerup", stopDrag);
+  document.addEventListener("pointercancel", stopDrag);
 
   // Перехватываем клик на этапе погружения — до того, как он дойдёт
   // до самой кнопки раунда, — только если это был драг, а не тап.
