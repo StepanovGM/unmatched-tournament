@@ -1,5 +1,5 @@
-import { matches } from "./data.js?v=15";
-import { buildThumb, slotLabel, playerLabel, formatDate } from "./util.js?v=15";
+import { matches } from "./data.js?v=16";
+import { buildThumb, slotLabel, playerLabel, formatDate } from "./util.js?v=16";
 
 const list = document.querySelector(".upcoming-list");
 

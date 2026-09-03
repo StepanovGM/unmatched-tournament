@@ -1,5 +1,5 @@
-import { matches as allMatches } from "./data.js?v=15";
-import { buildThumb, slotLabel, sidekickLabel, displayOrder, formatDate } from "./util.js?v=15";
+import { matches as allMatches } from "./data.js?v=16";
+import { buildThumb, slotLabel, sidekickLabel, displayOrder, formatDate } from "./util.js?v=16";
 
 const bracketEl = document.querySelector(".bracket");
 const svg = document.querySelector(".bracket-connectors");

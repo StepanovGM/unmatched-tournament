@@ -21,8 +21,8 @@
 //     снизу — это данные, которые всегда должны быть читаемы сразу,
 //     без наведения.
 // -------------------------------------------------------------
-import { buildThumb, buildCardbackThumb } from "./util.js?v=15";
-import { buildIcon } from "./icons.js?v=15";
+import { buildThumb, buildCardbackThumb } from "./util.js?v=16";
+import { buildIcon } from "./icons.js?v=16";
 
 // ---- Лайтбокс: клик по карте открывает её крупно ----
 
@@ -259,6 +259,7 @@ function buildHpLine(hit) {
 function buildAttachStack(items, match) {
   const stack = document.createElement("div");
   stack.className = "log-attach-stack";
+  stack.style.setProperty("--n", String(items.length));
 
   items.forEach((item, i) => {
     const holder = document.createElement("div");
@@ -413,6 +414,48 @@ function buildFullTimeline(logData, match) {
   });
 
   return { element: full, roundEls };
+}
+
+// Базовый нахлёст из CSS (переменная --n) — это только оценка на глаз;
+// на узких экранах при 3+ прицепленных карточках его всё равно может
+// не хватить, и строка вылезет за пределы своей колонки (а .log-full
+// её обрежет — карточка просто исчезнет). Домеряем уже отрисованное и
+// при нехватке места дожимаем нахлёст сильнее, но не более чем до
+// minReveal — карточка должна остаться видимой и кликабельной.
+function fitAttachStacks(root) {
+  root.querySelectorAll(".log-cell-main").forEach((main) => {
+    const cell = main.closest(".log-cell");
+    if (!cell) return;
+
+    const items = Array.from(main.querySelectorAll(".log-attach-item"));
+    if (items.length >= 2) {
+      const overflow = main.scrollWidth - cell.clientWidth;
+      if (overflow > 0) {
+        // Дожимаем нахлёст сверх базового (--n в CSS) вплоть до полного —
+        // карточка может уйти целиком под соседнюю, но останется на месте
+        // (клик/наведение по-прежнему поднимают её наверх стопки).
+        const itemWidth = items[1].getBoundingClientRect().width;
+        const minMargin = -itemWidth;
+        const perGap = overflow / (items.length - 1) + 1;
+        items.slice(1).forEach((item) => {
+          const current = parseFloat(getComputedStyle(item).marginLeft) || 0;
+          item.style.marginLeft = Math.max(minMargin, current - perGap) + "px";
+        });
+      }
+    }
+
+    // Страховка: если даже полный нахлёст не спас (очень узкий экран +
+    // крупная стопка) — чуть уменьшаем всю группу масштабом, прижимая
+    // её к внешнему краю (у стороны A — к правому, у B — к левому), а
+    // не обрезаем оверфлоу через .log-full { overflow: hidden }, из-за
+    // которого карточка просто пропадала бы.
+    const remaining = main.scrollWidth - cell.clientWidth;
+    if (remaining > 0) {
+      const scale = Math.max(0.01, cell.clientWidth / main.scrollWidth);
+      main.style.transformOrigin = cell.classList.contains("log-cell-a") ? "right center" : "left center";
+      main.style.transform = `scale(${scale})`;
+    }
+  });
 }
 
 // Стрелка атаки должна стоять на высоте бьющей карты, а не по
@@ -618,5 +661,8 @@ export async function renderMatchLog(root, match) {
 
   root.appendChild(section);
 
-  requestAnimationFrame(() => positionAttackArrows(fullEl));
+  requestAnimationFrame(() => {
+    fitAttachStacks(fullEl);
+    positionAttackArrows(fullEl);
+  });
 }
