@@ -184,6 +184,19 @@
               "reactions": []
             },
             {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Охотник",
+                  "delta": -2,
+                  "total": 9,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
               "side": "B",
               "kind": "draw",
               "reactions": []
@@ -305,19 +318,6 @@
                 }
               ],
               "reactions": []
-            },
-            {
-              "side": "A",
-              "kind": "hp",
-              "hits": [
-                {
-                  "fighterLabel": "Охотник",
-                  "delta": -2,
-                  "total": 3,
-                  "dead": false
-                }
-              ],
-              "reactions": []
             }
           ]
         },
@@ -429,7 +429,7 @@
                 {
                   "fighterLabel": "Охотник",
                   "delta": -2,
-                  "total": 1,
+                  "total": 3,
                   "dead": false
                 }
               ],
@@ -499,8 +499,8 @@
                 {
                   "fighterLabel": "Охотник",
                   "delta": -2,
-                  "total": -1,
-                  "dead": true
+                  "total": 1,
+                  "dead": false
                 }
               ],
               "reactions": []
@@ -550,6 +550,19 @@
             {
               "side": "B",
               "kind": "draw",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Бигфут",
+                  "delta": -3,
+                  "total": 8,
+                  "dead": false
+                }
+              ],
               "reactions": []
             }
           ]
@@ -732,7 +745,7 @@
                 {
                   "fighterLabel": "Бигфут",
                   "delta": -2,
-                  "total": 9,
+                  "total": 6,
                   "dead": false
                 },
                 {
@@ -976,19 +989,6 @@
                 {
                   "fighterLabel": "Бигфут",
                   "delta": -1,
-                  "total": 8,
-                  "dead": false
-                }
-              ],
-              "reactions": []
-            },
-            {
-              "side": "B",
-              "kind": "hp",
-              "hits": [
-                {
-                  "fighterLabel": "Бигфут",
-                  "delta": -3,
                   "total": 5,
                   "dead": false
                 }

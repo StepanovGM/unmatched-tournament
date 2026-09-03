@@ -354,8 +354,8 @@
               "hits": [
                 {
                   "fighterLabel": "Рапторы 2",
-                  "delta": -4,
-                  "total": -1,
+                  "delta": -3,
+                  "total": 0,
                   "dead": true
                 }
               ],
@@ -370,7 +370,7 @@
       "turnSide": "B",
       "heroHp": {
         "A": 10,
-        "B": 12
+        "B": 13
       },
       "segments": [
         {
@@ -390,7 +390,7 @@
       "turnSide": "A",
       "heroHp": {
         "A": 10,
-        "B": 12
+        "B": 13
       },
       "segments": [
         {
@@ -426,7 +426,7 @@
       "turnSide": "B",
       "heroHp": {
         "A": 10,
-        "B": 12
+        "B": 13
       },
       "segments": [
         {
@@ -446,7 +446,7 @@
       "turnSide": "A",
       "heroHp": {
         "A": 10,
-        "B": 12
+        "B": 13
       },
       "segments": [
         {
@@ -491,7 +491,7 @@
       "turnSide": "B",
       "heroHp": {
         "A": 12,
-        "B": 12
+        "B": 13
       },
       "segments": [
         {
@@ -548,32 +548,6 @@
               "reactions": []
             },
             {
-              "side": "B",
-              "kind": "hp",
-              "hits": [
-                {
-                  "fighterLabel": "Рапторы 1",
-                  "delta": -1,
-                  "total": 5,
-                  "dead": false
-                }
-              ],
-              "reactions": []
-            },
-            {
-              "side": "B",
-              "kind": "hp",
-              "hits": [
-                {
-                  "fighterLabel": "Рапторы 1",
-                  "delta": 1,
-                  "total": 6,
-                  "dead": false
-                }
-              ],
-              "reactions": []
-            },
-            {
               "side": "A",
               "kind": "hp",
               "hits": [
@@ -595,7 +569,7 @@
       "turnSide": "A",
       "heroHp": {
         "A": 9,
-        "B": 12
+        "B": 13
       },
       "segments": [
         {
@@ -615,7 +589,7 @@
       "turnSide": "B",
       "heroHp": {
         "A": 9,
-        "B": 12
+        "B": 13
       },
       "segments": [
         {
@@ -635,7 +609,7 @@
       "turnSide": "A",
       "heroHp": {
         "A": 9,
-        "B": 12
+        "B": 13
       },
       "segments": [
         {
@@ -698,7 +672,7 @@
       "turnSide": "B",
       "heroHp": {
         "A": 9,
-        "B": 8
+        "B": 9
       },
       "segments": [
         {
@@ -718,7 +692,7 @@
       "turnSide": "A",
       "heroHp": {
         "A": 9,
-        "B": 8
+        "B": 9
       },
       "segments": [
         {
@@ -778,7 +752,7 @@
       "turnSide": "B",
       "heroHp": {
         "A": 9,
-        "B": 6
+        "B": 7
       },
       "segments": [
         {
@@ -798,7 +772,7 @@
       "turnSide": "A",
       "heroHp": {
         "A": 9,
-        "B": 6
+        "B": 7
       },
       "segments": [
         {
@@ -847,7 +821,7 @@
       "turnSide": "B",
       "heroHp": {
         "A": 9,
-        "B": 6
+        "B": 7
       },
       "segments": [
         {
@@ -879,7 +853,7 @@
       "turnSide": "A",
       "heroHp": {
         "A": 9,
-        "B": 6
+        "B": 7
       },
       "segments": [
         {
@@ -931,7 +905,7 @@
       "turnSide": "B",
       "heroHp": {
         "A": 10,
-        "B": 5
+        "B": 6
       },
       "segments": [
         {
@@ -1024,7 +998,7 @@
       "turnSide": "A",
       "heroHp": {
         "A": 8,
-        "B": 5
+        "B": 6
       },
       "segments": [
         {
@@ -1069,7 +1043,7 @@
       "turnSide": "B",
       "heroHp": {
         "A": 10,
-        "B": 5
+        "B": 6
       },
       "segments": [
         {
@@ -1118,7 +1092,7 @@
       "turnSide": "A",
       "heroHp": {
         "A": 8,
-        "B": 5
+        "B": 6
       },
       "segments": [
         {
@@ -1138,7 +1112,7 @@
       "turnSide": "B",
       "heroHp": {
         "A": 8,
-        "B": 5
+        "B": 6
       },
       "segments": [
         {
@@ -1182,7 +1156,7 @@
       "turnSide": "A",
       "heroHp": {
         "A": 8,
-        "B": 5
+        "B": 6
       },
       "segments": [
         {
@@ -1221,7 +1195,7 @@
       "turnSide": "B",
       "heroHp": {
         "A": 8,
-        "B": 3
+        "B": 4
       },
       "segments": [
         {
@@ -1266,7 +1240,7 @@
       "turnSide": "A",
       "heroHp": {
         "A": 8,
-        "B": 3
+        "B": 4
       },
       "segments": [
         {
@@ -1302,7 +1276,7 @@
       "turnSide": "B",
       "heroHp": {
         "A": 8,
-        "B": 3
+        "B": 4
       },
       "segments": [
         {
@@ -1338,7 +1312,7 @@
       "turnSide": "A",
       "heroHp": {
         "A": 8,
-        "B": 3
+        "B": 4
       },
       "segments": [
         {
@@ -1410,7 +1384,7 @@
       "turnSide": "B",
       "heroHp": {
         "A": 8,
-        "B": 2
+        "B": 3
       },
       "segments": [
         {
@@ -1430,7 +1404,7 @@
       "turnSide": "A",
       "heroHp": {
         "A": 8,
-        "B": 2
+        "B": 3
       },
       "segments": [
         {
@@ -1458,7 +1432,21 @@
           "cardId": 51,
           "cardName": "Feeding Frenzy",
           "image": "assets/cardart/dracula/51.webp",
-          "reactions": []
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Рапторы 1",
+                  "delta": -2,
+                  "total": 1,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
         }
       ]
     },
@@ -1467,7 +1455,7 @@
       "turnSide": "B",
       "heroHp": {
         "A": 8,
-        "B": 2
+        "B": 1
       },
       "segments": [
         {

@@ -906,6 +906,12 @@
             },
             {
               "side": "A",
+              "kind": "spawn",
+              "image": "assets/cardart/robin-hood/sidekick.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
               "kind": "discard",
               "cardType": "scheme",
               "mechanic": null,
