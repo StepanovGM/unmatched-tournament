@@ -1,0 +1,972 @@
+{
+  "matchId": "final",
+  "slotA": {
+    "heroSlug": "t-rex"
+  },
+  "slotB": {
+    "heroSlug": "chupacabra"
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 27,
+        "B": 14
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 27,
+        "B": 14
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 22,
+          "cardName": "Closer Than She Appears",
+          "image": "assets/cardart/t-rex/22.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 339,
+          "cardName": "When Dinosaurs Ruled the Earth",
+          "image": "assets/cardart/t-rex/339.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 2,
+              "cardName": "Feint",
+              "image": "assets/cardart/chupacabra/2.webp",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 27,
+        "B": 14
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 684,
+          "cardName": "Unsettle",
+          "image": "assets/cardart/chupacabra/684.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "defense",
+              "mechanic": null,
+              "cardId": 352,
+              "cardName": "You're Just Making Her Angry",
+              "image": "assets/cardart/t-rex/352.webp",
+              "boosted": false,
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "scheme",
+              "mechanic": null,
+              "cardId": 22,
+              "cardName": "Closer Than She Appears",
+              "image": "assets/cardart/t-rex/22.webp",
+              "boosted": false,
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чупакабра",
+                  "delta": -2,
+                  "total": 12,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 27,
+        "B": 12
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 5,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 27,
+        "B": 12
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 676,
+          "cardName": "The more they struggle",
+          "image": "assets/cardart/chupacabra/676.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 21,
+              "cardName": "Terrifying Roar",
+              "image": "assets/cardart/t-rex/21.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Ти-рекс",
+                  "delta": -3,
+                  "total": 24,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 6,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 24,
+        "B": 12
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 7,
+          "cardName": "Commanding Impact",
+          "image": "assets/cardart/t-rex/7.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 679,
+              "cardName": "Natural toughness",
+              "image": "assets/cardart/chupacabra/679.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "return",
+              "cardType": "defense",
+              "mechanic": null,
+              "cardId": 679,
+              "cardName": "Natural toughness",
+              "image": "assets/cardart/chupacabra/679.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чупакабра",
+                  "delta": -2,
+                  "total": 10,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 341,
+          "cardName": "Ripples in the Water",
+          "image": "assets/cardart/t-rex/341.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "versatile",
+              "mechanic": null,
+              "cardId": 680,
+              "cardName": "Ravenous lunge",
+              "image": "assets/cardart/chupacabra/680.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 7,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 24,
+        "B": 10
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 681,
+          "cardName": "Tooth and tail",
+          "image": "assets/cardart/chupacabra/681.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 337,
+              "cardName": "Thrash",
+              "image": "assets/cardart/t-rex/337.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Ти-рекс",
+                  "delta": -1,
+                  "total": 23,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чупакабра",
+                  "delta": 1,
+                  "total": 11,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чупакабра",
+                  "delta": -1,
+                  "total": 10,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 681,
+          "cardName": "Tooth and tail",
+          "image": "assets/cardart/chupacabra/681.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 5,
+              "cardName": "Momentous Shift",
+              "image": "assets/cardart/t-rex/5.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Ти-рекс",
+                  "delta": -1,
+                  "total": 22,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чупакабра",
+                  "delta": 1,
+                  "total": 11,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 8,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 22,
+        "B": 11
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 7,
+          "cardName": "Commanding Impact",
+          "image": "assets/cardart/t-rex/7.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 2,
+              "cardName": "Feint",
+              "image": "assets/cardart/chupacabra/2.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чупакабра",
+                  "delta": -3,
+                  "total": 8,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 9,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 22,
+        "B": 8
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 10,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 22,
+        "B": 8
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 11,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 22,
+        "B": 8
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "versatile",
+              "mechanic": null,
+              "cardId": 681,
+              "cardName": "Tooth and tail",
+              "image": "assets/cardart/chupacabra/681.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 678,
+          "cardName": "Blood in the air",
+          "image": "assets/cardart/chupacabra/678.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 5,
+              "cardName": "Momentous Shift",
+              "image": "assets/cardart/t-rex/5.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Ти-рекс",
+                  "delta": -2,
+                  "total": 20,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 12,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 20,
+        "B": 8
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 339,
+          "cardName": "When Dinosaurs Ruled the Earth",
+          "image": "assets/cardart/t-rex/339.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 2,
+              "cardName": "Feint",
+              "image": "assets/cardart/chupacabra/2.webp",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 13,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 20,
+        "B": 8
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 14,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 20,
+        "B": 8
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 339,
+          "cardName": "When Dinosaurs Ruled the Earth",
+          "image": "assets/cardart/t-rex/339.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 679,
+              "cardName": "Natural toughness",
+              "image": "assets/cardart/chupacabra/679.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 338,
+              "cardName": "Reckless Lunge",
+              "image": "assets/cardart/t-rex/338.webp",
+              "boosted": false,
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чупакабра",
+                  "delta": -3,
+                  "total": 5,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Ти-рекс",
+                  "delta": -2,
+                  "total": 18,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "return",
+              "cardType": "defense",
+              "mechanic": null,
+              "cardId": 679,
+              "cardName": "Natural toughness",
+              "image": "assets/cardart/chupacabra/679.webp",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 338,
+          "cardName": "Reckless Lunge",
+          "image": "assets/cardart/t-rex/338.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 682,
+              "cardName": "Wounded beast",
+              "image": "assets/cardart/chupacabra/682.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чупакабра",
+                  "delta": -3,
+                  "total": 2,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Ти-рекс",
+                  "delta": -3,
+                  "total": 15,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 15,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 15,
+        "B": 2
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 683,
+          "cardName": "Traveler of the night",
+          "image": "assets/cardart/chupacabra/683.webp",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 676,
+          "cardName": "The more they struggle",
+          "image": "assets/cardart/chupacabra/676.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 337,
+              "cardName": "Thrash",
+              "image": "assets/cardart/t-rex/337.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "versatile",
+              "mechanic": null,
+              "cardId": 21,
+              "cardName": "Terrifying Roar",
+              "image": "assets/cardart/t-rex/21.webp",
+              "boosted": false,
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чупакабра",
+                  "delta": -1,
+                  "total": 1,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 677,
+          "cardName": "Feeding",
+          "image": "assets/cardart/chupacabra/677.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 337,
+              "cardName": "Thrash",
+              "image": "assets/cardart/t-rex/337.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 338,
+              "cardName": "Reckless Lunge",
+              "image": "assets/cardart/t-rex/338.webp",
+              "boosted": false,
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чупакабра",
+                  "delta": -1,
+                  "total": 0,
+                  "dead": true
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
