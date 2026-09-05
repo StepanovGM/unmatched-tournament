@@ -1,3 +1,143 @@
+.podium:empty {
+  display: none;
+}
+
+.podium-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--accent);
+  text-align: center;
+  margin: 0 0 1.2rem;
+  letter-spacing: 0.03em;
+}
+
+.podium-stand {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.podium-place {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 160px;
+  cursor: pointer;
+}
+
+.podium-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.8rem 0.6rem;
+  width: 100%;
+  margin-bottom: 0.6rem;
+}
+
+.podium-place:hover .podium-card {
+  border-color: var(--accent);
+}
+
+.podium-card .placeholder-thumb,
+.podium-card img.thumb {
+  width: 56px;
+  height: 56px;
+  font-size: 1.4rem;
+}
+
+.podium-card img.thumb {
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.podium-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 0;
+}
+
+.podium-name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+}
+
+.podium-sidekick {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+}
+
+.podium-player {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  margin-top: 0.1rem;
+}
+
+.podium-block {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--bg);
+  border-radius: 4px 4px 0 0;
+}
+
+.place-1 .podium-block {
+  height: 110px;
+  background: linear-gradient(180deg, #e0bd6a, var(--accent));
+}
+
+.place-1 .podium-card {
+  border-color: var(--accent);
+}
+
+.place-2 .podium-block {
+  height: 78px;
+  background: linear-gradient(180deg, #c4c8d4, #9297a8);
+}
+
+.place-3 .podium-block {
+  height: 56px;
+  background: linear-gradient(180deg, #cc8f61, #a3673f);
+}
+
+.podium-fourth {
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 560px) {
+  .podium-stand {
+    gap: 0.5rem;
+  }
+
+  .podium-place {
+    width: 100px;
+  }
+
+  .podium-card .placeholder-thumb,
+  .podium-card img.thumb {
+    width: 40px;
+    height: 40px;
+  }
+
+  .podium-name {
+    font-size: 0.9rem;
+  }
+}
+
 .bracket-wrap {
   position: relative;
   overflow-x: auto;

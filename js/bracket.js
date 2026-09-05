@@ -1,14 +1,16 @@
 import { matches as allMatches } from "./data.js?v=16";
-import { buildThumb, slotLabel, sidekickLabel, displayOrder, formatDate } from "./util.js?v=16";
+import { buildThumb, slotLabel, playerLabel, sidekickLabel, displayOrder, formatDate } from "./util.js?v=16";
 
 const bracketEl = document.querySelector(".bracket");
 const svg = document.querySelector(".bracket-connectors");
+const podiumEl = document.querySelector(".podium");
 
 // Матч за 3-е место — вне основной сетки на выбывание (не питает
 // nextMatchId никуда, не должен участвовать в расчёте размеров
 // раундов/сторон), поэтому везде ниже используется отдельный список.
 const matches = allMatches.filter((m) => m.id !== "third-place");
 const thirdPlaceMatch = allMatches.find((m) => m.id === "third-place");
+const finalMatch = allMatches.find((m) => m.id === "final");
 
 function roundSize(roundIndex) {
   return matches.filter((m) => m.roundIndex === roundIndex).length;
@@ -112,6 +114,80 @@ function buildColumn(roundIndex, side) {
   return column;
 }
 
+function buildPodiumPlace(rank, slot, targetMatchId) {
+  const place = document.createElement("div");
+  place.className = `podium-place place-${rank} clickable`;
+  place.addEventListener("click", () => {
+    location.href = `match.html?id=${targetMatchId}`;
+  });
+
+  const card = document.createElement("div");
+  card.className = "podium-card";
+  card.appendChild(buildThumb(slot));
+
+  const text = document.createElement("span");
+  text.className = "podium-text";
+
+  const name = document.createElement("span");
+  name.className = "podium-name";
+  name.textContent = slotLabel(slot);
+  text.appendChild(name);
+
+  const sidekick = sidekickLabel(slot);
+  if (sidekick) {
+    const sidekickEl = document.createElement("span");
+    sidekickEl.className = "podium-sidekick";
+    sidekickEl.textContent = sidekick;
+    text.appendChild(sidekickEl);
+  }
+
+  const player = document.createElement("span");
+  player.className = "podium-player";
+  player.textContent = playerLabel(slot);
+  text.appendChild(player);
+
+  card.appendChild(text);
+  place.appendChild(card);
+
+  const block = document.createElement("div");
+  block.className = "podium-block";
+  block.textContent = rank;
+  place.appendChild(block);
+
+  return place;
+}
+
+function renderPodium() {
+  if (!podiumEl) return;
+  podiumEl.innerHTML = "";
+  if (!finalMatch || finalMatch.status !== "completed") return;
+
+  const champSlot = finalMatch.winner === "A" ? finalMatch.slotA : finalMatch.slotB;
+  const runnerUpSlot = finalMatch.winner === "A" ? finalMatch.slotB : finalMatch.slotA;
+  const hasThird = thirdPlaceMatch && thirdPlaceMatch.status === "completed";
+  const thirdSlot = hasThird ? (thirdPlaceMatch.winner === "A" ? thirdPlaceMatch.slotA : thirdPlaceMatch.slotB) : null;
+  const fourthSlot = hasThird ? (thirdPlaceMatch.winner === "A" ? thirdPlaceMatch.slotB : thirdPlaceMatch.slotA) : null;
+
+  const title = document.createElement("h3");
+  title.className = "podium-title";
+  title.textContent = "Итоги турнира";
+  podiumEl.appendChild(title);
+
+  const stand = document.createElement("div");
+  stand.className = "podium-stand";
+  stand.appendChild(buildPodiumPlace(2, runnerUpSlot, "final"));
+  stand.appendChild(buildPodiumPlace(1, champSlot, "final"));
+  if (thirdSlot) stand.appendChild(buildPodiumPlace(3, thirdSlot, "third-place"));
+  podiumEl.appendChild(stand);
+
+  if (fourthSlot) {
+    const fourth = document.createElement("div");
+    fourth.className = "podium-fourth";
+    fourth.textContent = `4-е место: ${slotLabel(fourthSlot)} (${playerLabel(fourthSlot)})`;
+    podiumEl.appendChild(fourth);
+  }
+}
+
 function renderBracket() {
   bracketEl.innerHTML = "";
   bracketEl.appendChild(svg);
@@ -164,6 +240,7 @@ function debounce(fn, delay) {
   };
 }
 
+renderPodium();
 renderBracket();
 layoutConnectors();
 if (document.fonts && document.fonts.ready) {
