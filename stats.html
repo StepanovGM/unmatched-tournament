@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Статистика — Unmatched</title>
-  <link rel="stylesheet" href="css/style.css?v=16" />
+  <link rel="stylesheet" href="css/style.css?v=17" />
+  <link rel="stylesheet" href="css/stats.css?v=1" />
 </head>
 <body>
   <header class="site-header">
@@ -18,22 +19,20 @@
 
   <main>
     <h2 class="page-title">Статистика</h2>
-    <p class="stats-note">
-      Полноценная статистика по игрокам и персонажам появится позже.
-      Пока — сколько раз каждый персонаж уже был сыгран в завершённых матчах.
-    </p>
-    <table class="stats-table">
-      <thead>
-        <tr>
-          <th>Персонаж</th>
-          <th>Сыграно матчей</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+    <p class="stats-note">Статистика по всем завершённым матчам турнира.</p>
+
+    <div class="stats-grid">
+      <section class="stat-card" id="stat-players"></section>
+      <section class="stat-card" id="stat-firstmove"></section>
+      <section class="stat-card stat-tile" id="stat-avg-hp"></section>
+      <section class="stat-card stat-tile" id="stat-avg-rounds"></section>
+      <section class="stat-card stat-wide" id="stat-duration"></section>
+      <section class="stat-card stat-wide" id="stat-max-damage"></section>
+      <section class="stat-card stat-wide" id="stat-max-cards"></section>
+    </div>
   </main>
 
   <script type="module" src="js/nav.js?v=16"></script>
-  <script type="module" src="js/stats.js?v=16"></script>
+  <script type="module" src="js/stats.js?v=17"></script>
 </body>
 </html>

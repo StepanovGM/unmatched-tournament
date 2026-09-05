@@ -1,0 +1,202 @@
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+  max-width: 1200px;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.2rem 1.4rem;
+}
+
+.stat-card.stat-wide {
+  grid-column: 1 / -1;
+}
+
+.stat-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--accent);
+  margin: 0 0 0.9rem;
+  letter-spacing: 0.02em;
+}
+
+/* --- Соотношение (ratio-bar) --- */
+
+.ratio-bar {
+  display: flex;
+  height: 36px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.ratio-seg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: var(--bg);
+  white-space: nowrap;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.ratio-seg.p1 {
+  background: var(--accent);
+}
+
+.ratio-seg.p2 {
+  background: var(--stat-p2);
+}
+
+.ratio-seg.first {
+  background: var(--win);
+}
+
+.ratio-seg.second {
+  background: var(--lose);
+}
+
+.ratio-legend {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+/* --- Числовые плитки --- */
+
+.stat-tile .stat-value {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  color: var(--text);
+  line-height: 1;
+}
+
+.stat-tile .stat-sub {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}
+
+/* --- Самый долгий/короткий матч --- */
+
+.stat-duo-body {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.duo-item {
+  flex: 1 1 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.duo-item:hover {
+  border-color: var(--accent);
+}
+
+.duo-label {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.duo-value {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--accent);
+}
+
+.duo-pair {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+/* --- Пиковые значения (урон/карты за ход) --- */
+
+.highlight-body {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  flex-wrap: wrap;
+}
+
+.highlight-value {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  color: var(--accent);
+  min-width: 70px;
+  line-height: 1;
+}
+
+.highlight-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.highlight-meta {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+
+.highlight-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.85rem;
+  width: fit-content;
+}
+
+.highlight-link:hover {
+  text-decoration: underline;
+}
+
+.pair-thumb .placeholder-thumb,
+.pair-thumb img.thumb {
+  width: 30px;
+  height: 30px;
+  font-size: 0.9rem;
+  border-radius: 4px;
+}
+
+.pair-thumb img.thumb {
+  object-fit: cover;
+}
+
+.pair-vs {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+
+.stat-empty {
+  color: var(--text-dim);
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+  .highlight-body {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

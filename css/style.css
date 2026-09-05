@@ -16,6 +16,7 @@
   --win: #4caf7d;
   --lose: #6b6f7d;
   --danger: #c9564b;
+  --stat-p2: #5b9bd6;
   --font-display: "Bebas Neue Cyrillic", "Arial Narrow", sans-serif;
   --font-body: "Segoe UI", Arial, sans-serif;
 }
@@ -253,22 +254,4 @@ main {
   color: var(--text-dim);
   max-width: 640px;
   margin-bottom: 1.5rem;
-}
-
-.stats-table {
-  border-collapse: collapse;
-  max-width: 480px;
-}
-
-.stats-table th,
-.stats-table td {
-  text-align: left;
-  padding: 0.5rem 1rem 0.5rem 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.stats-table th {
-  color: var(--text-dim);
-  font-weight: normal;
-  font-size: 0.85rem;
 }
