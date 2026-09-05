@@ -1,5 +1,5 @@
 import { matches as allMatches } from "./data.js?v=16";
-import { buildThumb, slotLabel, playerLabel, sidekickLabel, displayOrder, formatDate } from "./util.js?v=16";
+import { buildThumb, slotLabel, sidekickLabel, displayOrder, formatDate } from "./util.js?v=16";
 
 const bracketEl = document.querySelector(".bracket");
 const svg = document.querySelector(".bracket-connectors");
@@ -141,11 +141,6 @@ function buildPodiumPlace(rank, slot, targetMatchId) {
     text.appendChild(sidekickEl);
   }
 
-  const player = document.createElement("span");
-  player.className = "podium-player";
-  player.textContent = playerLabel(slot);
-  text.appendChild(player);
-
   card.appendChild(text);
   place.appendChild(card);
 
@@ -183,7 +178,7 @@ function renderPodium() {
   if (fourthSlot) {
     const fourth = document.createElement("div");
     fourth.className = "podium-fourth";
-    fourth.textContent = `4-е место: ${slotLabel(fourthSlot)} (${playerLabel(fourthSlot)})`;
+    fourth.textContent = `4-е место: ${slotLabel(fourthSlot)}`;
     podiumEl.appendChild(fourth);
   }
 }

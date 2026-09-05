@@ -75,12 +75,6 @@
   color: var(--text-dim);
 }
 
-.podium-player {
-  font-size: 0.8rem;
-  color: var(--text-dim);
-  margin-top: 0.1rem;
-}
-
 .podium-block {
   width: 100%;
   display: flex;
