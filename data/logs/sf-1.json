@@ -1,0 +1,817 @@
+{
+  "matchId": "sf-1",
+  "slotA": {
+    "heroSlug": "t-rex"
+  },
+  "slotB": {
+    "heroSlug": "hamlet"
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 27,
+        "B": 15
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 22,
+          "cardName": "Closer Than She Appears",
+          "image": "assets/cardart/t-rex/22.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 7,
+          "cardName": "Commanding Impact",
+          "image": "assets/cardart/t-rex/7.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 570,
+              "cardName": "Blood Will Have Blood",
+              "image": "assets/cardart/hamlet/570.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Гамлет",
+                  "delta": -3,
+                  "total": 12,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Ти-рекс",
+                  "delta": -1,
+                  "total": 26,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 26,
+        "B": 12
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "versatile",
+              "mechanic": null,
+              "cardId": 575,
+              "cardName": "Outrageous Fortune",
+              "image": "assets/cardart/hamlet/575.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 26,
+        "B": 12
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 341,
+          "cardName": "Ripples in the Water",
+          "image": "assets/cardart/t-rex/341.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "defense",
+              "mechanic": null,
+              "cardId": 579,
+              "cardName": "The Rest Is Silence",
+              "image": "assets/cardart/hamlet/579.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 7,
+          "cardName": "Commanding Impact",
+          "image": "assets/cardart/t-rex/7.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 570,
+              "cardName": "Blood Will Have Blood",
+              "image": "assets/cardart/hamlet/570.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Ти-рекс",
+                  "delta": -1,
+                  "total": 25,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Гамлет",
+                  "delta": -3,
+                  "total": 9,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 25,
+        "B": 9
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 580,
+          "cardName": "To Sleep, Perchance To Dream",
+          "image": "assets/cardart/hamlet/580.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 352,
+              "cardName": "You're Just Making Her Angry",
+              "image": "assets/cardart/t-rex/352.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Ти-рекс",
+                  "delta": -2,
+                  "total": 23,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 5,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 23,
+        "B": 9
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "versatile",
+              "mechanic": null,
+              "cardId": 5,
+              "cardName": "Momentous Shift",
+              "image": "assets/cardart/t-rex/5.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 340,
+          "cardName": "65 Million Years of Gut Instinct",
+          "image": "assets/cardart/t-rex/340.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "return",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 7,
+              "cardName": "Commanding Impact",
+              "image": "assets/cardart/t-rex/7.webp",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 6,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 23,
+        "B": 9
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 573,
+          "cardName": "Method In The Madness",
+          "image": "assets/cardart/hamlet/573.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 7,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 23,
+        "B": 9
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 341,
+          "cardName": "Ripples in the Water",
+          "image": "assets/cardart/t-rex/341.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 580,
+              "cardName": "To Sleep, Perchance To Dream",
+              "image": "assets/cardart/hamlet/580.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 339,
+          "cardName": "When Dinosaurs Ruled the Earth",
+          "image": "assets/cardart/t-rex/339.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 579,
+              "cardName": "The Rest Is Silence",
+              "image": "assets/cardart/hamlet/579.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "versatile",
+              "mechanic": null,
+              "cardId": 21,
+              "cardName": "Terrifying Roar",
+              "image": "assets/cardart/t-rex/21.webp",
+              "boosted": false,
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Гамлет",
+                  "delta": -3,
+                  "total": 6,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 8,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 23,
+        "B": 6
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Розенкранц и Гильденстерн",
+                  "delta": -2,
+                  "total": 4,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 577,
+          "cardName": "The Play's The Thing",
+          "image": "assets/cardart/hamlet/577.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 337,
+              "cardName": "Thrash",
+              "image": "assets/cardart/t-rex/337.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 339,
+              "cardName": "When Dinosaurs Ruled the Earth",
+              "image": "assets/cardart/t-rex/339.webp",
+              "boosted": false,
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 7,
+              "cardName": "Commanding Impact",
+              "image": "assets/cardart/t-rex/7.webp",
+              "boosted": false,
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Гамлет",
+                  "delta": -1,
+                  "total": 5,
+                  "dead": false
+                },
+                {
+                  "fighterLabel": "Розенкранц и Гильденстерн",
+                  "delta": -1,
+                  "total": 3,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 576,
+          "cardName": "The Ghost",
+          "image": "assets/cardart/hamlet/576.webp",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 9,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 23,
+        "B": 5
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 341,
+          "cardName": "Ripples in the Water",
+          "image": "assets/cardart/t-rex/341.webp",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 7,
+          "cardName": "Commanding Impact",
+          "image": "assets/cardart/t-rex/7.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 574,
+              "cardName": "Nothing Either Good Or Bad",
+              "image": "assets/cardart/hamlet/574.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Гамлет",
+                  "delta": -3,
+                  "total": 2,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 10,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 23,
+        "B": 2
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 581,
+              "cardName": "Uncertain Doom",
+              "image": "assets/cardart/hamlet/581.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 11,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 23,
+        "B": 2
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 339,
+              "cardName": "When Dinosaurs Ruled the Earth",
+              "image": "assets/cardart/t-rex/339.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 353,
+          "cardName": "15,000 Pounds of Muscle",
+          "image": "assets/cardart/t-rex/353.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 572,
+              "cardName": "Maddening Insight",
+              "image": "assets/cardart/hamlet/572.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Гамлет",
+                  "delta": -3,
+                  "total": -1,
+                  "dead": true
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Ти-рекс",
+                  "delta": -2,
+                  "total": 21,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1209 @@
+{
+  "matchId": "sf-2",
+  "slotA": {
+    "heroSlug": "little-red-riding-hood"
+  },
+  "slotB": {
+    "heroSlug": "chupacabra"
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 14,
+        "B": 14
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 210,
+          "cardName": "Stones in the Belly",
+          "image": "assets/cardart/little-red-riding-hood/210.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "scheme",
+              "mechanic": null,
+              "cardId": 683,
+              "cardName": "Traveler of the night",
+              "image": "assets/cardart/chupacabra/683.webp",
+              "boosted": false,
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чупакабра",
+                  "delta": -5,
+                  "total": 9,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 14,
+        "B": 9
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 9,
+          "cardName": "Ambush",
+          "image": "assets/cardart/chupacabra/9.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 211,
+              "cardName": "Once Upon a Time",
+              "image": "assets/cardart/little-red-riding-hood/211.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Охотник",
+                  "delta": -3,
+                  "total": 6,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "scheme",
+              "mechanic": null,
+              "cardId": 209,
+              "cardName": "A Grimm Tale",
+              "image": "assets/cardart/little-red-riding-hood/209.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 14,
+        "B": 9
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "scheme",
+              "mechanic": null,
+              "cardId": 212,
+              "cardName": "Into the Woods",
+              "image": "assets/cardart/little-red-riding-hood/212.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 14,
+        "B": 9
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 5,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 14,
+        "B": 9
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 210,
+          "cardName": "Stones in the Belly",
+          "image": "assets/cardart/little-red-riding-hood/210.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 2,
+              "cardName": "Feint",
+              "image": "assets/cardart/chupacabra/2.webp",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 6,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 14,
+        "B": 9
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 9,
+          "cardName": "Ambush",
+          "image": "assets/cardart/chupacabra/9.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 222,
+              "cardName": "What's That In My Basket?",
+              "image": "assets/cardart/little-red-riding-hood/222.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "defense",
+              "mechanic": null,
+              "cardId": 203,
+              "cardName": "What a Terrible Big Mouth You Have",
+              "image": "assets/cardart/little-red-riding-hood/203.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 7,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 14,
+        "B": 9
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 8,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 14,
+        "B": 9
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 683,
+          "cardName": "Traveler of the night",
+          "image": "assets/cardart/chupacabra/683.webp",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 681,
+          "cardName": "Tooth and tail",
+          "image": "assets/cardart/chupacabra/681.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "attack",
+              "mechanic": "attack",
+              "cardId": 204,
+              "cardName": "What Big Ears You Have",
+              "image": "assets/cardart/little-red-riding-hood/204.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Красная Шапочка",
+                  "delta": -1,
+                  "total": 13,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чупакабра",
+                  "delta": 1,
+                  "total": 10,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 678,
+          "cardName": "Blood in the air",
+          "image": "assets/cardart/chupacabra/678.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Красная Шапочка",
+                  "delta": -4,
+                  "total": 9,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 9,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 9,
+        "B": 10
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 187,
+          "cardName": "What Large Hands You Have",
+          "image": "assets/cardart/little-red-riding-hood/187.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 2,
+              "cardName": "Feint",
+              "image": "assets/cardart/chupacabra/2.webp",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 206,
+          "cardName": "Never Leave the Path",
+          "image": "assets/cardart/little-red-riding-hood/206.webp",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 10,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 9,
+        "B": 10
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 11,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 9,
+        "B": 10
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 12,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 9,
+        "B": 12
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 680,
+          "cardName": "Ravenous lunge",
+          "image": "assets/cardart/chupacabra/680.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чупакабра",
+                  "delta": 2,
+                  "total": 12,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Охотник",
+                  "delta": -3,
+                  "total": 3,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 13,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 9,
+        "B": 12
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 208,
+          "cardName": "Long Have I Sought You",
+          "image": "assets/cardart/little-red-riding-hood/208.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 679,
+              "cardName": "Natural toughness",
+              "image": "assets/cardart/chupacabra/679.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чупакабра",
+                  "delta": -3,
+                  "total": 9,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 211,
+          "cardName": "Once Upon a Time",
+          "image": "assets/cardart/little-red-riding-hood/211.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 679,
+              "cardName": "Natural toughness",
+              "image": "assets/cardart/chupacabra/679.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чупакабра",
+                  "delta": -3,
+                  "total": 6,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 14,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 9,
+        "B": 6
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 677,
+          "cardName": "Feeding",
+          "image": "assets/cardart/chupacabra/677.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Охотник",
+                  "delta": -4,
+                  "total": -1,
+                  "dead": true
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чупакабра",
+                  "delta": 1,
+                  "total": 7,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 677,
+          "cardName": "Feeding",
+          "image": "assets/cardart/chupacabra/677.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Красная Шапочка",
+                  "delta": -4,
+                  "total": 5,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чупакабра",
+                  "delta": 1,
+                  "total": 8,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 684,
+          "cardName": "Unsettle",
+          "image": "assets/cardart/chupacabra/684.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чупакабра",
+                  "delta": -2,
+                  "total": 6,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 187,
+              "cardName": "What Large Hands You Have",
+              "image": "assets/cardart/little-red-riding-hood/187.webp",
+              "boosted": false,
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "defense",
+              "mechanic": null,
+              "cardId": 207,
+              "cardName": "The Wolf's Skin",
+              "image": "assets/cardart/little-red-riding-hood/207.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 15,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 5,
+        "B": 6
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "scheme",
+              "mechanic": null,
+              "cardId": 209,
+              "cardName": "A Grimm Tale",
+              "image": "assets/cardart/little-red-riding-hood/209.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 16,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 5,
+        "B": 6
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 678,
+              "cardName": "Blood in the air",
+              "image": "assets/cardart/chupacabra/678.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 682,
+          "cardName": "Wounded beast",
+          "image": "assets/cardart/chupacabra/682.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 222,
+              "cardName": "What's That In My Basket?",
+              "image": "assets/cardart/little-red-riding-hood/222.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Красная Шапочка",
+                  "delta": -1,
+                  "total": 4,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 17,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 4,
+        "B": 6
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 18,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 4,
+        "B": 6
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 676,
+              "cardName": "The more they struggle",
+              "image": "assets/cardart/chupacabra/676.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 682,
+          "cardName": "Wounded beast",
+          "image": "assets/cardart/chupacabra/682.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 205,
+              "cardName": "What Big Eyes You Have",
+              "image": "assets/cardart/little-red-riding-hood/205.webp",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 19,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 4,
+        "B": 6
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 208,
+              "cardName": "Long Have I Sought You",
+              "image": "assets/cardart/little-red-riding-hood/208.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 20,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 4,
+        "B": 6
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 676,
+              "cardName": "The more they struggle",
+              "image": "assets/cardart/chupacabra/676.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 677,
+          "cardName": "Feeding",
+          "image": "assets/cardart/chupacabra/677.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 222,
+              "cardName": "What's That In My Basket?",
+              "image": "assets/cardart/little-red-riding-hood/222.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чупакабра",
+                  "delta": 1,
+                  "total": 7,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 681,
+          "cardName": "Tooth and tail",
+          "image": "assets/cardart/chupacabra/681.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Красная Шапочка",
+                  "delta": -2,
+                  "total": 2,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Красная Шапочка",
+                  "delta": -1,
+                  "total": 1,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чупакабра",
+                  "delta": 1,
+                  "total": 8,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 21,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 1,
+        "B": 8
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 22,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 1,
+        "B": 8
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 683,
+          "cardName": "Traveler of the night",
+          "image": "assets/cardart/chupacabra/683.webp",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 681,
+          "cardName": "Tooth and tail",
+          "image": "assets/cardart/chupacabra/681.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Красная Шапочка",
+                  "delta": -1,
+                  "total": 0,
+                  "dead": true
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чупакабра",
+                  "delta": 1,
+                  "total": 9,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
