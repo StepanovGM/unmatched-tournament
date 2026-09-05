@@ -247,24 +247,28 @@ function walkSegments(segments, visit) {
   });
 }
 
-function roundDamage(round) {
-  let total = 0;
+// seg.side у "hp"-сегмента — это сторона, ЧЕЙ боец получил урон, т.е.
+// урон, который нанёс противоположный персонаж. Считаем отдельно по
+// сторонам, чтобы пик приписывался одному персонажу, а не сумме
+// обеих сторон обмена в рамках хода.
+function roundDamageBySide(round) {
+  const dmg = { A: 0, B: 0 };
   walkSegments(round.segments, (seg) => {
     if (seg.kind === "hp") {
       seg.hits.forEach((hit) => {
-        total += Math.abs(hit.delta);
+        dmg[seg.side] += Math.abs(hit.delta);
       });
     }
   });
-  return total;
+  return dmg;
 }
 
-function roundCardsPlayed(round) {
-  let count = 0;
+function roundCardsBySide(round) {
+  const cards = { A: 0, B: 0 };
   walkSegments(round.segments, (seg) => {
-    if (seg.kind === "play") count++;
+    if (seg.kind === "play") cards[seg.side]++;
   });
-  return count;
+  return cards;
 }
 
 function renderHighlight(id, title, valueSuffix, best) {
@@ -295,9 +299,9 @@ function renderHighlight(id, title, valueSuffix, best) {
   sub.textContent = valueSuffix;
   detail.appendChild(sub);
 
-  const activeSlug = best.turnSide === "A" ? best.match.slotA.character : best.match.slotB.character;
-  const otherSlug = best.turnSide === "A" ? best.match.slotB.character : best.match.slotA.character;
-  detail.appendChild(buildPair(activeSlug, otherSlug));
+  const dealerSlug = best.dealer === "A" ? best.match.slotA.character : best.match.slotB.character;
+  const otherSlug = best.dealer === "A" ? best.match.slotB.character : best.match.slotA.character;
+  detail.appendChild(buildPair(dealerSlug, otherSlug));
 
   const meta = document.createElement("div");
   meta.className = "highlight-meta";
@@ -322,14 +326,26 @@ async function renderPeaks() {
     const log = await loadLog(m.id);
     if (!log) continue;
     log.rounds.forEach((round) => {
-      const dmg = roundDamage(round);
-      if (!maxDamage || dmg > maxDamage.value) {
-        maxDamage = { value: dmg, match: m, round: round.round, turnSide: round.turnSide };
-      }
-      const cards = roundCardsPlayed(round);
-      if (!maxCards || cards > maxCards.value) {
-        maxCards = { value: cards, match: m, round: round.round, turnSide: round.turnSide };
-      }
+      const dmg = roundDamageBySide(round);
+      // Урон стороне A нанёс персонаж B, и наоборот.
+      [
+        { dealer: "A", value: dmg.B },
+        { dealer: "B", value: dmg.A },
+      ].forEach(({ dealer, value }) => {
+        if (value > 0 && (!maxDamage || value > maxDamage.value)) {
+          maxDamage = { value, match: m, round: round.round, dealer };
+        }
+      });
+
+      const cards = roundCardsBySide(round);
+      [
+        { dealer: "A", value: cards.A },
+        { dealer: "B", value: cards.B },
+      ].forEach(({ dealer, value }) => {
+        if (value > 0 && (!maxCards || value > maxCards.value)) {
+          maxCards = { value, match: m, round: round.round, dealer };
+        }
+      });
     });
   }
 
