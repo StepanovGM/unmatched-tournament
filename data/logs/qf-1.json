@@ -1,0 +1,1187 @@
+{
+  "matchId": "qf-1",
+  "slotA": {
+    "heroSlug": "t-rex"
+  },
+  "slotB": {
+    "heroSlug": "achilles"
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 27,
+        "B": 18
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 297,
+          "cardName": "Test For Weakness",
+          "image": "assets/cardart/achilles/297.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 352,
+              "cardName": "You're Just Making Her Angry",
+              "image": "assets/cardart/t-rex/352.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Ти-рекс",
+                  "delta": -1,
+                  "total": 26,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 337,
+              "cardName": "Thrash",
+              "image": "assets/cardart/t-rex/337.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Ти-рекс",
+                  "delta": -2,
+                  "total": 24,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 24,
+        "B": 18
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 7,
+          "cardName": "Commanding Impact",
+          "image": "assets/cardart/t-rex/7.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 6,
+              "cardName": "Wily Fighting",
+              "image": "assets/cardart/achilles/6.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Патрокл",
+                  "delta": -2,
+                  "total": 4,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Ти-рекс",
+                  "delta": -1,
+                  "total": 23,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 23,
+        "B": 18
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 294,
+          "cardName": "The Day of Your Doom",
+          "image": "assets/cardart/achilles/294.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 5,
+              "cardName": "Momentous Shift",
+              "image": "assets/cardart/t-rex/5.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Патрокл",
+                  "delta": -2,
+                  "total": 2,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Ти-рекс",
+                  "delta": -3,
+                  "total": 20,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 20,
+        "B": 18
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 339,
+          "cardName": "When Dinosaurs Ruled the Earth",
+          "image": "assets/cardart/t-rex/339.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 339,
+              "cardName": "When Dinosaurs Ruled the Earth",
+              "image": "assets/cardart/t-rex/339.webp",
+              "boosted": false,
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 300,
+              "cardName": "Blessed By Hermes",
+              "image": "assets/cardart/achilles/300.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Патрокл",
+                  "delta": -2,
+                  "total": 0,
+                  "dead": true
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Ти-рекс",
+                  "delta": -2,
+                  "total": 18,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "ability",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 294,
+              "cardName": "The Day of Your Doom",
+              "image": "assets/cardart/achilles/294.webp",
+              "boosted": false,
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "versatile",
+              "mechanic": null,
+              "cardId": 2,
+              "cardName": "Feint",
+              "image": "assets/cardart/achilles/2.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 339,
+          "cardName": "When Dinosaurs Ruled the Earth",
+          "image": "assets/cardart/t-rex/339.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Ахиллес",
+                  "delta": -2,
+                  "total": 16,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Ти-рекс",
+                  "delta": -2,
+                  "total": 16,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 7,
+          "cardName": "Commanding Impact",
+          "image": "assets/cardart/t-rex/7.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Ахиллес",
+                  "delta": -5,
+                  "total": 11,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 5,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 16,
+        "B": 11
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 6,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 16,
+        "B": 11
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 341,
+          "cardName": "Ripples in the Water",
+          "image": "assets/cardart/t-rex/341.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 298,
+              "cardName": "Brothers In Arms",
+              "image": "assets/cardart/achilles/298.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 7,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 16,
+        "B": 11
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 297,
+          "cardName": "Test For Weakness",
+          "image": "assets/cardart/achilles/297.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 21,
+              "cardName": "Terrifying Roar",
+              "image": "assets/cardart/t-rex/21.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 337,
+              "cardName": "Thrash",
+              "image": "assets/cardart/t-rex/337.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "scheme",
+              "mechanic": null,
+              "cardId": 22,
+              "cardName": "Closer Than She Appears",
+              "image": "assets/cardart/t-rex/22.webp",
+              "boosted": false,
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Ти-рекс",
+                  "delta": -1,
+                  "total": 15,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 6,
+          "cardName": "Wily Fighting",
+          "image": "assets/cardart/achilles/6.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 337,
+              "cardName": "Thrash",
+              "image": "assets/cardart/t-rex/337.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "scheme",
+              "mechanic": null,
+              "cardId": 22,
+              "cardName": "Closer Than She Appears",
+              "image": "assets/cardart/t-rex/22.webp",
+              "boosted": false,
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Ти-рекс",
+                  "delta": -1,
+                  "total": 14,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Ти-рекс",
+                  "delta": -1,
+                  "total": 13,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 8,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 13,
+        "B": 11
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 7,
+          "cardName": "Commanding Impact",
+          "image": "assets/cardart/t-rex/7.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 2,
+              "cardName": "Feint",
+              "image": "assets/cardart/achilles/2.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Ахиллес",
+                  "delta": -3,
+                  "total": 8,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 9,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 13,
+        "B": 8
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 10,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 13,
+        "B": 8
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 11,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 13,
+        "B": 8
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 12,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 13,
+        "B": 8
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "scheme",
+              "mechanic": null,
+              "cardId": 340,
+              "cardName": "65 Million Years of Gut Instinct",
+              "image": "assets/cardart/t-rex/340.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 353,
+          "cardName": "15,000 Pounds of Muscle",
+          "image": "assets/cardart/t-rex/353.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 301,
+              "cardName": "Under Achilles' Helm",
+              "image": "assets/cardart/achilles/301.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Ти-рекс",
+                  "delta": -2,
+                  "total": 11,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Ахиллес",
+                  "delta": -3,
+                  "total": 5,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 13,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 11,
+        "B": 5
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 332,
+              "cardName": "Battle Frenzy",
+              "image": "assets/cardart/achilles/332.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 14,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 11,
+        "B": 5
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 353,
+              "cardName": "15,000 Pounds of Muscle",
+              "image": "assets/cardart/t-rex/353.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 339,
+          "cardName": "When Dinosaurs Ruled the Earth",
+          "image": "assets/cardart/t-rex/339.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 338,
+              "cardName": "Reckless Lunge",
+              "image": "assets/cardart/t-rex/338.webp",
+              "boosted": false,
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 4,
+              "cardName": "Skirmish",
+              "image": "assets/cardart/achilles/4.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Ахиллес",
+                  "delta": -2,
+                  "total": 3,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Ти-рекс",
+                  "delta": -2,
+                  "total": 9,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 338,
+          "cardName": "Reckless Lunge",
+          "image": "assets/cardart/t-rex/338.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 2,
+              "cardName": "Feint",
+              "image": "assets/cardart/achilles/2.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Ахиллес",
+                  "delta": -1,
+                  "total": 2,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 15,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 9,
+        "B": 2
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 298,
+              "cardName": "Brothers In Arms",
+              "image": "assets/cardart/achilles/298.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 300,
+          "cardName": "Blessed By Hermes",
+          "image": "assets/cardart/achilles/300.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 352,
+              "cardName": "You're Just Making Her Angry",
+              "image": "assets/cardart/t-rex/352.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Ти-рекс",
+                  "delta": -5,
+                  "total": 4,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 16,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 4,
+        "B": 2
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 5,
+          "cardName": "Momentous Shift",
+          "image": "assets/cardart/t-rex/5.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 276,
+              "cardName": "Achilles' Heel",
+              "image": "assets/cardart/achilles/276.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Ахиллес",
+                  "delta": -1,
+                  "total": 1,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 338,
+          "cardName": "Reckless Lunge",
+          "image": "assets/cardart/t-rex/338.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 301,
+              "cardName": "Under Achilles' Helm",
+              "image": "assets/cardart/achilles/301.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Ахиллес",
+                  "delta": -1,
+                  "total": 0,
+                  "dead": true
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Ахиллес",
+                  "delta": -3,
+                  "total": -3,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Ти-рекс",
+                  "delta": -3,
+                  "total": 1,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

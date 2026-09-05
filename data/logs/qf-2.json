@@ -1,0 +1,1328 @@
+{
+  "matchId": "qf-2",
+  "slotA": {
+    "heroSlug": "raptors"
+  },
+  "slotB": {
+    "heroSlug": "hamlet"
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 21,
+        "B": 15
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "defense",
+              "mechanic": null,
+              "cardId": 574,
+              "cardName": "Nothing Either Good Or Bad",
+              "image": "assets/cardart/hamlet/574.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 581,
+          "cardName": "Uncertain Doom",
+          "image": "assets/cardart/hamlet/581.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 136,
+              "cardName": "Decoy",
+              "image": "assets/cardart/raptors/136.webp",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 21,
+        "B": 15
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 128,
+          "cardName": "They Remember",
+          "image": "assets/cardart/raptors/128.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 578,
+              "cardName": "The Readiness Is All",
+              "image": "assets/cardart/hamlet/578.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Розенкранц и Гильденстерн",
+                  "delta": -1,
+                  "total": 5,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 125,
+          "cardName": "Coordinated Attack Pattern",
+          "image": "assets/cardart/raptors/125.webp",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 133,
+          "cardName": "Clever Girl",
+          "image": "assets/cardart/raptors/133.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 572,
+              "cardName": "Maddening Insight",
+              "image": "assets/cardart/hamlet/572.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Гамлет",
+                  "delta": -1,
+                  "total": 14,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 134,
+          "cardName": "Pack Hunters",
+          "image": "assets/cardart/raptors/134.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Гамлет",
+                  "delta": -5,
+                  "total": 9,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Гамлет",
+                  "delta": -2,
+                  "total": 7,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 21,
+        "B": 7
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Розенкранц и Гильденстерн",
+                  "delta": -2,
+                  "total": 3,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 580,
+          "cardName": "To Sleep, Perchance To Dream",
+          "image": "assets/cardart/hamlet/580.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Рапторы 1",
+                  "delta": -5,
+                  "total": 2,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 580,
+          "cardName": "To Sleep, Perchance To Dream",
+          "image": "assets/cardart/hamlet/580.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Рапторы 2",
+                  "delta": -5,
+                  "total": 2,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 11,
+        "B": 7
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 5,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 11,
+        "B": 7
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 6,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 11,
+        "B": 7
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 7,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 11,
+        "B": 7
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 573,
+          "cardName": "Method In The Madness",
+          "image": "assets/cardart/hamlet/573.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "versatile",
+              "mechanic": null,
+              "cardId": 575,
+              "cardName": "Outrageous Fortune",
+              "image": "assets/cardart/hamlet/575.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 8,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 11,
+        "B": 7
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 135,
+          "cardName": "Eaten Alive",
+          "image": "assets/cardart/raptors/135.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 574,
+              "cardName": "Nothing Either Good Or Bad",
+              "image": "assets/cardart/hamlet/574.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Розенкранц и Гильденстерн",
+                  "delta": -2,
+                  "total": 1,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Рапторы 2",
+                  "delta": -2,
+                  "total": 0,
+                  "dead": true
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Розенкранц и Гильденстерн",
+                  "delta": -1,
+                  "total": 0,
+                  "dead": true
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 9,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 9,
+        "B": 7
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "versatile",
+              "mechanic": null,
+              "cardId": 570,
+              "cardName": "Blood Will Have Blood",
+              "image": "assets/cardart/hamlet/570.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 577,
+          "cardName": "The Play's The Thing",
+          "image": "assets/cardart/hamlet/577.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 2,
+              "cardName": "Feint",
+              "image": "assets/cardart/raptors/2.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Рапторы 1",
+                  "delta": -1,
+                  "total": 1,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 10,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 8,
+        "B": 7
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 11,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 8,
+        "B": 7
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 576,
+          "cardName": "The Ghost",
+          "image": "assets/cardart/hamlet/576.webp",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 577,
+          "cardName": "The Play's The Thing",
+          "image": "assets/cardart/hamlet/577.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 135,
+              "cardName": "Eaten Alive",
+              "image": "assets/cardart/raptors/135.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Гамлет",
+                  "delta": -1,
+                  "total": 6,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "versatile",
+              "mechanic": null,
+              "cardId": 135,
+              "cardName": "Eaten Alive",
+              "image": "assets/cardart/raptors/135.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 12,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 8,
+        "B": 6
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 13,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 8,
+        "B": 6
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 581,
+              "cardName": "Uncertain Doom",
+              "image": "assets/cardart/hamlet/581.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 571,
+          "cardName": "Cruel To Be Kind",
+          "image": "assets/cardart/hamlet/571.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 571,
+              "cardName": "Cruel To Be Kind",
+              "image": "assets/cardart/hamlet/571.webp",
+              "boosted": false,
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Рапторы 3",
+                  "delta": -6,
+                  "total": 1,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 14,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 2,
+        "B": 6
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 15,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 2,
+        "B": 6
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 573,
+          "cardName": "Method In The Madness",
+          "image": "assets/cardart/hamlet/573.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "versatile",
+              "mechanic": null,
+              "cardId": 578,
+              "cardName": "The Readiness Is All",
+              "image": "assets/cardart/hamlet/578.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 16,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 2,
+        "B": 6
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 8,
+          "cardName": "Disengage",
+          "image": "assets/cardart/raptors/8.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 579,
+              "cardName": "The Rest Is Silence",
+              "image": "assets/cardart/hamlet/579.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Гамлет",
+                  "delta": -2,
+                  "total": 4,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 17,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 2,
+        "B": 4
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Гамлет",
+                  "delta": -2,
+                  "total": 2,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 577,
+          "cardName": "The Play's The Thing",
+          "image": "assets/cardart/hamlet/577.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 128,
+              "cardName": "They Remember",
+              "image": "assets/cardart/raptors/128.webp",
+              "boosted": false,
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Гамлет",
+                  "delta": 2,
+                  "total": 4,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Рапторы 3",
+                  "delta": -1,
+                  "total": 0,
+                  "dead": true
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 18,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 1,
+        "B": 4
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 127,
+          "cardName": "Working Things Out",
+          "image": "assets/cardart/raptors/127.webp",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 8,
+          "cardName": "Disengage",
+          "image": "assets/cardart/raptors/8.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 574,
+              "cardName": "Nothing Either Good Or Bad",
+              "image": "assets/cardart/hamlet/574.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Гамлет",
+                  "delta": -2,
+                  "total": 2,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 19,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 1,
+        "B": 2
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 573,
+          "cardName": "Method In The Madness",
+          "image": "assets/cardart/hamlet/573.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 20,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 1,
+        "B": 2
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 127,
+          "cardName": "Working Things Out",
+          "image": "assets/cardart/raptors/127.webp",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 147,
+          "cardName": "Eviscerate",
+          "image": "assets/cardart/raptors/147.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 572,
+              "cardName": "Maddening Insight",
+              "image": "assets/cardart/hamlet/572.webp",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 21,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 1,
+        "B": 2
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 581,
+          "cardName": "Uncertain Doom",
+          "image": "assets/cardart/hamlet/581.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 2,
+              "cardName": "Feint",
+              "image": "assets/cardart/raptors/2.webp",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 576,
+          "cardName": "The Ghost",
+          "image": "assets/cardart/hamlet/576.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Гамлет",
+                  "delta": 2,
+                  "total": 4,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 22,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 1,
+        "B": 4
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 23,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 1,
+        "B": 4
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Гамлет",
+                  "delta": -2,
+                  "total": 2,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "defense",
+              "mechanic": null,
+              "cardId": 579,
+              "cardName": "The Rest Is Silence",
+              "image": "assets/cardart/hamlet/579.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 570,
+          "cardName": "Blood Will Have Blood",
+          "image": "assets/cardart/hamlet/570.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Рапторы 1",
+                  "delta": -4,
+                  "total": -3,
+                  "dead": true
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Рапторы 1",
+                  "delta": -1,
+                  "total": -4,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

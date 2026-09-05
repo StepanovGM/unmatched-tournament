@@ -1,0 +1,997 @@
+{
+  "matchId": "qf-4",
+  "slotA": {
+    "heroSlug": "medusa"
+  },
+  "slotB": {
+    "heroSlug": "chupacabra"
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 16,
+        "B": 14
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 16,
+        "B": 14
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 3,
+          "cardName": "Regroup",
+          "image": "assets/cardart/medusa/3.png",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 2,
+              "cardName": "Feint",
+              "image": "assets/cardart/chupacabra/2.webp",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 16,
+        "B": 14
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 9,
+          "cardName": "Ambush",
+          "image": "assets/cardart/chupacabra/9.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 126,
+              "cardName": "Snipe",
+              "image": "assets/cardart/medusa/126.png",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "versatile",
+              "mechanic": null,
+              "cardId": 11,
+              "cardName": "Dash",
+              "image": "assets/cardart/medusa/11.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 16,
+        "B": 14
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 5,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 16,
+        "B": 14
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 676,
+          "cardName": "The more they struggle",
+          "image": "assets/cardart/chupacabra/676.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 94,
+              "cardName": "Hiss and Slither",
+              "image": "assets/cardart/medusa/94.png",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Медуза",
+                  "delta": -4,
+                  "total": 12,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "versatile",
+              "mechanic": null,
+              "cardId": 681,
+              "cardName": "Tooth and tail",
+              "image": "assets/cardart/chupacabra/681.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 678,
+          "cardName": "Blood in the air",
+          "image": "assets/cardart/chupacabra/678.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 2,
+              "cardName": "Feint",
+              "image": "assets/cardart/medusa/2.png",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Медуза",
+                  "delta": -2,
+                  "total": 10,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 6,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 10,
+        "B": 14
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чупакабра",
+                  "delta": -1,
+                  "total": 13,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 3,
+          "cardName": "Regroup",
+          "image": "assets/cardart/medusa/3.png",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 679,
+              "cardName": "Natural toughness",
+              "image": "assets/cardart/chupacabra/679.webp",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 7,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 10,
+        "B": 13
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 8,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 10,
+        "B": 13
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 9,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 10,
+        "B": 13
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 681,
+          "cardName": "Tooth and tail",
+          "image": "assets/cardart/chupacabra/681.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 123,
+              "cardName": "Clutching Claws",
+              "image": "assets/cardart/medusa/123.png",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Гарпии 1",
+                  "delta": -1,
+                  "total": 0,
+                  "dead": true
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чупакабра",
+                  "delta": 1,
+                  "total": 14,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "versatile",
+              "mechanic": null,
+              "cardId": 680,
+              "cardName": "Ravenous lunge",
+              "image": "assets/cardart/chupacabra/680.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 10,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 10,
+        "B": 14
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чупакабра",
+                  "delta": -1,
+                  "total": 13,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 124,
+          "cardName": "Winged Frenzy",
+          "image": "assets/cardart/medusa/124.png",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 11,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 10,
+        "B": 13
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 682,
+          "cardName": "Wounded beast",
+          "image": "assets/cardart/chupacabra/682.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 123,
+              "cardName": "Clutching Claws",
+              "image": "assets/cardart/medusa/123.png",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "versatile",
+              "mechanic": null,
+              "cardId": 2,
+              "cardName": "Feint",
+              "image": "assets/cardart/chupacabra/2.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 12,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 10,
+        "B": 13
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 3,
+          "cardName": "Regroup",
+          "image": "assets/cardart/medusa/3.png",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чупакабра",
+                  "delta": -1,
+                  "total": 12,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 13,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 10,
+        "B": 12
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "scheme",
+              "mechanic": null,
+              "cardId": 684,
+              "cardName": "Unsettle",
+              "image": "assets/cardart/chupacabra/684.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 14,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 10,
+        "B": 12
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 170,
+          "cardName": "Second Shot",
+          "image": "assets/cardart/medusa/170.png",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 680,
+              "cardName": "Ravenous lunge",
+              "image": "assets/cardart/chupacabra/680.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "scheme",
+              "mechanic": null,
+              "cardId": 93,
+              "cardName": "A Momentary Glance",
+              "image": "assets/cardart/medusa/93.png",
+              "boosted": false,
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чупакабра",
+                  "delta": -4,
+                  "total": 8,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чупакабра",
+                  "delta": 1,
+                  "total": 9,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 15,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 10,
+        "B": 9
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "scheme",
+              "mechanic": null,
+              "cardId": 684,
+              "cardName": "Unsettle",
+              "image": "assets/cardart/chupacabra/684.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 16,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 10,
+        "B": 9
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 170,
+          "cardName": "Second Shot",
+          "image": "assets/cardart/medusa/170.png",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 14,
+              "cardName": "Gaze of Stone",
+              "image": "assets/cardart/medusa/14.png",
+              "boosted": false,
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чупакабра",
+                  "delta": -7,
+                  "total": 2,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 17,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 10,
+        "B": 2
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 683,
+          "cardName": "Traveler of the night",
+          "image": "assets/cardart/chupacabra/683.webp",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 677,
+          "cardName": "Feeding",
+          "image": "assets/cardart/chupacabra/677.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 94,
+              "cardName": "Hiss and Slither",
+              "image": "assets/cardart/medusa/94.png",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чупакабра",
+                  "delta": 1,
+                  "total": 3,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 676,
+              "cardName": "The more they struggle",
+              "image": "assets/cardart/chupacabra/676.webp",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 677,
+          "cardName": "Feeding",
+          "image": "assets/cardart/chupacabra/677.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 11,
+              "cardName": "Dash",
+              "image": "assets/cardart/medusa/11.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Медуза",
+                  "delta": -1,
+                  "total": 9,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Чупакабра",
+                  "delta": 1,
+                  "total": 4,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 683,
+          "cardName": "Traveler of the night",
+          "image": "assets/cardart/chupacabra/683.webp",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 678,
+          "cardName": "Blood in the air",
+          "image": "assets/cardart/chupacabra/678.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 2,
+              "cardName": "Feint",
+              "image": "assets/cardart/medusa/2.png",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Медуза",
+                  "delta": -2,
+                  "total": 7,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 678,
+          "cardName": "Blood in the air",
+          "image": "assets/cardart/chupacabra/678.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 9,
+              "cardName": "Ambush",
+              "image": "assets/cardart/chupacabra/9.webp",
+              "boosted": false,
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Медуза",
+                  "delta": -7,
+                  "total": 0,
+                  "dead": true
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

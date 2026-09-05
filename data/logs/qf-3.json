@@ -1,0 +1,1520 @@
+{
+  "matchId": "qf-3",
+  "slotA": {
+    "heroSlug": "robin-hood"
+  },
+  "slotB": {
+    "heroSlug": "little-red-riding-hood"
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 13,
+        "B": 14
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 16,
+          "cardName": "Piercing Shot",
+          "image": "assets/cardart/robin-hood/16.png",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 210,
+              "cardName": "Stones in the Belly",
+              "image": "assets/cardart/little-red-riding-hood/210.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 129,
+              "cardName": "A Hunter's Eye",
+              "image": "assets/cardart/robin-hood/129.png",
+              "boosted": false,
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 13,
+        "B": 14
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 13,
+        "B": 14
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "versatile",
+              "mechanic": null,
+              "cardId": 17,
+              "cardName": "Snark",
+              "image": "assets/cardart/robin-hood/17.png",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 6,
+          "cardName": "Wily Fighting",
+          "image": "assets/cardart/robin-hood/6.png",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 222,
+              "cardName": "What's That In My Basket?",
+              "image": "assets/cardart/little-red-riding-hood/222.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Красная Шапочка",
+                  "delta": -1,
+                  "total": 13,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 13,
+        "B": 13
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 204,
+          "cardName": "What Big Ears You Have",
+          "image": "assets/cardart/little-red-riding-hood/204.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 17,
+              "cardName": "Snark",
+              "image": "assets/cardart/robin-hood/17.png",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "разбойники 1",
+                  "delta": -1,
+                  "total": 0,
+                  "dead": true
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 5,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 13,
+        "B": 13
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 9,
+          "cardName": "Ambush",
+          "image": "assets/cardart/robin-hood/9.png",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 210,
+              "cardName": "Stones in the Belly",
+              "image": "assets/cardart/little-red-riding-hood/210.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "scheme",
+              "mechanic": null,
+              "cardId": 212,
+              "cardName": "Into the Woods",
+              "image": "assets/cardart/little-red-riding-hood/212.webp",
+              "boosted": false,
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Красная Шапочка",
+                  "delta": -2,
+                  "total": 11,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 6,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 13,
+        "B": 11
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 208,
+          "cardName": "Long Have I Sought You",
+          "image": "assets/cardart/little-red-riding-hood/208.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "разбойники 2",
+                  "delta": -6,
+                  "total": -5,
+                  "dead": true
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 7,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 13,
+        "B": 11
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 132,
+          "cardName": "Highway Robbery",
+          "image": "assets/cardart/robin-hood/132.png",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Охотник",
+                  "delta": -2,
+                  "total": 7,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 8,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 13,
+        "B": 11
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 206,
+          "cardName": "Never Leave the Path",
+          "image": "assets/cardart/little-red-riding-hood/206.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Робин Гуд",
+                  "delta": -2,
+                  "total": 11,
+                  "dead": false
+                },
+                {
+                  "fighterLabel": "разбойники 4",
+                  "delta": -2,
+                  "total": -1,
+                  "dead": true
+                },
+                {
+                  "fighterLabel": "разбойники 3",
+                  "delta": -2,
+                  "total": -1,
+                  "dead": true
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 9,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 11,
+        "B": 11
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 130,
+          "cardName": "Steal From the Rich",
+          "image": "assets/cardart/robin-hood/130.png",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 15,
+          "cardName": "Disarming Shot",
+          "image": "assets/cardart/robin-hood/15.png",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 207,
+              "cardName": "The Wolf's Skin",
+              "image": "assets/cardart/little-red-riding-hood/207.webp",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 10,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 11,
+        "B": 11
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 11,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 11,
+        "B": 11
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "versatile",
+              "mechanic": null,
+              "cardId": 3,
+              "cardName": "Regroup",
+              "image": "assets/cardart/robin-hood/3.png",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 9,
+          "cardName": "Ambush",
+          "image": "assets/cardart/robin-hood/9.png",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 211,
+              "cardName": "Once Upon a Time",
+              "image": "assets/cardart/little-red-riding-hood/211.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 187,
+              "cardName": "What Large Hands You Have",
+              "image": "assets/cardart/little-red-riding-hood/187.webp",
+              "boosted": false,
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Красная Шапочка",
+                  "delta": -3,
+                  "total": 8,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 12,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 11,
+        "B": 8
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 13,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 11,
+        "B": 8
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 129,
+          "cardName": "A Hunter's Eye",
+          "image": "assets/cardart/robin-hood/129.png",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 222,
+              "cardName": "What's That In My Basket?",
+              "image": "assets/cardart/little-red-riding-hood/222.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Красная Шапочка",
+                  "delta": -1,
+                  "total": 7,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 14,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 11,
+        "B": 7
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 209,
+          "cardName": "A Grimm Tale",
+          "image": "assets/cardart/little-red-riding-hood/209.webp",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Красная Шапочка",
+                  "delta": 4,
+                  "total": 11,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 15,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 11,
+        "B": 11
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 3,
+          "cardName": "Regroup",
+          "image": "assets/cardart/robin-hood/3.png",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 205,
+              "cardName": "What Big Eyes You Have",
+              "image": "assets/cardart/little-red-riding-hood/205.webp",
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 16,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 11,
+        "B": 11
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 208,
+          "cardName": "Long Have I Sought You",
+          "image": "assets/cardart/little-red-riding-hood/208.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 2,
+              "cardName": "Feint",
+              "image": "assets/cardart/robin-hood/2.png",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Робин Гуд",
+                  "delta": -2,
+                  "total": 9,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 17,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 9,
+        "B": 11
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 18,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 9,
+        "B": 11
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 208,
+          "cardName": "Long Have I Sought You",
+          "image": "assets/cardart/little-red-riding-hood/208.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 131,
+              "cardName": "Defenders of Sherwood",
+              "image": "assets/cardart/robin-hood/131.png",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Робин Гуд",
+                  "delta": -3,
+                  "total": 6,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "spawn",
+              "image": "assets/cardart/robin-hood/sidekick.webp",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 19,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 6,
+        "B": 11
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 132,
+          "cardName": "Highway Robbery",
+          "image": "assets/cardart/robin-hood/132.png",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 222,
+              "cardName": "What's That In My Basket?",
+              "image": "assets/cardart/little-red-riding-hood/222.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Красная Шапочка",
+                  "delta": -2,
+                  "total": 9,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 20,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 6,
+        "B": 9
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 210,
+          "cardName": "Stones in the Belly",
+          "image": "assets/cardart/little-red-riding-hood/210.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 3,
+              "cardName": "Regroup",
+              "image": "assets/cardart/robin-hood/3.png",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "versatile",
+              "mechanic": null,
+              "cardId": 2,
+              "cardName": "Feint",
+              "image": "assets/cardart/robin-hood/2.png",
+              "boosted": false,
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "разбойники 1",
+                  "delta": -3,
+                  "total": -3,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 21,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 6,
+        "B": 9
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 6,
+          "cardName": "Wily Fighting",
+          "image": "assets/cardart/robin-hood/6.png",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 207,
+              "cardName": "The Wolf's Skin",
+              "image": "assets/cardart/little-red-riding-hood/207.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Красная Шапочка",
+                  "delta": -2,
+                  "total": 7,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 22,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 6,
+        "B": 7
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 23,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 6,
+        "B": 7
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "attack",
+              "mechanic": null,
+              "cardId": 132,
+              "cardName": "Highway Robbery",
+              "image": "assets/cardart/robin-hood/132.png",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 15,
+          "cardName": "Disarming Shot",
+          "image": "assets/cardart/robin-hood/15.png",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 205,
+              "cardName": "What Big Eyes You Have",
+              "image": "assets/cardart/little-red-riding-hood/205.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Красная Шапочка",
+                  "delta": -1,
+                  "total": 6,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 24,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 6,
+        "B": 6
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 25,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 6,
+        "B": 6
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 6,
+          "cardName": "Wily Fighting",
+          "image": "assets/cardart/robin-hood/6.png",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "versatile",
+              "mechanic": "defense",
+              "cardId": 222,
+              "cardName": "What's That In My Basket?",
+              "image": "assets/cardart/little-red-riding-hood/222.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Охотник",
+                  "delta": -1,
+                  "total": 6,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "ability",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 26,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 6,
+        "B": 6
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 27,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 6,
+        "B": 6
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 130,
+          "cardName": "Steal From the Rich",
+          "image": "assets/cardart/robin-hood/130.png",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 28,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 6,
+        "B": 6
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 212,
+          "cardName": "Into the Woods",
+          "image": "assets/cardart/little-red-riding-hood/212.webp",
+          "reactions": []
+        },
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 204,
+          "cardName": "What Big Ears You Have",
+          "image": "assets/cardart/little-red-riding-hood/204.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 131,
+              "cardName": "Defenders of Sherwood",
+              "image": "assets/cardart/robin-hood/131.png",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Робин Гуд",
+                  "delta": -1,
+                  "total": 5,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "draw",
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "spawn",
+              "image": "assets/cardart/robin-hood/sidekick.webp",
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 29,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 5,
+        "B": 6
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 132,
+          "cardName": "Highway Robbery",
+          "image": "assets/cardart/robin-hood/132.png",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Красная Шапочка",
+                  "delta": -2,
+                  "total": 4,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "attack",
+          "mechanic": "attack",
+          "cardId": 129,
+          "cardName": "A Hunter's Eye",
+          "image": "assets/cardart/robin-hood/129.png",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 207,
+              "cardName": "The Wolf's Skin",
+              "image": "assets/cardart/little-red-riding-hood/207.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "draw",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Красная Шапочка",
+                  "delta": -3,
+                  "total": 1,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 30,
+      "turnSide": "B",
+      "heroHp": {
+        "A": 5,
+        "B": 1
+      },
+      "segments": [
+        {
+          "side": "B",
+          "kind": "play",
+          "cardType": "scheme",
+          "mechanic": "scheme",
+          "cardId": 206,
+          "cardName": "Never Leave the Path",
+          "image": "assets/cardart/little-red-riding-hood/206.webp",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Робин Гуд",
+                  "delta": -2,
+                  "total": 3,
+                  "dead": false
+                },
+                {
+                  "fighterLabel": "разбойники 2",
+                  "delta": -2,
+                  "total": -7,
+                  "dead": false
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "maneuver",
+          "reactions": []
+        }
+      ]
+    },
+    {
+      "round": 31,
+      "turnSide": "A",
+      "heroHp": {
+        "A": 3,
+        "B": 1
+      },
+      "segments": [
+        {
+          "side": "A",
+          "kind": "maneuver",
+          "reactions": [
+            {
+              "side": "A",
+              "kind": "discard",
+              "cardType": "scheme",
+              "mechanic": null,
+              "cardId": 130,
+              "cardName": "Steal From the Rich",
+              "image": "assets/cardart/robin-hood/130.png",
+              "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "A",
+          "kind": "play",
+          "cardType": "versatile",
+          "mechanic": "attack",
+          "cardId": 17,
+          "cardName": "Snark",
+          "image": "assets/cardart/robin-hood/17.png",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "play",
+              "cardType": "defense",
+              "mechanic": "defense",
+              "cardId": 203,
+              "cardName": "What a Terrible Big Mouth You Have",
+              "image": "assets/cardart/little-red-riding-hood/203.webp",
+              "reactions": []
+            },
+            {
+              "side": "B",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Красная Шапочка",
+                  "delta": -3,
+                  "total": -2,
+                  "dead": true
+                }
+              ],
+              "reactions": []
+            },
+            {
+              "side": "A",
+              "kind": "hp",
+              "hits": [
+                {
+                  "fighterLabel": "Робин Гуд",
+                  "delta": -3,
+                  "total": 0,
+                  "dead": true
+                }
+              ],
+              "reactions": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
