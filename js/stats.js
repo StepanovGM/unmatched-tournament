@@ -271,6 +271,23 @@ function roundCardsBySide(round) {
   return cards;
 }
 
+// Карты по типу розыгрыша, отдельно на сторону: mechanic на "play"
+// сегменте уже учитывает, как сыграна универсальная карта — как
+// приём (scheme), атаку (attack, включая универсальные-в-атаку) или
+// защиту (defense, включая универсальные-в-защиту).
+function roundCardCategoriesBySide(round) {
+  const cats = {
+    A: { scheme: 0, attack: 0, defense: 0 },
+    B: { scheme: 0, attack: 0, defense: 0 },
+  };
+  walkSegments(round.segments, (seg) => {
+    if (seg.kind === "play" && cats[seg.side] && seg.mechanic in cats[seg.side]) {
+      cats[seg.side][seg.mechanic]++;
+    }
+  });
+  return cats;
+}
+
 function renderHighlight(id, title, valueSuffix, best) {
   const card = document.getElementById(id);
   if (!best) {
@@ -314,6 +331,73 @@ function renderHighlight(id, title, valueSuffix, best) {
 
   body.appendChild(detail);
   card.appendChild(body);
+}
+
+function avg(arr) {
+  return arr.length ? arr.reduce((a, b) => a + b, 0) / arr.length : null;
+}
+
+const CARD_CATEGORY_LABELS = [
+  ["scheme", "Приёмы"],
+  ["attack", "Атаки"],
+  ["defense", "Защиты"],
+];
+
+function renderCardBreakdown(id, title, winnerTotals, loserTotals) {
+  const card = document.getElementById(id);
+  const matchCount = winnerTotals.scheme.length;
+
+  if (matchCount === 0) {
+    setEmpty(card, title, "Нет матчей с сохранённым логом.");
+    return;
+  }
+
+  const h = document.createElement("h3");
+  h.className = "stat-title";
+  h.textContent = title;
+  card.appendChild(h);
+
+  const wrap = document.createElement("div");
+  wrap.className = "cards-breakdown";
+
+  const buildCol = (label, totals) => {
+    const col = document.createElement("div");
+    col.className = "cards-col";
+
+    const lbl = document.createElement("div");
+    lbl.className = "cards-col-label";
+    lbl.textContent = label;
+    col.appendChild(lbl);
+
+    CARD_CATEGORY_LABELS.forEach(([key, name]) => {
+      const row = document.createElement("div");
+      row.className = "cards-row";
+
+      const cat = document.createElement("span");
+      cat.className = "cards-cat";
+      cat.textContent = name;
+      row.appendChild(cat);
+
+      const val = document.createElement("span");
+      val.className = "cards-val";
+      const a = avg(totals[key]);
+      val.textContent = a != null ? a.toFixed(1) : "—";
+      row.appendChild(val);
+
+      col.appendChild(row);
+    });
+
+    return col;
+  };
+
+  wrap.appendChild(buildCol("Победитель", winnerTotals));
+  wrap.appendChild(buildCol("Проигравший", loserTotals));
+  card.appendChild(wrap);
+
+  const sub = document.createElement("div");
+  sub.className = "stat-sub";
+  sub.textContent = `по ${matchCount} матчам`;
+  card.appendChild(sub);
 }
 
 // Есть ли в ходе розыгрыш карты как атаки (mechanic === "attack"),
@@ -370,13 +454,18 @@ async function renderLogDerivedStats() {
   let maxCards = null;
   let quietStreak = null;
   let lowHpSurvival = null;
-  const winnerCardTotals = [];
+  const winnerCardTotals = { scheme: [], attack: [], defense: [] };
+  const loserCardTotals = { scheme: [], attack: [], defense: [] };
 
   for (const m of completed) {
     const log = await loadLog(m.id);
     if (!log) continue;
 
     const cardTotals = { A: 0, B: 0 };
+    const categoryTotals = {
+      A: { scheme: 0, attack: 0, defense: 0 },
+      B: { scheme: 0, attack: 0, defense: 0 },
+    };
 
     log.rounds.forEach((round) => {
       const dmg = roundDamageBySide(round);
@@ -399,6 +488,13 @@ async function renderLogDerivedStats() {
       const cards = roundCardsBySide(round);
       cardTotals.A += cards.A;
       cardTotals.B += cards.B;
+
+      const cats = roundCardCategoriesBySide(round);
+      ["A", "B"].forEach((side) => {
+        categoryTotals[side].scheme += cats[side].scheme;
+        categoryTotals[side].attack += cats[side].attack;
+        categoryTotals[side].defense += cats[side].defense;
+      });
       [
         { dealer: "A", value: cards.A },
         { dealer: "B", value: cards.B },
@@ -416,7 +512,11 @@ async function renderLogDerivedStats() {
     });
 
     if (m.winner === "A" || m.winner === "B") {
-      winnerCardTotals.push(cardTotals[m.winner]);
+      const loser = m.winner === "A" ? "B" : "A";
+      ["scheme", "attack", "defense"].forEach((cat) => {
+        winnerCardTotals[cat].push(categoryTotals[m.winner][cat]);
+        loserCardTotals[cat].push(categoryTotals[loser][cat]);
+      });
     }
 
     const quiet = longestQuietStreak(log);
@@ -453,7 +553,12 @@ async function renderLogDerivedStats() {
   renderHighlight("stat-max-cards", "Наибольшее число карт, сыгранных за один ход", "карт за ход", maxCards);
   renderHighlight("stat-quiet-streak", "Самое долгое затишье", "ходов без урона и атак подряд", quietStreak);
   renderHighlight("stat-low-hp-survival", "Самое долгое выживание на грани смерти", "ходов с HP ≤ 3", lowHpSurvival);
-  renderAverageTile("stat-avg-winner-cards", "Среднее число карт, разыгранных победителем", winnerCardTotals, "карт");
+  renderCardBreakdown(
+    "stat-avg-winner-cards",
+    "Среднее число сыгранных карт по типу",
+    winnerCardTotals,
+    loserCardTotals
+  );
 }
 
 renderPlayerRatio();

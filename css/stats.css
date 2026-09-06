@@ -188,6 +188,50 @@
   font-size: 0.85rem;
 }
 
+/* --- Разбивка карт по типу (победитель/проигравший) --- */
+
+.cards-breakdown {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cards-col {
+  flex: 1 1 200px;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+}
+
+.cards-col-label {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--accent);
+  letter-spacing: 0.03em;
+  margin-bottom: 0.5rem;
+}
+
+.cards-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.2rem 0;
+  font-size: 0.9rem;
+}
+
+.cards-row + .cards-row {
+  border-top: 1px solid var(--border);
+}
+
+.cards-cat {
+  color: var(--text-dim);
+}
+
+.cards-val {
+  font-family: var(--font-display);
+  color: var(--text);
+}
+
 .stat-empty {
   color: var(--text-dim);
   font-style: italic;
