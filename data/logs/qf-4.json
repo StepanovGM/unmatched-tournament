@@ -167,17 +167,6 @@
               "cardName": "Hiss and Slither",
               "image": "assets/cardart/medusa/94.png",
               "reactions": []
-            }
-          ]
-        },
-        {
-          "side": "B",
-          "kind": "ability",
-          "reactions": [
-            {
-              "side": "B",
-              "kind": "draw",
-              "reactions": []
             },
             {
               "side": "A",
@@ -201,6 +190,17 @@
               "cardName": "Tooth and tail",
               "image": "assets/cardart/chupacabra/681.webp",
               "boosted": false,
+              "reactions": []
+            }
+          ]
+        },
+        {
+          "side": "B",
+          "kind": "ability",
+          "reactions": [
+            {
+              "side": "B",
+              "kind": "draw",
               "reactions": []
             }
           ]
