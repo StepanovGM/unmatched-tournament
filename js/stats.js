@@ -299,18 +299,16 @@ function renderHighlight(id, title, valueSuffix, best) {
   sub.textContent = valueSuffix;
   detail.appendChild(sub);
 
-  const dealerSlug = best.dealer === "A" ? best.match.slotA.character : best.match.slotB.character;
-  const otherSlug = best.dealer === "A" ? best.match.slotB.character : best.match.slotA.character;
-  detail.appendChild(buildPair(dealerSlug, otherSlug));
+  detail.appendChild(buildPair(best.pairSlugs[0], best.pairSlugs[1]));
 
   const meta = document.createElement("div");
   meta.className = "highlight-meta";
-  meta.textContent = `${best.match.stage} · ход ${best.round}`;
+  meta.textContent = best.meta;
   detail.appendChild(meta);
 
   const link = document.createElement("a");
   link.className = "highlight-link";
-  link.href = `match.html?id=${best.match.id}`;
+  link.href = `match.html?id=${best.matchId}`;
   link.textContent = "Смотреть матч →";
   detail.appendChild(link);
 
@@ -318,13 +316,68 @@ function renderHighlight(id, title, valueSuffix, best) {
   card.appendChild(body);
 }
 
-async function renderPeaks() {
+// Есть ли в ходе розыгрыш карты как атаки (mechanic === "attack"),
+// независимо от того, чья это была карта.
+function roundHasAttack(round) {
+  let found = false;
+  walkSegments(round.segments, (seg) => {
+    if (seg.mechanic === "attack") found = true;
+  });
+  return found;
+}
+
+// Самая длинная последовательность подряд идущих ходов без урона
+// (ни одной из сторон) и без розыгрыша атакующих карт.
+function longestQuietStreak(log) {
+  let best = null;
+  let streakLen = 0;
+  let streakStart = null;
+
+  log.rounds.forEach((round) => {
+    const dmg = roundDamageBySide(round);
+    const quiet = dmg.A + dmg.B === 0 && !roundHasAttack(round);
+
+    if (quiet) {
+      if (streakLen === 0) streakStart = round.round;
+      streakLen++;
+      if (!best || streakLen > best.length) {
+        best = { length: streakLen, startRound: streakStart, endRound: round.round };
+      }
+    } else {
+      streakLen = 0;
+    }
+  });
+
+  return best;
+}
+
+// Сколько ходов (снимков heroHp на начало хода) каждая сторона
+// провела с суммарным HP <= 3 — считаем по всему матчу, эпизоды
+// низкого HP до и после лечения суммируются.
+function lowHpRoundCounts(log) {
+  const counts = { A: 0, B: 0 };
+  log.rounds.forEach((round) => {
+    ["A", "B"].forEach((side) => {
+      const hp = round.heroHp && round.heroHp[side];
+      if (hp != null && hp <= 3) counts[side]++;
+    });
+  });
+  return counts;
+}
+
+async function renderLogDerivedStats() {
   let maxDamage = null;
   let maxCards = null;
+  let quietStreak = null;
+  let lowHpSurvival = null;
+  const winnerCardTotals = [];
 
   for (const m of completed) {
     const log = await loadLog(m.id);
     if (!log) continue;
+
+    const cardTotals = { A: 0, B: 0 };
+
     log.rounds.forEach((round) => {
       const dmg = roundDamageBySide(round);
       // Урон стороне A нанёс персонаж B, и наоборот.
@@ -333,24 +386,74 @@ async function renderPeaks() {
         { dealer: "B", value: dmg.A },
       ].forEach(({ dealer, value }) => {
         if (value > 0 && (!maxDamage || value > maxDamage.value)) {
-          maxDamage = { value, match: m, round: round.round, dealer };
+          maxDamage = {
+            value,
+            pairSlugs:
+              dealer === "A" ? [m.slotA.character, m.slotB.character] : [m.slotB.character, m.slotA.character],
+            meta: `${m.stage} · ход ${round.round}`,
+            matchId: m.id,
+          };
         }
       });
 
       const cards = roundCardsBySide(round);
+      cardTotals.A += cards.A;
+      cardTotals.B += cards.B;
       [
         { dealer: "A", value: cards.A },
         { dealer: "B", value: cards.B },
       ].forEach(({ dealer, value }) => {
         if (value > 0 && (!maxCards || value > maxCards.value)) {
-          maxCards = { value, match: m, round: round.round, dealer };
+          maxCards = {
+            value,
+            pairSlugs:
+              dealer === "A" ? [m.slotA.character, m.slotB.character] : [m.slotB.character, m.slotA.character],
+            meta: `${m.stage} · ход ${round.round}`,
+            matchId: m.id,
+          };
         }
       });
+    });
+
+    if (m.winner === "A" || m.winner === "B") {
+      winnerCardTotals.push(cardTotals[m.winner]);
+    }
+
+    const quiet = longestQuietStreak(log);
+    if (quiet && (!quietStreak || quiet.length > quietStreak.value)) {
+      quietStreak = {
+        value: quiet.length,
+        pairSlugs: [m.slotA.character, m.slotB.character],
+        meta:
+          quiet.startRound === quiet.endRound
+            ? `${m.stage} · ход ${quiet.startRound}`
+            : `${m.stage} · ходы ${quiet.startRound}–${quiet.endRound}`,
+        matchId: m.id,
+      };
+    }
+
+    const lowHp = lowHpRoundCounts(log);
+    [
+      { side: "A", value: lowHp.A },
+      { side: "B", value: lowHp.B },
+    ].forEach(({ side, value }) => {
+      if (value > 0 && (!lowHpSurvival || value > lowHpSurvival.value)) {
+        const otherSide = side === "A" ? "B" : "A";
+        lowHpSurvival = {
+          value,
+          pairSlugs: [m[`slot${side}`].character, m[`slot${otherSide}`].character],
+          meta: m.stage,
+          matchId: m.id,
+        };
+      }
     });
   }
 
   renderHighlight("stat-max-damage", "Наибольший урон за один ход", "урона за ход", maxDamage);
   renderHighlight("stat-max-cards", "Наибольшее число карт, сыгранных за один ход", "карт за ход", maxCards);
+  renderHighlight("stat-quiet-streak", "Самое долгое затишье", "ходов без урона и атак подряд", quietStreak);
+  renderHighlight("stat-low-hp-survival", "Самое долгое выживание на грани смерти", "ходов с HP ≤ 3", lowHpSurvival);
+  renderAverageTile("stat-avg-winner-cards", "Среднее число карт, разыгранных победителем", winnerCardTotals, "карт");
 }
 
 renderPlayerRatio();
@@ -368,4 +471,4 @@ renderAverageTile(
   "ходов"
 );
 renderDuration();
-renderPeaks();
+renderLogDerivedStats();
