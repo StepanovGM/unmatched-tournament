@@ -272,6 +272,23 @@ function roundDamageBySide(round) {
   return dmg;
 }
 
+// Как roundDamageBySide, но только фактический урон (delta < 0) —
+// лечение (delta > 0, напр. когда сняли хп, а потом подлечились)
+// в сумму не идёт и не гасит уже нанесённый урон предыдущими
+// хитами. Считает и героя, и сайдкиков — hits уже включает обоих
+// (см. fighterLabel в data/logs/*.json).
+function roundRealDamageBySide(round) {
+  const dmg = { A: 0, B: 0 };
+  walkSegments(round.segments, (seg) => {
+    if (seg.kind === "hp") {
+      seg.hits.forEach((hit) => {
+        if (hit.delta < 0) dmg[seg.side] += -hit.delta;
+      });
+    }
+  });
+  return dmg;
+}
+
 function roundCardsBySide(round) {
   const cards = { A: 0, B: 0 };
   walkSegments(round.segments, (seg) => {
@@ -465,6 +482,8 @@ async function renderLogDerivedStats() {
   let lowHpSurvival = null;
   const winnerCardTotals = { scheme: [], attack: [], defense: [] };
   const loserCardTotals = { scheme: [], attack: [], defense: [] };
+  const winnerRealDamagePerRound = [];
+  const loserRealDamagePerRound = [];
 
   for (const m of completed) {
     const log = await loadLog(m.id);
@@ -475,8 +494,13 @@ async function renderLogDerivedStats() {
       A: { scheme: 0, attack: 0, defense: 0 },
       B: { scheme: 0, attack: 0, defense: 0 },
     };
+    const realDamageTotals = { A: 0, B: 0 };
 
     log.rounds.forEach((round) => {
+      const realDmg = roundRealDamageBySide(round);
+      realDamageTotals.A += realDmg.A;
+      realDamageTotals.B += realDmg.B;
+
       const dmg = roundDamageBySide(round);
       // Урон стороне A нанёс персонаж B, и наоборот.
       [
@@ -526,6 +550,12 @@ async function renderLogDerivedStats() {
         winnerCardTotals[cat].push(categoryTotals[m.winner][cat]);
         loserCardTotals[cat].push(categoryTotals[loser][cat]);
       });
+
+      const rounds = m.stats && m.stats.finalRound;
+      if (rounds) {
+        winnerRealDamagePerRound.push(realDamageTotals[m.winner] / rounds);
+        loserRealDamagePerRound.push(realDamageTotals[loser] / rounds);
+      }
     }
 
     const quiet = longestQuietStreak(log);
@@ -567,6 +597,18 @@ async function renderLogDerivedStats() {
     "Среднее число сыгранных карт по типу",
     winnerCardTotals,
     loserCardTotals
+  );
+  renderAverageTile(
+    "stat-avg-real-dmg-winner",
+    "Реальный урон за раунд по логу (победитель)",
+    winnerRealDamagePerRound,
+    "урона/раунд"
+  );
+  renderAverageTile(
+    "stat-avg-real-dmg-loser",
+    "Реальный урон за раунд по логу (проигравший)",
+    loserRealDamagePerRound,
+    "урона/раунд"
   );
 }
 
