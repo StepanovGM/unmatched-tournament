@@ -15,10 +15,11 @@
 // с первой буквой имени, вёрстка не сломается. maxHp — суммарное
 // стартовое HP героя (для стай вроде Рапторов/Вещих Сестёр — сумма
 // по всем фигуркам): для 14 персонажей, реально сыгранных через
-// трекер, взято из Tracker/web/data/heroes.json, для остальных —
-// с unmatched.cards/umdb/decks. Нет только у Локи и Пандоры (Battle
-// of Legends, Volume Three) — сайт не указывает их HP вообще.
-// Используется в stats.js для "среднего урона за раунд".
+// трекер, взято из Tracker/web/data/heroes.json, для большинства
+// остальных — с unmatched.cards/umdb/decks (у него нет данных по
+// Локи и Пандоре из Battle of Legends, Volume Three — эти два
+// проставлены со слов пользователя). Используется в stats.js для
+// "среднего урона за раунд".
 // -------------------------------------------------------------
 export const characters = {
   "t-rex": { name: "Ти-рекс", maxHp: 27, image: "assets/characters/t-rex.webp", cardback: "assets/cardbacks/t-rex.webp" },
@@ -46,13 +47,13 @@ export const characters = {
   "bigfoot": { name: "Бигфут", sidekick: "и Кролень", maxHp: 16, image: "assets/characters/bigfoot.webp", cardback: "assets/cardbacks/bigfoot.jpg" },
   "titania": { name: "Титания", sidekick: "и Оберон", maxHp: 12, image: "assets/characters/titania.webp", cardback: "assets/cardbacks/titania.webp" },
   "medusa": { name: "Медуза", sidekick: "и Гарпии", maxHp: 16, image: "assets/characters/medusa.webp", cardback: "assets/cardbacks/medusa.png" },
-  "loki": { name: "Локи", image: "assets/characters/loki.webp", cardback: "assets/cardbacks/loki.webp" },
+  "loki": { name: "Локи", maxHp: 16, image: "assets/characters/loki.webp", cardback: "assets/cardbacks/loki.webp" },
   "sindbad": { name: "Синдбад", sidekick: "и Носильщик", maxHp: 15, image: "assets/characters/sindbad.webp", cardback: "assets/cardbacks/sindbad.png" },
   "weird-sisters": { name: "Вещие Сёстры", maxHp: 18, image: "assets/characters/weird-sisters.webp", cardback: "assets/cardbacks/weird-sisters.webp" },
   "alice": { name: "Алиса", sidekick: "и Бармаглот", maxHp: 13, image: "assets/characters/alice.webp", cardback: "assets/cardbacks/alice.png" },
   "chupacabra": { name: "Чупакабра", maxHp: 14, image: "assets/characters/chupacabra.webp", cardback: "assets/cardbacks/chupacabra.webp" },
   "oda-nobunaga": { name: "Ода Нобунага", sidekick: "и Самураи", maxHp: 13, image: "assets/characters/oda-nobunaga.webp", cardback: "assets/cardbacks/oda-nobunaga.webp" },
-  "pandora": { name: "Пандора", sidekick: "и Какодемоны", image: "assets/characters/pandora.webp", cardback: "assets/cardbacks/pandora.webp" },
+  "pandora": { name: "Пандора", sidekick: "и Какодемоны", maxHp: 14, image: "assets/characters/pandora.webp", cardback: "assets/cardbacks/pandora.webp" },
 };
 
 // -------------------------------------------------------------
