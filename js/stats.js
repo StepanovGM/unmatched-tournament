@@ -7,6 +7,15 @@ function winnerSlot(m) {
   return m.winner === "A" ? m.slotA : m.winner === "B" ? m.slotB : null;
 }
 
+function loserSlot(m) {
+  return m.winner === "A" ? m.slotB : m.winner === "B" ? m.slotA : null;
+}
+
+function characterMaxHp(slug) {
+  const c = slug ? characters[slug] : null;
+  return c && c.maxHp != null ? c.maxHp : null;
+}
+
 // "Кто ходил первым" — то же правило, что и в advance-round.mjs:
 // для 1/16 жёсткий house-rule (всегда slotA), иначе — фактически
 // записанный первый ход (stats.firstPlayer), а до записи — firstMove.
@@ -576,4 +585,32 @@ renderAverageTile(
   "ходов"
 );
 renderDuration();
+
+// --- Средний урон за раунд ---
+// Не требует сохранённого лога — только stats.finalRound/winnerHp
+// и maxHp персонажа (известен только для 14 героев, реально
+// сыгранных через трекер, — остальные матчи просто пропускаются).
+// Проигравший: maxHp/раунды (условно потратил всё HP за игру).
+// Победитель: (maxHp - остаток HP)/раунды.
+{
+  const winnerDamagePerRound = [];
+  const loserDamagePerRound = [];
+
+  completed.forEach((m) => {
+    const rounds = m.stats && m.stats.finalRound;
+    const winnerHp = m.stats && m.stats.winnerHp;
+    const w = winnerSlot(m);
+    const l = loserSlot(m);
+    if (!rounds || !w || !l || winnerHp == null) return;
+
+    const winnerMaxHp = characterMaxHp(w.character);
+    const loserMaxHp = characterMaxHp(l.character);
+    if (winnerMaxHp != null) winnerDamagePerRound.push((winnerMaxHp - winnerHp) / rounds);
+    if (loserMaxHp != null) loserDamagePerRound.push(loserMaxHp / rounds);
+  });
+
+  renderAverageTile("stat-avg-dmg-winner", "Средний урон за раунд (победитель)", winnerDamagePerRound, "урона/раунд");
+  renderAverageTile("stat-avg-dmg-loser", "Средний урон за раунд (проигравший)", loserDamagePerRound, "урона/раунд");
+}
+
 renderLogDerivedStats();
