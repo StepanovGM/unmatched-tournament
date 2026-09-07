@@ -259,25 +259,12 @@ function walkSegments(segments, visit) {
 // seg.side у "hp"-сегмента — это сторона, ЧЕЙ боец получил урон, т.е.
 // урон, который нанёс противоположный персонаж. Считаем отдельно по
 // сторонам, чтобы пик приписывался одному персонажу, а не сумме
-// обеих сторон обмена в рамках хода.
+// обеих сторон обмена в рамках хода. Только фактический урон
+// (delta < 0) — лечение (delta > 0, напр. когда сняли хп, а потом
+// подлечились) в сумму не идёт и не гасит уже нанесённый урон
+// предыдущими хитами. Считает и героя, и сайдкиков — hits уже
+// включает обоих (см. fighterLabel в data/logs/*.json).
 function roundDamageBySide(round) {
-  const dmg = { A: 0, B: 0 };
-  walkSegments(round.segments, (seg) => {
-    if (seg.kind === "hp") {
-      seg.hits.forEach((hit) => {
-        dmg[seg.side] += Math.abs(hit.delta);
-      });
-    }
-  });
-  return dmg;
-}
-
-// Как roundDamageBySide, но только фактический урон (delta < 0) —
-// лечение (delta > 0, напр. когда сняли хп, а потом подлечились)
-// в сумму не идёт и не гасит уже нанесённый урон предыдущими
-// хитами. Считает и героя, и сайдкиков — hits уже включает обоих
-// (см. fighterLabel в data/logs/*.json).
-function roundRealDamageBySide(round) {
   const dmg = { A: 0, B: 0 };
   walkSegments(round.segments, (seg) => {
     if (seg.kind === "hp") {
@@ -497,11 +484,10 @@ async function renderLogDerivedStats() {
     const realDamageTotals = { A: 0, B: 0 };
 
     log.rounds.forEach((round) => {
-      const realDmg = roundRealDamageBySide(round);
-      realDamageTotals.A += realDmg.A;
-      realDamageTotals.B += realDmg.B;
-
       const dmg = roundDamageBySide(round);
+      realDamageTotals.A += dmg.A;
+      realDamageTotals.B += dmg.B;
+
       // Урон стороне A нанёс персонаж B, и наоборот.
       [
         { dealer: "A", value: dmg.B },

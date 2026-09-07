@@ -2,6 +2,7 @@
 `python -m http.server`, but with caching disabled so the preview
 always reflects the latest edits. Not part of the deployed site."""
 
+import functools
 import http.server
 import sys
 
@@ -16,4 +17,6 @@ class NoCacheHandler(http.server.SimpleHTTPRequestHandler):
 
 if __name__ == "__main__":
     port = int(sys.argv[1]) if len(sys.argv) > 1 else 8123
-    http.server.test(HandlerClass=NoCacheHandler, port=port)
+    directory = sys.argv[2] if len(sys.argv) > 2 else None
+    handler_class = functools.partial(NoCacheHandler, directory=directory) if directory else NoCacheHandler
+    http.server.test(HandlerClass=handler_class, port=port)
