@@ -13,41 +13,43 @@
 // чтобы не перегружать карточку). image — путь до портрета
 // в assets/characters/. Пока картинок нет — покажется плейсхолдер
 // с первой буквой имени, вёрстка не сломается. maxHp — суммарное
-// стартовое HP героя (для стай вроде Рапторов — сумма по всем
-// фигуркам), из Tracker/web/data/heroes.json; проставлено только
-// тем 14 персонажам, что реально играли через трекер — используется
-// stats.js для "среднего урона за раунд".
+// стартовое HP героя (для стай вроде Рапторов/Вещих Сестёр — сумма
+// по всем фигуркам): для 14 персонажей, реально сыгранных через
+// трекер, взято из Tracker/web/data/heroes.json, для остальных —
+// с unmatched.cards/umdb/decks. Нет только у Локи и Пандоры (Battle
+// of Legends, Volume Three) — сайт не указывает их HP вообще.
+// Используется в stats.js для "среднего урона за раунд".
 // -------------------------------------------------------------
 export const characters = {
   "t-rex": { name: "Ти-рекс", maxHp: 27, image: "assets/characters/t-rex.webp", cardback: "assets/cardbacks/t-rex.webp" },
-  "sherlock-holmes": { name: "Шерлок Холмс", sidekick: "и доктор Ватсон", image: "assets/characters/sherlock-holmes.webp", cardback: "assets/cardbacks/sherlock-holmes.png" },
-  "bloody-mary": { name: "Кровавая Мэри", image: "assets/characters/bloody-mary.webp", cardback: "assets/cardbacks/bloody-mary.gif" },
-  "jekyll-hyde": { name: "Джекил и Хайд", image: "assets/characters/jekyll-hyde.webp", cardback: "assets/cardbacks/jekyll-hyde.png" },
-  "jinn": { name: "Джинн", image: "assets/characters/jinn.webp", cardback: "assets/cardbacks/jinn.webp" },
-  "invisible-man": { name: "Невидимка", image: "assets/characters/invisible-man.webp", cardback: "assets/cardbacks/invisible-man.png" },
-  "houdini": { name: "Гудини", sidekick: "и Бесс", image: "assets/characters/houdini.webp", cardback: "assets/cardbacks/houdini.webp" },
+  "sherlock-holmes": { name: "Шерлок Холмс", sidekick: "и доктор Ватсон", maxHp: 16, image: "assets/characters/sherlock-holmes.webp", cardback: "assets/cardbacks/sherlock-holmes.png" },
+  "bloody-mary": { name: "Кровавая Мэри", maxHp: 16, image: "assets/characters/bloody-mary.webp", cardback: "assets/cardbacks/bloody-mary.gif" },
+  "jekyll-hyde": { name: "Джекил и Хайд", maxHp: 16, image: "assets/characters/jekyll-hyde.webp", cardback: "assets/cardbacks/jekyll-hyde.png" },
+  "jinn": { name: "Джинн", maxHp: 16, image: "assets/characters/jinn.webp", cardback: "assets/cardbacks/jinn.webp" },
+  "invisible-man": { name: "Невидимка", maxHp: 15, image: "assets/characters/invisible-man.webp", cardback: "assets/cardbacks/invisible-man.png" },
+  "houdini": { name: "Гудини", sidekick: "и Бесс", maxHp: 14, image: "assets/characters/houdini.webp", cardback: "assets/cardbacks/houdini.webp" },
   "achilles": { name: "Ахиллес", sidekick: "и Патрокл", maxHp: 18, image: "assets/characters/achilles.webp", cardback: "assets/cardbacks/achilles.gif" },
-  "ellie-sattler": { name: "Д-р Элли Сэттлер", sidekick: "и Д-р Иэн Малькольм", image: "assets/characters/ellie-sattler.webp", cardback: "assets/cardbacks/ellie-sattler.webp" },
+  "ellie-sattler": { name: "Д-р Элли Сэттлер", sidekick: "и Д-р Иэн Малькольм", maxHp: 13, image: "assets/characters/ellie-sattler.webp", cardback: "assets/cardbacks/ellie-sattler.webp" },
   "dracula": { name: "Дракула", sidekick: "и Сёстры", maxHp: 13, image: "assets/characters/dracula.webp", cardback: "assets/cardbacks/dracula.png" },
   "raptors": { name: "Рапторы", maxHp: 21, image: "assets/characters/raptors.webp", cardback: "assets/cardbacks/raptors.webp" },
-  "yennenga": { name: "Йенненга", sidekick: "и лучники", image: "assets/characters/yennenga.webp", cardback: "assets/cardbacks/yennenga.jpg" },
-  "beowulf": { name: "Беовульф", sidekick: "и Виглаф", image: "assets/characters/beowulf.webp", cardback: "assets/cardbacks/beowulf.webp" },
+  "yennenga": { name: "Йенненга", sidekick: "и лучники", maxHp: 15, image: "assets/characters/yennenga.webp", cardback: "assets/cardbacks/yennenga.jpg" },
+  "beowulf": { name: "Беовульф", sidekick: "и Виглаф", maxHp: 17, image: "assets/characters/beowulf.webp", cardback: "assets/cardbacks/beowulf.webp" },
   "blackbeard": { name: "Чёрная Борода", sidekick: "и Морские Волки", maxHp: 13, image: "assets/characters/blackbeard.webp", cardback: "assets/cardbacks/blackbeard.webp" },
   "hamlet": { name: "Гамлет", sidekick: "и Розенкранц и Гильденстерн", maxHp: 15, image: "assets/characters/hamlet.webp", cardback: "assets/cardbacks/hamlet.webp" },
-  "shakespeare": { name: "Шекспир", sidekick: "и Актёры", image: "assets/characters/shakespeare.webp", cardback: "assets/cardbacks/shakespeare.webp" },
+  "shakespeare": { name: "Шекспир", sidekick: "и Актёры", maxHp: 13, image: "assets/characters/shakespeare.webp", cardback: "assets/cardbacks/shakespeare.webp" },
   "robin-hood": { name: "Робин Гуд", sidekick: "и разбойники", maxHp: 13, image: "assets/characters/robin-hood.webp", cardback: "assets/cardbacks/robin-hood.jpg" },
-  "tomoe-gozen": { name: "Томоэ Годзэн", image: "assets/characters/tomoe-gozen.webp", cardback: "assets/cardbacks/tomoe-gozen.webp" },
-  "king-arthur": { name: "Король Артур", sidekick: "и Мерлин", image: "assets/characters/king-arthur.webp", cardback: "assets/cardbacks/king-arthur.png" },
+  "tomoe-gozen": { name: "Томоэ Годзэн", maxHp: 14, image: "assets/characters/tomoe-gozen.webp", cardback: "assets/cardbacks/tomoe-gozen.webp" },
+  "king-arthur": { name: "Король Артур", sidekick: "и Мерлин", maxHp: 18, image: "assets/characters/king-arthur.webp", cardback: "assets/cardbacks/king-arthur.png" },
   "sun-wukong": { name: "Сунь Укун", sidekick: "и Двойники", maxHp: 17, image: "assets/characters/sun-wukong.webp", cardback: "assets/cardbacks/sun-wukong.jpg" },
   "little-red-riding-hood": { name: "Красная Шапочка", sidekick: "и Охотник", maxHp: 14, image: "assets/characters/little-red-riding-hood.webp", cardback: "assets/cardbacks/little-red-riding-hood.webp" },
-  "robert-muldoon": { name: "Роберт Малдуин", sidekick: "и работники \"Инген\"", image: "assets/characters/robert-muldoon.webp", cardback: "assets/cardbacks/robert-muldoon.webp" },
+  "robert-muldoon": { name: "Роберт Малдуин", sidekick: "и работники \"Инген\"", maxHp: 14, image: "assets/characters/robert-muldoon.webp", cardback: "assets/cardbacks/robert-muldoon.webp" },
   "bigfoot": { name: "Бигфут", sidekick: "и Кролень", maxHp: 16, image: "assets/characters/bigfoot.webp", cardback: "assets/cardbacks/bigfoot.jpg" },
-  "titania": { name: "Титания", sidekick: "и Оберон", image: "assets/characters/titania.webp", cardback: "assets/cardbacks/titania.webp" },
+  "titania": { name: "Титания", sidekick: "и Оберон", maxHp: 12, image: "assets/characters/titania.webp", cardback: "assets/cardbacks/titania.webp" },
   "medusa": { name: "Медуза", sidekick: "и Гарпии", maxHp: 16, image: "assets/characters/medusa.webp", cardback: "assets/cardbacks/medusa.png" },
   "loki": { name: "Локи", image: "assets/characters/loki.webp", cardback: "assets/cardbacks/loki.webp" },
   "sindbad": { name: "Синдбад", sidekick: "и Носильщик", maxHp: 15, image: "assets/characters/sindbad.webp", cardback: "assets/cardbacks/sindbad.png" },
-  "weird-sisters": { name: "Вещие Сёстры", image: "assets/characters/weird-sisters.webp", cardback: "assets/cardbacks/weird-sisters.webp" },
-  "alice": { name: "Алиса", sidekick: "и Бармаглот", image: "assets/characters/alice.webp", cardback: "assets/cardbacks/alice.png" },
+  "weird-sisters": { name: "Вещие Сёстры", maxHp: 18, image: "assets/characters/weird-sisters.webp", cardback: "assets/cardbacks/weird-sisters.webp" },
+  "alice": { name: "Алиса", sidekick: "и Бармаглот", maxHp: 13, image: "assets/characters/alice.webp", cardback: "assets/cardbacks/alice.png" },
   "chupacabra": { name: "Чупакабра", maxHp: 14, image: "assets/characters/chupacabra.webp", cardback: "assets/cardbacks/chupacabra.webp" },
   "oda-nobunaga": { name: "Ода Нобунага", sidekick: "и Самураи", maxHp: 13, image: "assets/characters/oda-nobunaga.webp", cardback: "assets/cardbacks/oda-nobunaga.webp" },
   "pandora": { name: "Пандора", sidekick: "и Какодемоны", image: "assets/characters/pandora.webp", cardback: "assets/cardbacks/pandora.webp" },
